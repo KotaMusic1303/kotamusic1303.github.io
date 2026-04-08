@@ -34,7 +34,7 @@ body {
 
 .tagline {
   margin-top: 15px;
-  color: #00ff88;
+  color: #a855f7;
   font-size: 1.1em;
 }
 
@@ -47,7 +47,7 @@ body {
 
 .section h2 {
   margin-bottom: 30px;
-  border-left: 3px solid #00ff88;
+  border-left: 3px solid ##a855f7;
   padding-left: 10px;
   font-weight: 400;
 }
@@ -63,7 +63,7 @@ body {
 }
 
 .card:hover {
-  border-color: #00ff88;
+  border-color: #a855f7;
   transform: translateY(-4px);
 }
 
@@ -73,7 +73,7 @@ body {
 
 .info span {
   font-size: 0.8em;
-  color: #00ff88;
+  color: #a855f7;
 }
 
 .info p {
