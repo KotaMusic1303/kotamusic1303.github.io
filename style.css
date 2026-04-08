@@ -8,6 +8,8 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #0a0a0a;
   color: #eaeaea;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* HERO */
