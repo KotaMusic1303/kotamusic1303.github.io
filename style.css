@@ -160,60 +160,75 @@ body {
 .variety-container {
   display: flex;
   gap: 40px;
+  flex-wrap: wrap;
   align-items: flex-start;
-  flex-wrap: wrap; /* se adapta a móviles */
 }
 
-/* TEXTO IZQUIERDA */
+/* TEXTO */
 .variety-text {
   flex: 1;
-  font-size: 1em;
   color: #bbb;
+  font-size: 1em;
   line-height: 1.6;
 }
 
-/* REPRODUCTOR DERECHA */
+/* PANEL DE REPRODUCTOR */
 .variety-player {
   flex: 1;
+  max-height: 500px;       /* altura fija */
+  overflow-y: auto;        /* scroll si hay muchas canciones */
+  background: #121212;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+/* LISTA DE CANCIONES */
+.song-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 /* CADA CANCION */
-.variety-audio {
+.song-item {
   display: flex;
   flex-direction: column;
-  background: #121212;
-  border: 1px solid #222;
-  border-radius: 10px;
-  padding: 12px 15px;
-  transition: 0.3s;
+  background: #1c1c1c;
+  border-radius: 8px;
+  padding: 10px;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
-.variety-audio:hover {
-  border-color: #a855f7;
-  transform: translateY(-3px);
+.song-item:hover {
+  background-color: #2c2c2c;
+  transform: translateY(-2px);
 }
 
-.variety-audio audio {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.variety-audio p {
-  font-size: 0.9em;
+/* INFO Y BOTON PLAY */
+.song-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: #ccc;
+  margin-bottom: 8px;
+  cursor: pointer;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .variety-container {
-    flex-direction: column;
-  }
-  .variety-player {
-    width: 100%;
-  }
+.song-info i {
+  color: #a855f7;
+  font-size: 1.3em;
+  transition: transform 0.2s;
+}
+
+.song-info:hover i {
+  transform: scale(1.2);
+}
+
+/* AUDIO REAL */
+.song-item audio {
+  width: 100%;
+  outline: none;
 }
 
 /* MEDIA */
