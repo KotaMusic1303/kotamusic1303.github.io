@@ -113,13 +113,22 @@
   </section>
 
   <script>
-function swapImages() {
-  const img1 = document.getElementById("img1");
-  const img2 = document.getElementById("img2");
+const img1 = document.getElementById("img1");
+const img2 = document.getElementById("img2");
 
+// Función para intercambiar imágenes (click)
+function swapImages() {
   img1.classList.toggle("active");
   img2.classList.toggle("active");
 }
+
+// Función para intercambiar automáticamente
+function autoSwap() {
+  swapImages(); // reutiliza la función de click
+}
+
+// Ejecuta cada 7 segundos
+setInterval(autoSwap, 7000);
 </script>
   
 </body>
