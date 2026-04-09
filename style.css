@@ -161,3 +161,23 @@ audio, video {
     width: 60px;
   }
 }
+
+.socials {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: #a855f7;
+  text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+}
