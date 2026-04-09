@@ -356,6 +356,9 @@ audio, video {
     rgba(168,85,247,0.1),
     transparent 70%
   );
+  margin: 0;   /* elimina margen extra */
+  padding: 0;  /* elimina padding extra */
+}
   position: relative;
 }
 
