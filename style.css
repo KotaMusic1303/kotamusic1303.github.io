@@ -16,12 +16,20 @@ body {
 .hero {
   min-height: 60vh;
   padding: 80px 20px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at center, #111 0%, #0a0a0a 70%);
+
   text-align: center;
+
+  /* NUEVO FONDO */
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(168, 85, 247, 0.15),
+    #0a0a0a 70%
+  );
 }
 
 .hero h1 {
