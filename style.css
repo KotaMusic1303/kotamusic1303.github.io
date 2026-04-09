@@ -218,23 +218,31 @@ audio, video {
 
 .vg-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
-  align-items: center;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;  /* alineación al inicio */
 }
 
-.vg-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
-  align-items: center;
+.vg-image {
+  position: relative;   /* necesario para las imágenes absolutas */
+  height: auto;         /* ahora dependerá del contenedor de audios */
 }
 
-/* IMAGEN */
 .vg-image img {
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;          /* ocupa ancho del contenedor */
+  height: 100%;         /* ahora se ajusta a la altura de .vg-image */
+  object-fit: cover;    /* recorta si es necesario, mantiene proporción */
   border-radius: 10px;
-  opacity: 0.9;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+.vg-image img:not(.active) {
+  opacity: 0.6;         /* visible al fondo */
+  z-index: 1;
 }
 
 /* AUDIOS */
