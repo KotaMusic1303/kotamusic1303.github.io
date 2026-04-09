@@ -309,9 +309,5 @@ audio, video {
 }
 
 .vg-audio {
-  margin-top: 15px;
-}
-
-.vg-audio {
   transform: translateY(12px);
 }
