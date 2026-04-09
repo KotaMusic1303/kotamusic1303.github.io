@@ -307,3 +307,11 @@ audio, video {
   gap: 40px;
   align-items: start;
 }
+
+.vg-audio {
+  margin-top: 15px;
+}
+
+.vg-audio {
+  transform: translateY(12px);
+}
