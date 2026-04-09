@@ -15,146 +15,99 @@
 
 <body>
 
-  <script>
-const icons = document.querySelectorAll(".style-icon");
-let currentAudio = null;
-
-icons.forEach(icon => {
-  const audio = new Audio(icon.dataset.audio);
-
-  icon.addEventListener("click", () => {
-
-    // Pausar el audio actual si existe
-    if (currentAudio && currentAudio !== audio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-    }
-
-    // Reproducir/pausar este audio
-    if (audio.paused) {
-      audio.play();
-      icons.forEach(i => i.classList.remove("active")); // quitar highlight de los demás
-      icon.classList.add("active"); // resaltar este icono
-    } else {
-      audio.pause();
-      icon.classList.remove("active");
-    }
-
-    currentAudio = audio; // guardar el audio actual
-  });
-});
-</script>
-
   <!-- HERO -->
   <section class="hero">
     <h1>KotaMusic</h1>
     <p class="subtitle">Audio Engineer • Composer</p>
     <p class="tagline">Creating the sound you are looking for</p>
     <div class="socials">
-  <a href="https://www.youtube.com/@kotamusic1" target="_blank"><i class="fab fa-youtube"></i></a>
-  <a href="https://soundcloud.com/user-876843643" target="_blank"><i class="fab fa-soundcloud"></i></a>
-  <a href="https://www.instagram.com/kotamusic1/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://x.com/Kotamusic1" target="_blank"><i class="fab fa-x-twitter"></i></a>
-</div>
-</div>
-</div>
+      <a href="https://www.youtube.com/@kotamusic1" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://soundcloud.com/user-876843643" target="_blank"><i class="fab fa-soundcloud"></i></a>
+      <a href="https://www.instagram.com/kotamusic1/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/Kotamusic1" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    </div>
   </section>
 
   <!-- AUDIO -->
-<section class="section vg-section">
-  <h2>Videogame Music</h2>
+  <section class="section vg-section">
+    <h2>Videogame Music</h2>
 
-  <div class="vg-container">
+    <div class="vg-container">
 
-    <!-- IMAGEN -->
-    <div class="vg-image" onclick="swapImages()">
-  <img id="img1" src="images/Chilly Fox.png" class="active">
-  <img id="img2" src="images/MMXII.png">
-</div>
+      <!-- IMAGEN -->
+      <div class="vg-image" onclick="swapImages()">
+        <img id="img1" src="images/Chilly Fox.png" class="active">
+        <img id="img2" src="images/MMXII.png">
+      </div>
 
-    <!-- AUDIOS -->
-    <div class="vg-audio">
+      <!-- AUDIOS -->
+      <div class="vg-audio">
+        <div class="audio-item">
+          <audio controls>
+            <source src="Audio/MMXII1.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="audio-item">
+          <audio controls>
+            <source src="Audio/MMXII2.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="audio-item">
+          <audio controls>
+            <source src="Audio/MMXII3.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
 
-  <div class="audio-item">
-    <audio controls>
-      <source src="Audio/MMXII1.mp3" type="audio/mpeg">
-    </audio>
-  </div>
+      <!-- TEXTO -->
+      <div class="vg-text">
+        <p>
+          Videogame focused compositions, combining narrative context and immersion.
+          These samples are trying to emulate the 8bit era, with a touch of modern processing.
+        </p>
+      </div>
 
-  <div class="audio-item">
-    <audio controls>
-      <source src="Audio/MMXII2.mp3" type="audio/mpeg">
-    </audio>
-  </div>
+    </div>
 
-  <div class="audio-item">
-    <audio controls>
-      <source src="Audio/MMXII3.mp3" type="audio/mpeg">
-    </audio>
-  </div>
-
-</div>
-
-  <script>
-    const audios = document.querySelectorAll(".vg-audio audio");
-
-    audios.forEach(audio => {
-      audio.addEventListener("play", () => {
-        audios.forEach(a => {
-          if (a !== audio) a.pause(); // pausa los demás
+    <!-- Script para pausar audios entre sí -->
+    <script>
+      const audios = document.querySelectorAll(".vg-audio audio");
+      audios.forEach(audio => {
+        audio.addEventListener("play", () => {
+          audios.forEach(a => {
+            if (a !== audio) a.pause();
+          });
         });
       });
-    });
-  </script>
+    </script>
+  </section>
 
-    <!-- TEXTO -->
-    <div class="vg-text">
-      <p>
-        Videogame focused compositions, combining narrative context and immersion.
-        These samples are trying to emulate the 8bit era, with a touch of modern processing.
-           
-      </p>
+  <div class="section-combo"></div>
+
+  <!-- NUEVA SECCIÓN DE ICONOS -->
+  <section class="styles-section">
+    <h2>Pick Your Mood</h2>
+
+    <p class="styles-description">
+      As we already know, context is everything!
+      Give it a try and choose the tone for your project
+    </p>
+
+    <div class="styles-icons">
+      <div class="style-icon" data-audio="Audio/miedo.mp3">
+        <i class="fas fa-ghost"></i>
+        <p>Scary</p>
+      </div>
+      <div class="style-icon" data-audio="Audio/calma.mp3">
+        <i class="fas fa-water"></i>
+        <p>Soothing</p>
+      </div>
+      <div class="style-icon" data-audio="Audio/alegria.mp3">
+        <i class="fas fa-music"></i>
+        <p>Joyful</p>
+      </div>
     </div>
-
-  </div>
-</section>
-
-   <!-- Videogame Music -->
-</section>
-
-<div class="section-combo"></div>
-
-<section class="section">
-</section>
-
-  
-    <!-- NUEVA SECCIÓN DE ICONOS -->
- <section class="styles-section">
-  <h2>Pick Your Mood</h2>
-
-  <!-- TEXTO CENTRADO DE DESCRIPCIÓN -->
-  <p class="styles-description">
-    As we already know, context is everything!
-    Give it a try and choose the tone for your project
-  </p>
-
-  <div class="styles-icons">
-    <div class="style-icon" data-audio="Audio/miedo.mp3">
-      <i class="fas fa-ghost"></i>
-      <p>Scary</p>
-    </div>
-
-    <div class="style-icon" data-audio="Audio/calma.mp3">
-      <i class="fas fa-water"></i>
-      <p>Soothing</p>
-    </div>
-
-    <div class="style-icon" data-audio="Audio/alegria.mp3">
-      <i class="fas fa-music"></i>
-      <p>Joyful</p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- VIDEO -->
   <section class="section">
@@ -170,7 +123,6 @@ icons.forEach(icon => {
         <source src="video/demo1.mp4" type="video/mp4">
       </video>
     </div>
-
   </section>
 
   <!-- ABOUT -->
@@ -183,53 +135,50 @@ icons.forEach(icon => {
     </p>
   </section>
 
+  <!-- SCRIPT IMAGENES -->
   <script>
-const img1 = document.getElementById("img1");
-const img2 = document.getElementById("img2");
+    const img1 = document.getElementById("img1");
+    const img2 = document.getElementById("img2");
 
-// Función para intercambiar imágenes (click)
-function swapImages() {
-  img1.classList.toggle("active");
-  img2.classList.toggle("active");
-}
-
-// Función para intercambiar automáticamente
-function autoSwap() {
-  swapImages(); // reutiliza la función de click
-}
-
-// Ejecuta cada 7 segundos
-setInterval(autoSwap, 7000);
-</script>
-
-// Para arreglar que los audios en iconos no suenan al clickear
-  
-<script>
-const icons = document.querySelectorAll(".style-icon");
-let currentAudio = null;
-
-icons.forEach(icon => {
-  const audio = new Audio(icon.dataset.audio);
-
-  icon.addEventListener("click", () => {
-    if (currentAudio && currentAudio !== audio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
+    function swapImages() {
+      img1.classList.toggle("active");
+      img2.classList.toggle("active");
     }
 
-    if (audio.paused) {
-      audio.play();
-      icons.forEach(i => i.classList.remove("active"));
-      icon.classList.add("active");
-    } else {
-      audio.pause();
-      icon.classList.remove("active");
+    function autoSwap() {
+      swapImages();
     }
 
-    currentAudio = audio;
-  });
-});
-</script>
-  
+    setInterval(autoSwap, 7000);
+  </script>
+
+  <!-- SCRIPT ICONOS -->
+  <script>
+    const styleIcons = document.querySelectorAll(".style-icon");
+    let currentAudio = null;
+
+    styleIcons.forEach(icon => {
+      const audio = new Audio(icon.dataset.audio);
+
+      icon.addEventListener("click", () => {
+        if (currentAudio && currentAudio !== audio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+        }
+
+        if (audio.paused) {
+          audio.play();
+          styleIcons.forEach(i => i.classList.remove("active"));
+          icon.classList.add("active");
+        } else {
+          audio.pause();
+          icon.classList.remove("active");
+        }
+
+        currentAudio = audio;
+      });
+    });
+  </script>
+
 </body>
 </html>
