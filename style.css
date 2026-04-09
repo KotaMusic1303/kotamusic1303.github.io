@@ -223,49 +223,39 @@ audio, video {
   align-items: center;
 }
 
-/* IMAGEN */
-.vg-image {
-  position: relative;
-  width: 100%;
-  height: 1065px; /* ajusta según tu diseño */
-  overflow: hidden;
-  border-radius: 10px;
+/* IMAGEN A LA IZQUIERDA */
+.vg-audio-image {
+  flex: 0 0 auto;           /* tamaño fijo, no se estira */
+  width: 200px;              /* ancho de la imagen */
+  height: auto;              /* altura flexible, coincide con audios */
+  position: relative;        /* para superponer imágenes */
   cursor: pointer;
 }
 
 /* Imagen principal */
-.vg-image img.active {
-  position: relative;      /* deja que ocupe su tamaño original */
+.vg-audio-image img.active {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 2;
   opacity: 1;
   transition: opacity 1s ease;
-  display: block;
 }
 
 /* Imagen secundaria visible al fondo */
-.vg-image img:not(.active) {
-  position: absolute;      /* superpuesta sin afectar altura del contenedor */
-  top: 0;
-  left: 0;
-  opacity: 0.6;
-  z-index: 1;
-  transition: opacity 1s ease;
-}
-
-/* Hover para enfatizar interacción */
-.vg-image:hover img:not(.active) {
-  opacity: 0.85;                     /* más notoria al pasar mouse */
-  transform: scale(0.93) translate(10px, 10px);
-}
-
-.vg-image img {
-  position: absolute;
+.vg-audio-image img:not(.active) {
   width: 100%;
-  height: 1065px; /* ajusta según tu layout */
+  height: 100%;
   object-fit: cover;
+  position: absolute;
   top: 0;
   left: 0;
-  border-radius: 10px
+  z-index: 1;
+  opacity: 0.6;
+  transition: opacity 1s ease;
 }
 
 /* AUDIOS */
