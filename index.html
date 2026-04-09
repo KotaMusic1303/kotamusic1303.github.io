@@ -164,6 +164,7 @@
     // Pick Your Mood Icons
     styleIcons.forEach(icon => {
       const audio = new Audio(icon.dataset.audio);
+      audio.loop = true;
 
       icon.addEventListener("click", () => {
         // Pausar audio previo
