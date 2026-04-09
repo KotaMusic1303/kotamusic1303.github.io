@@ -223,39 +223,18 @@ audio, video {
   align-items: center;
 }
 
-/* IMAGEN A LA IZQUIERDA */
-.vg-audio-image {
-  flex: 0 0 auto;           /* tamaño fijo, no se estira */
-  width: 200px;              /* ancho de la imagen */
-  height: auto;              /* altura flexible, coincide con audios */
-  position: relative;        /* para superponer imágenes */
-  cursor: pointer;
+.vg-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  align-items: center;
 }
 
-/* Imagen principal */
-.vg-audio-image img.active {
+/* IMAGEN */
+.vg-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  opacity: 1;
-  transition: opacity 1s ease;
-}
-
-/* Imagen secundaria visible al fondo */
-.vg-audio-image img:not(.active) {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  opacity: 0.6;
-  transition: opacity 1s ease;
+  border-radius: 10px;
+  opacity: 0.9;
 }
 
 /* AUDIOS */
@@ -366,44 +345,4 @@ audio, video {
 
 .vg-image img:not(.active) {
   opacity: 0;
-}
-
-/* Contenedor principal de imagen + audios */
-.vg-audio-container {
-  display: flex;
-  align-items: stretch; /* hace que imagen y audios tengan la misma altura */
-  gap: 20px;
-}
-
-/* Contenedor de la imagen */
-.vg-audio-image {
-  flex: 0 0 200px;      /* ancho fijo */
-  position: relative;
-  cursor: pointer;
-}
-
-/* Imagen principal */
-.vg-audio-image img.active {
-  width: 100%;           /* ocupa ancho del contenedor */
-  height: 100%;          /* ahora se ajusta al contenedor que tiene la altura de los audios */
-  object-fit: cover;     
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  opacity: 1;
-  transition: opacity 1s ease;
-}
-
-/* Imagen secundaria visible al fondo */
-.vg-audio-image img:not(.active) {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  opacity: 0.6;
-  transition: opacity 1s ease;
 }
