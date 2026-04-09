@@ -419,3 +419,45 @@ audio, video {
 .style-audio audio {
   width: 100%;
 }
+
+/* SECCIÓN DIFFERENT STYLES CON ICONOS */
+.styles-section h2 {
+  font-size: 2.5em;
+  color: #a855f7;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+.styles-icons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.style-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2.5em;
+  color: #888;
+  transition: 0.3s;
+}
+
+.style-icon p {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #bbb;
+}
+
+/* HIGHLIGHT cuando está activo */
+.style-icon.active {
+  color: #a855f7;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.7);
+  transform: scale(1.2);
+}
+
+/*FIN ICONOS ESTILOS MUSICALES*/
+
+
