@@ -201,6 +201,33 @@ function autoSwap() {
 // Ejecuta cada 7 segundos
 setInterval(autoSwap, 7000);
 </script>
+
+// Para arreglar que los audios en iconos no suenan al clickear
+  
+const icons = document.querySelectorAll(".style-icon");
+let currentAudio = null;
+
+icons.forEach(icon => {
+  const audio = new Audio(icon.dataset.audio);
+
+  icon.addEventListener("click", () => {
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+
+    if (audio.paused) {
+      audio.play();
+      icons.forEach(i => i.classList.remove("active"));
+      icon.classList.add("active");
+    } else {
+      audio.pause();
+      icon.classList.remove("active");
+    }
+
+    currentAudio = audio;
+  });
+});
   
 </body>
 </html>
