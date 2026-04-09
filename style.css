@@ -100,8 +100,8 @@ body {
 
 /* SECCIONES */
 .section {
-  max-width: 900px;
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 60px 20px;
 }
 
@@ -244,4 +244,44 @@ audio, video {
   font-size: 0.95em;
   color: #bbb;
   line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .vg-container {
+    grid-template-columns: 1fr;
+  }
+
+  .vg-audio {
+    align-items: center;
+  }
+
+  .vg-text {
+    text-align: center;
+  }
+}
+
+.vg-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.vg-container > div {
+  background: #121212;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.vg-container > div:hover {
+  border-color: #a855f7;
+  transform: translateY(-4px);
+}
+
+.vg-image img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
 }
