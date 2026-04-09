@@ -235,21 +235,21 @@ audio, video {
 
 /* Imagen principal */
 .vg-image img.active {
-  opacity: 1;
+  position: relative;      /* deja que ocupe su tamaño original */
   z-index: 2;
-  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 25px rgba(168,85,247,0.5); /* borde brillante para destacarla */
-  transform: scale(1);
+  opacity: 1;
+  transition: opacity 1s ease;
+  display: block;
 }
 
-/* Imagen secundaria visible detrás */
+/* Imagen secundaria visible al fondo */
 .vg-image img:not(.active) {
-  opacity: 0.7;                     /* más visible */
+  position: absolute;      /* superpuesta sin afectar altura del contenedor */
+  top: 0;
+  left: 0;
+  opacity: 0.6;
   z-index: 1;
-  transform: scale(0.9) translate(20px, 20px); /* desplazamiento más notorio */
-  filter: brightness(0.7);           /* ilumina para destacar sobre fondo negro */
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  border-radius: 10px;               /* mantiene bordes suaves */
+  transition: opacity 1s ease;
 }
 
 /* Hover para enfatizar interacción */
