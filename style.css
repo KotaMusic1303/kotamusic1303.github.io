@@ -481,7 +481,9 @@ audio, video {
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 10px rgba(168, 85, 247, 0.5);
-  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  opacity: 0;                /* inicio invisible */
+  visibility: hidden;        /* evita clics cuando está oculto */
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, opacity 0.3s, visibility 0.3s;
   z-index: 1000;
 }
 
@@ -489,4 +491,10 @@ audio, video {
   transform: scale(1.2);
   background-color: #9333ea;
   box-shadow: 0 6px 15px rgba(168, 85, 247, 0.7);
+}
+
+/* Clase visible cuando hace scroll */
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
 }
