@@ -258,6 +258,10 @@ audio, video {
   transform: scale(0.93) translate(10px, 10px);
 }
 
+.vg-image img {
+  transition: opacity 1s ease, transform 0.5s ease, filter 0.5s ease;
+}
+
 /* AUDIOS */
 .vg-audio {
   display: flex;
