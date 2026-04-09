@@ -189,23 +189,24 @@
 
   <!-- HOVER MORADO EN ICONOS -->
   <style>
-    .style-icon {
-      display: inline-block;
-      padding: 15px;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+  .style-icon {
+  display: inline-block;
+  padding: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s, border-color 0.3s;
+  border: 2px solid transparent; /* espacio reservado para el borde */
+}
 
-    .style-icon:hover {
-      border: 2px solid #a855f7;
-      transform: translateY(-3px) scale(1.15);
-    }
+.style-icon:hover {
+  border-color: #a855f7;
+  transform: translateY(-3px) scale(1.15);
+}
 
-    .style-icon.active {
-      transform: scale(1.2);
-      border-color: #a855f7;
-    }
+.style-icon.active {
+  transform: scale(1.2);
+  border-color: #a855f7;
+}
   </style>
 
 </body>
