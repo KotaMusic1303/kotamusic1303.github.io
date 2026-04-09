@@ -156,10 +156,24 @@ audio, video {
 }
 
 @media (max-width: 768px) {
-  .hero h1::before,
-  .hero h1::after {
-    width: 60px;
+  .vg-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
+
+  /* 👇 CLAVE: audios más compactos */
+  .vg-audio {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .audio-item {
+    padding: 8px;
+  }
+
+  .audio-item audio {
+    width: 100%;
+    height: 35px; /* ↓ reduce altura */
 }
 
 .socials {
