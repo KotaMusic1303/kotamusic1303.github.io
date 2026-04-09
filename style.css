@@ -320,3 +320,19 @@ audio, video {
   );
   position: relative;
 }
+
+.vg-image {
+  position: relative;
+  cursor: pointer;
+}
+
+.vg-image img {
+  position: absolute;
+  width: 100%;
+  border-radius: 10px;
+  transition: opacity 0.5s ease;
+}
+
+.vg-image img:not(.active) {
+  opacity: 0;
+}
