@@ -244,12 +244,11 @@ audio, video {
 
 /* Imagen secundaria visible detrás */
 .vg-image img:not(.active) {
-  opacity: 0.7;                     /* más visible */
+  transform: scale(0.95); /* solo escalado, sin translate */
+  opacity: 0.7;
   z-index: 1;
-  transform: scale(0.9) translate(20px, 20px); /* desplazamiento más notorio */
-  filter: brightness(0.7);           /* ilumina para destacar sobre fondo negro */
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  border-radius: 10px;               /* mantiene bordes suaves */
+  filter: brightness(0.7);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 /* Hover para enfatizar interacción */
