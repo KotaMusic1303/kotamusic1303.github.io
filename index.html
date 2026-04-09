@@ -28,7 +28,7 @@
     </div>
   </section>
 
-  <!-- AUDIO -->
+  <!-- AUDIO - Videogame Music -->
   <section class="section vg-section">
     <h2>Videogame Music</h2>
 
@@ -68,18 +68,6 @@
       </div>
 
     </div>
-
-    <!-- Script para pausar audios entre sí -->
-    <script>
-      const audios = document.querySelectorAll(".vg-audio audio");
-      audios.forEach(audio => {
-        audio.addEventListener("play", () => {
-          audios.forEach(a => {
-            if (a !== audio) a.pause();
-          });
-        });
-      });
-    </script>
   </section>
 
   <div class="section-combo"></div>
@@ -98,10 +86,12 @@
         <i class="fas fa-ghost"></i>
         <p>Scary</p>
       </div>
+
       <div class="style-icon" data-audio="Audio/calma.mp3">
         <i class="fas fa-water"></i>
         <p>Soothing</p>
       </div>
+
       <div class="style-icon" data-audio="Audio/alegria.mp3">
         <i class="fas fa-music"></i>
         <p>Joyful</p>
@@ -112,7 +102,6 @@
   <!-- VIDEO -->
   <section class="section">
     <h2>Audiovisual Work</h2>
-
     <div class="card">
       <div class="info">
         <h3>Short Film Sound Design</h3>
@@ -135,49 +124,67 @@
     </p>
   </section>
 
-  <!-- SCRIPT IMAGENES -->
-  <script>
-    const img1 = document.getElementById("img1");
-    const img2 = document.getElementById("img2");
+  <!-- SCRIPTS -->
 
-    function swapImages() {
-      img1.classList.toggle("active");
-      img2.classList.toggle("active");
+  <script>
+  // IMÁGENES - swap click y auto fade
+  const img1 = document.getElementById("img1");
+  const img2 = document.getElementById("img2");
+
+  function swapImages() {
+    img1.classList.toggle("active");
+    img2.classList.toggle("active");
+  }
+
+  function autoSwap() {
+    swapImages();
+  }
+
+  setInterval(autoSwap, 7000);
+
+  // CONTROL UNIFICADO DE AUDIOS
+  const allAudios = [
+    ...document.querySelectorAll(".vg-audio audio"), // audios de Videogame Music
+    ...Array.from(document.querySelectorAll(".style-icon")).map(icon => new Audio(icon.dataset.audio)) // audios de iconos
+  ];
+
+  let currentAudio = null;
+
+  function playAudio(audio) {
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
     }
 
-    function autoSwap() {
-      swapImages();
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
     }
 
-    setInterval(autoSwap, 7000);
-  </script>
+    currentAudio = audio;
+  }
 
-  <!-- SCRIPT ICONOS -->
-  <script>
-    const styleIcons = document.querySelectorAll(".style-icon");
-    let currentAudio = null;
+  // ICONOS
+  const styleIcons = document.querySelectorAll(".style-icon");
+  styleIcons.forEach((icon, index) => {
+    const audio = allAudios[document.querySelectorAll(".vg-audio audio").length + index];
 
-    styleIcons.forEach(icon => {
-      const audio = new Audio(icon.dataset.audio);
+    icon.addEventListener("click", () => {
+      playAudio(audio);
 
-      icon.addEventListener("click", () => {
-        if (currentAudio && currentAudio !== audio) {
-          currentAudio.pause();
-          currentAudio.currentTime = 0;
-        }
-
-        if (audio.paused) {
-          audio.play();
-          styleIcons.forEach(i => i.classList.remove("active"));
-          icon.classList.add("active");
-        } else {
-          audio.pause();
-          icon.classList.remove("active");
-        }
-
-        currentAudio = audio;
-      });
+      // Highlight
+      styleIcons.forEach(i => i.classList.remove("active"));
+      if (!audio.paused) icon.classList.add("active");
     });
+  });
+
+  // AUDIOS VIDEOGAME MUSIC
+  document.querySelectorAll(".vg-audio audio").forEach(audio => {
+    audio.addEventListener("play", () => {
+      playAudio(audio);
+    });
+  });
   </script>
 
 </body>
