@@ -216,3 +216,32 @@ audio, video {
 .socials a:nth-child(4):hover {
   color: #ffffff; /* X (blanco sobre fondo oscuro) */
 }
+
+.vg-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+/* IMAGEN */
+.vg-image img {
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+/* AUDIOS */
+.vg-audio {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start; /* ← clave para alinearlos a la izquierda */
+}
+
+/* TEXTO */
+.vg-text {
+  font-size: 0.95em;
+  color: #bbb;
+  line-height: 1.6;
+}
