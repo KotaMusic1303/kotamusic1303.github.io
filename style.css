@@ -152,3 +152,10 @@ audio, video {
   color: #ccc;
   line-height: 1.6;
 }
+
+@media (max-width: 768px) {
+  .hero h1::before,
+  .hero h1::after {
+    width: 60px;
+  }
+}
