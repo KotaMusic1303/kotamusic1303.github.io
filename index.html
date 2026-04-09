@@ -28,12 +28,11 @@
     </div>
   </section>
 
-  <!-- AUDIO - Videogame Music -->
+  <!-- VIDEOGAME MUSIC -->
   <section class="section vg-section">
     <h2>Videogame Music</h2>
 
     <div class="vg-container">
-
       <!-- IMAGEN -->
       <div class="vg-image" onclick="swapImages()">
         <img id="img1" src="images/Chilly Fox.png" class="active">
@@ -66,16 +65,14 @@
           These samples are trying to emulate the 8bit era, with a touch of modern processing.
         </p>
       </div>
-
     </div>
   </section>
 
   <div class="section-combo"></div>
 
-  <!-- NUEVA SECCIÓN DE ICONOS -->
+  <!-- DIFFERENT STYLES -->
   <section class="styles-section">
     <h2>Pick Your Mood</h2>
-
     <p class="styles-description">
       As we already know, context is everything!
       Give it a try and choose the tone for your project
@@ -102,6 +99,7 @@
   <!-- VIDEO -->
   <section class="section">
     <h2>Audiovisual Work</h2>
+
     <div class="card">
       <div class="info">
         <h3>Short Film Sound Design</h3>
@@ -125,66 +123,54 @@
   </section>
 
   <!-- SCRIPTS -->
-
   <script>
-  // IMÁGENES - swap click y auto fade
-  const img1 = document.getElementById("img1");
-  const img2 = document.getElementById("img2");
-
-  function swapImages() {
-    img1.classList.toggle("active");
-    img2.classList.toggle("active");
-  }
-
-  function autoSwap() {
-    swapImages();
-  }
-
-  setInterval(autoSwap, 7000);
-
-  // CONTROL UNIFICADO DE AUDIOS
-  const allAudios = [
-    ...document.querySelectorAll(".vg-audio audio"), // audios de Videogame Music
-    ...Array.from(document.querySelectorAll(".style-icon")).map(icon => new Audio(icon.dataset.audio)) // audios de iconos
-  ];
-
-  let currentAudio = null;
-
-  function playAudio(audio) {
-    if (currentAudio && currentAudio !== audio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
+    // SWAP IMAGES
+    const img1 = document.getElementById("img1");
+    const img2 = document.getElementById("img2");
+    function swapImages() {
+      img1.classList.toggle("active");
+      img2.classList.toggle("active");
     }
+    setInterval(swapImages, 7000); // automatic swap cada 7s
 
-    if (audio.paused) {
-      audio.play();
-    } else {
-      audio.pause();
-    }
+    // UNIFICAR AUDIOS
+    let currentAudio = null;
 
-    currentAudio = audio;
-  }
-
-  // ICONOS
-  const styleIcons = document.querySelectorAll(".style-icon");
-  styleIcons.forEach((icon, index) => {
-    const audio = allAudios[document.querySelectorAll(".vg-audio audio").length + index];
-
-    icon.addEventListener("click", () => {
-      playAudio(audio);
-
-      // Highlight
-      styleIcons.forEach(i => i.classList.remove("active"));
-      if (!audio.paused) icon.classList.add("active");
+    // VIDEOGAME MUSIC - HTML audio
+    const vgAudios = document.querySelectorAll(".vg-audio audio");
+    vgAudios.forEach(audio => {
+      audio.addEventListener("play", () => {
+        if (currentAudio && currentAudio !== audio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+        }
+        currentAudio = audio;
+      });
     });
-  });
 
-  // AUDIOS VIDEOGAME MUSIC
-  document.querySelectorAll(".vg-audio audio").forEach(audio => {
-    audio.addEventListener("play", () => {
-      playAudio(audio);
+    // ICONOS - audios dinámicos
+    const styleIcons = document.querySelectorAll(".style-icon");
+    styleIcons.forEach(icon => {
+      const audio = new Audio(icon.dataset.audio);
+
+      icon.addEventListener("click", () => {
+        if (currentAudio && currentAudio !== audio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+        }
+
+        if (audio.paused) {
+          audio.play();
+          styleIcons.forEach(i => i.classList.remove("active"));
+          icon.classList.add("active");
+        } else {
+          audio.pause();
+          icon.classList.remove("active");
+        }
+
+        currentAudio = audio;
+      });
     });
-  });
   </script>
 
 </body>
