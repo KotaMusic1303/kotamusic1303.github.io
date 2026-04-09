@@ -218,6 +218,16 @@
 <script>
 const backToTop = document.getElementById("back-to-top");
 
+// Función para mostrar/ocultar según scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {   // 300px desde arriba
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
+});
+
+// Scroll suave al top
 backToTop.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
