@@ -52,8 +52,10 @@ body {
   font-size: 4em;
   font-weight: 600;
   letter-spacing: 2px;
-
   color: #ffffff;
+
+  position: relative;
+  display: inline-block;
 
   text-shadow:
     0 0 10px rgba(168, 85, 247, 0.4),
