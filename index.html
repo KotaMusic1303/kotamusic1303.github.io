@@ -164,6 +164,21 @@
     </div>
   </div>
 </section>
+
+  <script>
+const songs = document.querySelectorAll('.song-item audio');
+
+songs.forEach(audio => {
+  audio.addEventListener('play', () => {
+    songs.forEach(a => {
+      if (a !== audio) {
+        a.pause();
+        a.currentTime = 0;
+      }
+    });
+  });
+});
+</script>
   
   <!-- VIDEO -->
   <section class="section">
