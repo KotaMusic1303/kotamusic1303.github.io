@@ -375,3 +375,47 @@ audio, video {
 .vg-image img:not(.active) {
   opacity: 0;
 }
+
+/* SECCIÓN DIFFERENT STYLES */
+.styles-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  text-align: center;  /* título centrado */
+}
+
+.styles-section h2 {
+  font-size: 2.5em;
+  color: #a855f7;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+/* CONTENEDOR DE AUDIOS HORIZONTALES */
+.styles-container {
+  display: flex;
+  justify-content: center;  /* centrar horizontalmente */
+  gap: 30px;               /* separación entre audios */
+  flex-wrap: wrap;          /* que se adapte a móviles */
+}
+
+.style-audio {
+  width: 300px;             /* ancho fijo por cada audio */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #121212;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 15px;
+  transition: 0.3s;
+}
+
+.style-audio:hover {
+  border-color: #a855f7;
+  transform: translateY(-3px);
+}
+
+.style-audio audio {
+  width: 100%;
+}
