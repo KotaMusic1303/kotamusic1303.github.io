@@ -181,3 +181,38 @@ audio, video {
   color: #a855f7;
   text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
 }
+
+.socials {
+  margin-top: 25px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.socials a {
+  font-size: 1.6em;
+  color: #888; /* color base neutro */
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* ANIMACIÓN GENERAL */
+.socials a:hover {
+  transform: translateY(-3px) scale(1.15);
+}
+
+/* COLORES OFICIALES */
+.socials a:nth-child(1):hover {
+  color: #FF0000; /* YouTube */
+}
+
+.socials a:nth-child(2):hover {
+  color: #FF5500; /* SoundCloud */
+}
+
+.socials a:nth-child(3):hover {
+  color: #E1306C; /* Instagram */
+}
+
+.socials a:nth-child(4):hover {
+  color: #ffffff; /* X (blanco sobre fondo oscuro) */
+}
