@@ -294,3 +294,9 @@ audio, video {
 .audio-item {
   padding: 12px 15px;
 }
+
+.vg-section {
+  max-width: 1400px; /* más ancho */
+  margin-left: 40px; /* ← empuja hacia la izquierda */
+  margin-right: auto;
+}
