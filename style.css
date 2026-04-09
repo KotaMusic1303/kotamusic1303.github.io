@@ -216,41 +216,68 @@ audio, video {
   color: #ffffff; /* X (blanco sobre fondo oscuro) */
 }
 
+/* CONTENEDOR PRINCIPAL */
+.vg-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
 .vg-container {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 40px;
-  align-items: start;  /* alineación al inicio */
+  display: flex;           /* flex para alinear imagen + audios + texto */
+  gap: 30px;
+  align-items: stretch;    /* altura igual entre imagen y audios */
 }
 
+/* IMAGEN */
 .vg-image {
-  position: relative;   /* necesario para las imágenes absolutas */
-  height: auto;         /* ahora dependerá del contenedor de audios */
+  flex: 0 0 250px;         /* ancho fijo de la imagen */
+  position: relative;       /* para imágenes absolutas */
+  cursor: pointer;
 }
 
+/* IMÁGENES SUPERPUESTAS */
 .vg-image img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;          /* ocupa ancho del contenedor */
-  height: 100%;         /* ahora se ajusta a la altura de .vg-image */
-  object-fit: cover;    /* recorta si es necesario, mantiene proporción */
+  width: 100%;
+  height: 100%;            /* ahora coincide con altura del contenedor */
+  object-fit: cover;
   border-radius: 10px;
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
   z-index: 2;
 }
 
 .vg-image img:not(.active) {
-  opacity: 0.6;         /* visible al fondo */
+  opacity: 0.6;            /* visible al fondo */
   z-index: 1;
 }
 
-/* AUDIOS */
+/* BLOQUE DE AUDIOS */
 .vg-audio {
+  flex: 1;                  /* ocupa el resto del espacio */
   display: flex;
   flex-direction: column;
   gap: 15px;
-  align-items: flex-start; /* ← clave para alinearlos a la izquierda */
+}
+
+.audio-item {
+  width: 100%;
+  background: #121212;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 12px 15px;
+  transition: 0.3s;
+}
+
+.audio-item:hover {
+  border-color: #a855f7;
+  transform: translateY(-3px);
+}
+
+.audio-item audio {
+  width: 100%;
 }
 
 /* TEXTO */
