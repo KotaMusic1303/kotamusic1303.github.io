@@ -142,6 +142,80 @@ body {
   color: #bbb;
 }
 
+/* SECCIÓN VARIETY */
+.variety-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px 20px;
+}
+
+.variety-section h2 {
+  font-size: 2.5em;
+  color: #a855f7;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+/* CONTENEDOR FLEX */
+.variety-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* se adapta a móviles */
+}
+
+/* TEXTO IZQUIERDA */
+.variety-text {
+  flex: 1;
+  font-size: 1em;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* REPRODUCTOR DERECHA */
+.variety-player {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* CADA CANCION */
+.variety-audio {
+  display: flex;
+  flex-direction: column;
+  background: #121212;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 12px 15px;
+  transition: 0.3s;
+}
+
+.variety-audio:hover {
+  border-color: #a855f7;
+  transform: translateY(-3px);
+}
+
+.variety-audio audio {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.variety-audio p {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .variety-container {
+    flex-direction: column;
+  }
+  .variety-player {
+    width: 100%;
+  }
+}
+
 /* MEDIA */
 audio, video {
   width: 100%;
