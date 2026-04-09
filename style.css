@@ -233,7 +233,7 @@ audio, video {
   height: 100%;
   object-fit: cover;
   border-radius: 0px;
-  transition: opacity 1s ease;
+  transition: opacity 2s ease;
 }
 
 /* IMAGEN ACTIVA AL FRENTE */
@@ -245,7 +245,7 @@ audio, video {
 /* IMAGEN DE FONDO */
 .vg-image img:not(.active) {
   z-index: 2;
-  opacity: 0.6; /* visible detrás */
+  opacity: 1; /* visible detrás */
 }
 
 /* BLOQUE DE AUDIOS */
