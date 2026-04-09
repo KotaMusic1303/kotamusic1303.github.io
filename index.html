@@ -15,6 +15,36 @@
 
 <body>
 
+  <script>
+const icons = document.querySelectorAll(".style-icon");
+let currentAudio = null;
+
+icons.forEach(icon => {
+  const audio = new Audio(icon.dataset.audio);
+
+  icon.addEventListener("click", () => {
+
+    // Pausar el audio actual si existe
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+
+    // Reproducir/pausar este audio
+    if (audio.paused) {
+      audio.play();
+      icons.forEach(i => i.classList.remove("active")); // quitar highlight de los demás
+      icon.classList.add("active"); // resaltar este icono
+    } else {
+      audio.pause();
+      icon.classList.remove("active");
+    }
+
+    currentAudio = audio; // guardar el audio actual
+  });
+});
+</script>
+
   <!-- HERO -->
   <section class="hero">
     <h1>KotaMusic</h1>
