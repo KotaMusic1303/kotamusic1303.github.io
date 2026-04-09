@@ -267,19 +267,6 @@ audio, video {
   align-items: start;
 }
 
-.vg-container > div {
-  background: #121212;
-  border: 1px solid #222;
-  border-radius: 12px;
-  padding: 20px;
-  transition: 0.3s;
-}
-
-.vg-container > div:hover {
-  border-color: #a855f7;
-  transform: translateY(-4px);
-}
-
 .vg-image img {
   width: 100%;
   border-radius: 10px;
