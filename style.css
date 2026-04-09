@@ -60,6 +60,25 @@ body {
     0 0 20px rgba(168, 85, 247, 0.3);
 }
 
+.hero h1::before,
+.hero h1::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 120px; /* largo de línea */
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.hero h1::before {
+  right: 100%;
+  margin-right: 20px; /* espacio entre línea y texto */
+}
+.hero h1::after {
+  left: 100%;
+  margin-left: 20px;
+}
+
 .subtitle {
   margin-top: 10px;
   color: #888;
