@@ -224,13 +224,10 @@ audio, video {
 }
 
 /* IMAGEN */
-.vg-image {
-  position: relative;
+.vg-image img {
   width: 100%;
-  height: 250px; /* ← ajusta esto */
-  overflow: hidden;
   border-radius: 10px;
-  cursor: pointer;
+  opacity: 0.9;
 }
 
 .vg-image img {
