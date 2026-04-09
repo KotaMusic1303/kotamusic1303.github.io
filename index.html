@@ -65,6 +65,18 @@
 
 </div>
 
+  <script>
+    const audios = document.querySelectorAll(".vg-audio audio");
+
+    audios.forEach(audio => {
+      audio.addEventListener("play", () => {
+        audios.forEach(a => {
+          if (a !== audio) a.pause(); // pausa los demás
+        });
+      });
+    });
+  </script>
+
     <!-- TEXTO -->
     <div class="vg-text">
       <p>
