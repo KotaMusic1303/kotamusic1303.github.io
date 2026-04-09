@@ -220,7 +220,7 @@ audio, video {
 .vg-image {
   flex: 0 0 250px;        /* ancho fijo */
   position: relative;      /* necesario para imgs absolutas */
-  height: 300px;           /* altura fija para que se vea correctamente */
+  height: 350px;           /* altura fija para que se vea correctamente */
   cursor: pointer;
 }
 
