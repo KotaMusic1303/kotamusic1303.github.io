@@ -300,3 +300,10 @@ audio, video {
   margin-left: 40px; /* ← empuja hacia la izquierda */
   margin-right: auto;
 }
+
+.vg-container {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
