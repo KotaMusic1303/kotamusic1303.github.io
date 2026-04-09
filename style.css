@@ -433,7 +433,7 @@ audio, video {
 .styles-icons {
   display: flex;
   justify-content: center;
-  gap: 80px;  /* antes era 50px, ahora más separación */
+  gap: 120px;  /* antes era 50px, ahora más separación */
   flex-wrap: wrap;
 }
 
@@ -443,7 +443,7 @@ audio, video {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  font-size: 2.5em;
+  font-size: 5em;
   color: #888;
   transition: 0.3s;
 }
