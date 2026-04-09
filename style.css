@@ -227,7 +227,7 @@ audio, video {
 .vg-image {
   position: relative;
   width: 100%;
-  height: 1065px; /* ajusta según tu layout */
+  height: 250px; /* ajusta según tu diseño */
   overflow: hidden;
   border-radius: 10px;
   cursor: pointer;
@@ -237,22 +237,25 @@ audio, video {
 .vg-image img.active {
   opacity: 1;
   z-index: 2;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 25px rgba(168,85,247,0.5); /* borde brillante para destacarla */
+  transform: scale(1);
 }
 
-/* Imagen secundaria (visible al fondo) */
+/* Imagen secundaria visible detrás */
 .vg-image img:not(.active) {
-  opacity: 0.45;               /* aumenta visibilidad */
+  opacity: 0.7;                     /* más visible */
   z-index: 1;
-  transform: scale(0.95) translate(15px, 15px); /* desplazamiento más claro */
-  filter: brightness(0.5);     /* más contraste */
+  transform: scale(0.9) translate(20px, 20px); /* desplazamiento más notorio */
+  filter: brightness(0.7);           /* ilumina para destacar sobre fondo negro */
   transition: opacity 0.5s ease, transform 0.5s ease;
+  border-radius: 10px;               /* mantiene bordes suaves */
 }
 
 /* Hover para enfatizar interacción */
 .vg-image:hover img:not(.active) {
-  opacity: 0.6;                /* se nota más al pasar mouse */
-  transform: scale(0.97) translate(10px, 10px);
+  opacity: 0.85;                     /* más notoria al pasar mouse */
+  transform: scale(0.93) translate(10px, 10px);
 }
 
 /* AUDIOS */
