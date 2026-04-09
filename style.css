@@ -423,7 +423,7 @@ audio, video {
 /* SECCIÓN DIFFERENT STYLES CON ICONOS */
 /* TEXTO CENTRADO DE DESCRIPCIÓN */
 .styles-description {
-  margin: 20px 0 40px 0; /* margen superior y inferior */
+  margin: 20px 0 60px 0; /* margen superior y inferior */
   font-size: 1.1em;
   color: #bbb;
   text-align: center; /* centrado */
