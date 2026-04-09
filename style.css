@@ -272,3 +272,25 @@ audio, video {
   border-radius: 10px;
   display: block;
 }
+
+.audio-item {
+  width: 100%;
+  background: #121212;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.audio-item:hover {
+  border-color: #a855f7;
+  transform: translateY(-3px);
+}
+
+.audio-item audio {
+  width: 100%;
+}
+
+.audio-item {
+  padding: 12px 15px;
+}
