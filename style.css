@@ -579,6 +579,28 @@ audio, video {
 
 /*FIN ICONOS ESTILOS MUSICALES*/
 
+/* ICONO DERECHA */
+.song-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+/* SVG */
+.icon-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* HOVER */
+.song-item:hover .song-icon {
+  opacity: 1;
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.8));
+}
+
 /* BOTÓN VOLVER AL INICIO */
 /* ============================== */
 #back-to-top {
