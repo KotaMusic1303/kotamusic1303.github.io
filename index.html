@@ -392,6 +392,7 @@ varietyItems.forEach(item => {
 
   // Click en canción
   item.addEventListener("click", () => {
+    document.querySelectorAll(".style-icon").forEach(icon => icon.classList.remove("active"));
     if (currentAudio && currentAudio !== audio) {
       currentAudio.pause();
       currentAudio.currentTime = 0;
