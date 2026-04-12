@@ -679,3 +679,64 @@ audio, video {
   width: 100px;
   cursor: pointer;
 }
+
+/* =========================
+   RESTORE BORDE MORADO
+========================= */
+
+/* ICONOS PICK YOUR MOOD */
+.style-icon {
+  border: 2px solid transparent;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.style-icon:hover {
+  border-color: #a855f7;
+  transform: translateY(-3px) scale(1.15);
+}
+
+.style-icon.active {
+  border-color: #a855f7;
+  transform: scale(1.2);
+}
+
+
+/* IMÁGENES VG */
+.vg-image img {
+  border: 2px solid transparent;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+
+.vg-image img.active {
+  border-color: #a855f7;
+}
+
+
+/* AUDIOS (los 3 de arriba) */
+.vg-audio audio {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: border 0.3s ease;
+}
+
+.vg-audio audio:hover {
+  border-color: #a855f7;
+}
+
+
+/* VARIETY SONG ITEMS */
+.song-item {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.song-item:hover {
+  border-color: #a855f7;
+}
+
+.song-item.active {
+  border-color: #a855f7;
+}
