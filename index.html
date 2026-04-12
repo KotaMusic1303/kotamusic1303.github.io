@@ -388,6 +388,14 @@ function stopAllAudios(except = null) {
 }
   </style>
 
+    <!-- VOLUMEN GLOBAL -->
+<div class="global-volume">
+  <i class="fas fa-volume-up"></i>
+  <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
+</div>
+  
+  
+
   <!-- BOTÓN VOLVER AL INICIO -->
 <button id="back-to-top">
   <i class="fas fa-step-backward"></i>
@@ -507,6 +515,38 @@ varietyItems.forEach(item => {
     icon.className = "fas fa-play-circle";
   });
 });
+</script>
+
+  <script>
+const volumeControl = document.getElementById("volumeControl");
+
+// 🔥 función que obtiene TODOS los audios existentes y futuros
+function getAllAudios() {
+  return document.querySelectorAll("audio");
+}
+
+// 🔥 aplicar volumen a todo
+function setGlobalVolume(value) {
+  const audios = getAllAudios();
+  audios.forEach(audio => {
+    audio.volume = value;
+  });
+
+  // también los audios creados manualmente (Mood)
+  document.querySelectorAll(".style-icon").forEach(icon => {
+    if (icon.audioInstance) {
+      icon.audioInstance.volume = value;
+    }
+  });
+}
+
+// 🎚️ cambiar volumen en tiempo real
+volumeControl.addEventListener("input", (e) => {
+  setGlobalVolume(e.target.value);
+});
+
+// 🔥 volumen inicial (por si cargas audios después)
+setGlobalVolume(volumeControl.value);
 </script>
   
 </body>
