@@ -163,6 +163,68 @@
   </div>
 </section>
 
+  <div class="section-combo"></div>
+
+<section class="section audiovisual-section">
+  <h2>Audiovisual</h2>
+
+  <!-- FLECHAS -->
+  <div class="av-controls">
+    <i class="fas fa-chevron-left" id="av-prev"></i>
+    <i class="fas fa-chevron-right" id="av-next"></i>
+  </div>
+
+  <div class="av-container">
+
+    <!-- VIDEOS -->
+    <div class="av-videos">
+
+      <!-- VIDEO 1 -->
+      <video class="av-video active" src="video/demo1.mp4" controls></video>
+
+      <!-- VIDEO 2 -->
+      <video class="av-video" src="video/demo2.mp4" controls></video>
+
+      <!-- VIDEO 3 -->
+      <video class="av-video" src="video/demo3.mp4" controls></video>
+
+      <!-- VIDEO 4 -->
+      <video class="av-video" src="video/demo4.mp4" controls></video>
+
+      <!-- VIDEO 5 -->
+      <video class="av-video" src="video/demo5.mp4" controls></video>
+
+      <!-- VIDEO 6 -->
+      <video class="av-video" src="video/demo6.mp4" controls></video>
+
+      <!-- VIDEO 7 -->
+      <video class="av-video" src="video/demo7.mp4" controls></video>
+
+      <!-- VIDEO 8 -->
+      <video class="av-video" src="video/demo8.mp4" controls></video>
+
+    </div>
+
+    <!-- DESCRIPCIÓN -->
+    <div class="av-description">
+
+      <p class="av-text active">
+        Descripción del video 1
+      </p>
+
+      <p class="av-text">Descripción del video 2</p>
+      <p class="av-text">Descripción del video 3</p>
+      <p class="av-text">Descripción del video 4</p>
+      <p class="av-text">Descripción del video 5</p>
+      <p class="av-text">Descripción del video 6</p>
+      <p class="av-text">Descripción del video 7</p>
+      <p class="av-text">Descripción del video 8</p>
+
+    </div>
+
+  </div>
+</section>
+
 <!-- ================= BOTON ================= -->
 <button id="back-to-top">
   <i class="fas fa-step-backward"></i>
@@ -419,6 +481,44 @@ document.querySelectorAll(".song-item").forEach(item => {
     progress.style.width = "0%";
     current.textContent = "0:00";
   });
+});
+</script>
+
+  <script>
+// =========================
+// AUDIOVISUAL SLIDER LOOP
+// =========================
+
+const videos = document.querySelectorAll(".av-video");
+const texts = document.querySelectorAll(".av-text");
+const nextBtn = document.getElementById("av-next");
+const prevBtn = document.getElementById("av-prev");
+
+let currentIndex = 0;
+
+function updateAV(index) {
+
+  videos.forEach(v => {
+    v.classList.remove("active");
+    v.pause();
+  });
+
+  texts.forEach(t => t.classList.remove("active"));
+
+  videos[index].classList.add("active");
+  texts[index].classList.add("active");
+}
+
+// NEXT
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % videos.length;
+  updateAV(currentIndex);
+});
+
+// PREV
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+  updateAV(currentIndex);
 });
 </script>
 
