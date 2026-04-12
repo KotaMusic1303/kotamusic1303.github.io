@@ -52,7 +52,7 @@
 
 <body>
 
-<!-- VOLUMEN -->
+<!-- VOLUMEN GLOBAL -->
 <div class="global-volume">
   <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
 </div>
@@ -70,20 +70,21 @@
   </div>
 </section>
 
-<!-- VG -->
+<!-- AUDIO / VIDEOGAME MUSIC -->
 <section class="section vg-section">
   <h2>Videogame Music</h2>
 
   <div class="vg-container">
+
     <div class="vg-image" onclick="swapImages()">
       <img id="img1" src="images/Chilly Fox.png" class="active">
       <img id="img2" src="images/MMXII.png">
     </div>
 
     <div class="vg-audio">
-      <audio controls src="Audio/MMXII1.mp3"></audio>
-      <audio controls src="Audio/MMXII2.mp3"></audio>
-      <audio controls src="Audio/MMXII3.mp3"></audio>
+      <div class="audio-item"><audio controls src="Audio/MMXII1.mp3"></audio></div>
+      <div class="audio-item"><audio controls src="Audio/MMXII2.mp3"></audio></div>
+      <div class="audio-item"><audio controls src="Audio/MMXII3.mp3"></audio></div>
     </div>
 
     <div class="vg-text">
@@ -91,6 +92,7 @@
         Videogame focused compositions, combining narrative context and immersion.
       </p>
     </div>
+
   </div>
 </section>
 
@@ -119,43 +121,50 @@
 
 <div class="section-combo"></div>
 
-<!-- VARIETY -->
+<!-- VARIETY COMPLETO -->
 <section class="section variety-section">
   <h2>Variety</h2>
 
-  <div class="variety-player">
-    <div class="song-list">
+  <div class="variety-container">
 
-      <div class="song-item">
-        <i class="fas fa-play-circle"></i>
-        <audio src="Audio/Pokemon.mp3"></audio>
+    <div class="variety-text">
+      <p>
+        Explora esta selección de canciones con estilos variados.
+      </p>
+    </div>
+
+    <div class="variety-player">
+      <div class="song-list">
+
+        <!-- TODAS LAS CANCIONES RESTAURADAS -->
+        <div class="song-item"><div class="song-info"><i class="fas fa-play-circle"></i><p>Battle</p></div><audio src="Audio/Pokemon.mp3"></audio></div>
+        <div class="song-item"><div class="song-info"><i class="fas fa-play-circle"></i><p>Mario</p></div><audio src="Audio/Mario.mp3"></audio></div>
+        <div class="song-item"><div class="song-info"><i class="fas fa-play-circle"></i><p>Space</p></div><audio src="Audio/Space.mp3"></audio></div>
+        <div class="song-item"><div class="song-info"><i class="fas fa-play-circle"></i><p>Pirata</p></div><audio src="Audio/Pirata.mp3"></audio></div>
+        <div class="song-item"><div class="song-info"><i class="fas fa-play-circle"></i><p>Castle</p></div><audio src="Audio/Castle.mp3"></audio></div>
+        <div class="song-item"><div class="song-info"><i class="fas fa-play-circle"></i><p>Ghost</p></div><audio src="Audio/Ghost.mp3"></audio></div>
+
       </div>
-
-      <div class="song-item">
-        <i class="fas fa-play-circle"></i>
-        <audio src="Audio/Mario.mp3"></audio>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- BOTON -->
+<!-- BOTÓN VOLVER -->
 <button id="back-to-top">
   <i class="fas fa-step-backward"></i>
 </button>
 
 <script>
-const volumeControl = document.getElementById("volumeControl");
 let currentAudio = null;
+const volumeControl = document.getElementById("volumeControl");
 
-/* VOLUMEN GLOBAL TIEMPO REAL */
-function applyVolume(audio) {
+/* VOLUMEN GLOBAL REAL */
+function setVolume(audio) {
   audio.volume = volumeControl.value;
 }
 
 volumeControl.addEventListener("input", () => {
-  if (currentAudio) currentAudio.volume = volumeControl.value;
+  document.querySelectorAll("audio").forEach(a => a.volume = volumeControl.value);
 });
 
 /* VG */
@@ -163,7 +172,7 @@ document.querySelectorAll(".vg-audio audio").forEach(audio => {
   audio.addEventListener("play", () => {
     if (currentAudio && currentAudio !== audio) currentAudio.pause();
     currentAudio = audio;
-    applyVolume(audio);
+    setVolume(audio);
   });
 });
 
@@ -174,9 +183,7 @@ document.querySelectorAll(".style-icon").forEach(icon => {
 
   icon.addEventListener("click", () => {
 
-    if (currentAudio && currentAudio !== audio) {
-      currentAudio.pause();
-    }
+    if (currentAudio && currentAudio !== audio) currentAudio.pause();
 
     if (audio.paused) {
       audio.play();
@@ -188,7 +195,7 @@ document.querySelectorAll(".style-icon").forEach(icon => {
     }
 
     currentAudio = audio;
-    applyVolume(audio);
+    setVolume(audio);
   });
 });
 
@@ -215,8 +222,17 @@ document.querySelectorAll(".song-item").forEach(item => {
     }
 
     currentAudio = audio;
-    applyVolume(audio);
+    setVolume(audio);
   });
+});
+
+/* BOTÓN TOP */
+const backToTop = document.getElementById("back-to-top");
+window.addEventListener("scroll", () => {
+  backToTop.classList.toggle("show", window.scrollY > 300);
+});
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 </script>
 
