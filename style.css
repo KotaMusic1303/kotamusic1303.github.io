@@ -740,3 +740,9 @@ audio, video {
 .song-item.active {
   border-color: #a855f7;
 }
+
+/* HOVER IMÁGENES VG (primera sección) */
+.vg-image img:hover {
+  border-color: #a855f7;
+  transform: scale(1.05);
+}
