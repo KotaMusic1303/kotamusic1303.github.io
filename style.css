@@ -651,16 +651,17 @@ audio, video {
 
 .global-volume {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(20, 20, 20, 0.9);
-  padding: 10px 14px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 999;
-  backdrop-filter: blur(10px);
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+}
+
+#volumeControl {
+  writing-mode: bt-lr; /* vertical */
+  -webkit-appearance: slider-vertical;
+  width: 8px;
+  height: 150px;
+  cursor: pointer;
 }
 
 .global-volume i {
