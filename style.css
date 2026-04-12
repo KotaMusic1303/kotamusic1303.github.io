@@ -746,3 +746,9 @@ audio, video {
   border-color: #a855f7;
   transform: scale(1.05);
 }
+
+/* HOVER audios sección VG */
+.vg-audio audio:hover {
+  border-color: #a855f7;
+  transform: scale(1.05);
+}
