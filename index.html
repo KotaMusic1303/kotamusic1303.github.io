@@ -288,6 +288,8 @@
       audio.loop = true;
 
       icon.addEventListener("click", () => {
+        resetVarietyUI();
+        
         // Pausar audio previo
         if (currentAudio && currentAudio !== audio) {
           currentAudio.pause();
