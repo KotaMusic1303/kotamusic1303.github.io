@@ -217,5 +217,54 @@ btn.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}))
 
 </script>
 
+  <script>
+// ===========================
+// FIX GLOBAL SIN ROMPER NADA
+// ===========================
+
+// reset visual de variety
+function forceResetVariety() {
+  document.querySelectorAll(".song-item").forEach(item => {
+    item.classList.remove("active");
+    const icon = item.querySelector("i");
+    if (icon) icon.className = "fas fa-play-circle";
+  });
+}
+
+// reset visual de mood
+function forceResetMood() {
+  document.querySelectorAll(".style-icon").forEach(icon => {
+    icon.classList.remove("active");
+  });
+}
+
+// detectar cualquier audio HTML
+document.querySelectorAll("audio").forEach(audio => {
+  audio.addEventListener("play", () => {
+
+    // si NO es de variety → resetear variety
+    if (!audio.closest(".song-item")) {
+      forceResetVariety();
+    }
+
+    // si NO es de mood → resetear mood
+    if (!audio.closest(".style-icon")) {
+      forceResetMood();
+    }
+  });
+});
+
+// detectar audios de Pick Your Mood (new Audio)
+document.querySelectorAll(".style-icon").forEach(icon => {
+
+  if (!icon.audioRef) return;
+
+  icon.audioRef.addEventListener("play", () => {
+    forceResetVariety();
+  });
+
+});
+</script>
+
 </body>
 </html>
