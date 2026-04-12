@@ -165,6 +165,99 @@
 
   <div class="section-combo"></div>
 
+  <div class="section-combo"></div>
+
+<section class="section audiovisual-section">
+  <h2>Audiovisual</h2>
+
+  <!-- FLECHAS -->
+  <div class="av-controls">
+    <i class="fas fa-chevron-left" id="av-prev"></i>
+    <i class="fas fa-chevron-right" id="av-next"></i>
+  </div>
+
+  <div class="av-container">
+
+    <!-- TEXTO (IZQUIERDA) -->
+    <div class="av-description">
+
+      <div class="av-item active">
+        <p>
+          Descripción del video 1. Puedes hablar del diseño sonoro,
+          intención narrativa o técnicas usadas.
+        </p>
+      </div>
+
+      <div class="av-item">
+        <p>Descripción del video 2</p>
+      </div>
+
+      <div class="av-item">
+        <p>Descripción del video 3</p>
+      </div>
+
+      <div class="av-item">
+        <p>Descripción del video 4</p>
+      </div>
+
+      <div class="av-item">
+        <p>Descripción del video 5</p>
+      </div>
+
+      <div class="av-item">
+        <p>Descripción del video 6</p>
+      </div>
+
+      <div class="av-item">
+        <p>Descripción del video 7</p>
+      </div>
+
+      <div class="av-item">
+        <p>Descripción del video 8</p>
+      </div>
+
+    </div>
+
+    <!-- VIDEOS (DERECHA) -->
+    <div class="av-videos">
+
+      <div class="av-item active">
+        <iframe src="https://youtu.be/iSdMBckIgC4" allowfullscreen></iframe>
+      </div>
+
+      <div class="av-item">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+      </div>
+
+      <div class="av-item">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+      </div>
+
+      <div class="av-item">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
+      </div>
+
+      <div class="av-item">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" allowfullscreen></iframe>
+      </div>
+
+      <div class="av-item">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" allowfullscreen></iframe>
+      </div>
+
+      <div class="av-item">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_7" allowfullscreen></iframe>
+      </div>
+
+      <div class="av-item">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_8" allowfullscreen></iframe>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 <!-- ================= BOTON ================= -->
 <button id="back-to-top">
   <i class="fas fa-step-backward"></i>
@@ -421,6 +514,41 @@ document.querySelectorAll(".song-item").forEach(item => {
     progress.style.width = "0%";
     current.textContent = "0:00";
   });
+});
+</script>
+
+  <script>
+// =========================
+// AUDIOVISUAL LOOP YOUTUBE
+// =========================
+
+const avPrev = document.getElementById("av-prev");
+const avNext = document.getElementById("av-next");
+
+const avTextItems = document.querySelectorAll(".av-description .av-item");
+const avVideoItems = document.querySelectorAll(".av-videos .av-item");
+
+let avIndex = 0;
+
+function updateAV(index) {
+
+  avTextItems.forEach(el => el.classList.remove("active"));
+  avVideoItems.forEach(el => el.classList.remove("active"));
+
+  avTextItems[index].classList.add("active");
+  avVideoItems[index].classList.add("active");
+}
+
+// NEXT
+avNext.addEventListener("click", () => {
+  avIndex = (avIndex + 1) % avTextItems.length;
+  updateAV(avIndex);
+});
+
+// PREV
+avPrev.addEventListener("click", () => {
+  avIndex = (avIndex - 1 + avTextItems.length) % avTextItems.length;
+  updateAV(avIndex);
 });
 </script>
 
