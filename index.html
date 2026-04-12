@@ -475,29 +475,28 @@ document.querySelectorAll("audio").forEach(audio => {
 
 });
  </script>
+  
   <script>
+const volumeControl = document.getElementById("volumeControl");
 
-  const volumeControl = document.getElementById("volumeControl");
-
-// Función para aplicar volumen a TODOS los audios
+// Aplicar volumen a TODOS los audios registrados
 function setGlobalVolume(value) {
-  document.querySelectorAll("audio").forEach(audio => {
+  allAudios.forEach(audio => {
     audio.volume = value;
   });
 }
 
-// Cambiar volumen al mover el slider
+// Slider
 volumeControl.addEventListener("input", () => {
   setGlobalVolume(volumeControl.value);
 });
 
-// Aplicar volumen inicial a futuros audios
+// Aplicar volumen inicial cuando suene cualquier audio
 document.addEventListener("play", (e) => {
   if (e.target.tagName === "AUDIO") {
     e.target.volume = volumeControl.value;
   }
 }, true);
-  
 </script>
  
 </body>
