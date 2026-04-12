@@ -15,216 +15,180 @@
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>KotaMusic</h1>
-    <p class="subtitle">Audio Engineer • Composer</p>
-    <p class="tagline">Creating the sound you are looking for</p>
-  </section>
+<!-- 🔊 VOLUMEN GLOBAL -->
+<div class="global-volume">
+  <i class="fas fa-volume-up"></i>
+  <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
+</div>
 
-  <div class="section-combo"></div>
+<!-- HERO -->
+<section class="hero">
+  <h1>KotaMusic</h1>
+  <p class="subtitle">Audio Engineer • Composer</p>
+  <p class="tagline">Creating the sound you are looking for</p>
+  <div class="socials">
+    <a href="https://www.youtube.com/@kotamusic1" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://soundcloud.com/user-876843643" target="_blank"><i class="fab fa-soundcloud"></i></a>
+    <a href="https://www.instagram.com/kotamusic1/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://x.com/Kotamusic1" target="_blank"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</section>
 
-  <!-- SECCIÓN VARIETY -->
-  <section class="section variety-section">
-    <h2>Variety</h2>
+<!-- VIDEO GAME -->
+<section class="section vg-section">
+  <h2>Videogame Music</h2>
 
-    <div class="variety-container">
+  <div class="vg-container">
+    <div class="vg-image" onclick="swapImages()">
+      <img id="img1" src="images/Chilly Fox.png" class="active">
+      <img id="img2" src="images/MMXII.png">
+    </div>
 
-      <!-- TEXTO -->
-      <div class="variety-text">
-        <p>
-          Explora esta selección de canciones con estilos variados.
-        </p>
-      </div>
+    <div class="vg-audio">
+      <div class="audio-item"><audio controls src="Audio/MMXII1.mp3"></audio></div>
+      <div class="audio-item"><audio controls src="Audio/MMXII2.mp3"></audio></div>
+      <div class="audio-item"><audio controls src="Audio/MMXII3.mp3"></audio></div>
+    </div>
 
-      <!-- PLAYER -->
-      <div class="variety-player">
-        <div class="song-list">
+    <div class="vg-text">
+      <p>Videogame focused compositions...</p>
+    </div>
+  </div>
+</section>
 
-          <!-- SONG TEMPLATE -->
-          <div class="song-item">
-            <div class="song-info">
-              <i class="fas fa-play-circle"></i>
-              <p>KotaMusic - Battle Against The Champion</p>
-            </div>
+<div class="section-combo"></div>
 
-            <div class="progress-container">
-              <div class="progress"></div>
-            </div>
+<!-- PICK YOUR MOOD -->
+<section class="styles-section">
+  <h2>Pick Your Mood</h2>
+  <p class="styles-description">Choose the tone for your project</p>
 
-            <div class="time">
-              <span class="current">0:00</span>
-              <span class="duration">0:00</span>
-            </div>
+  <div class="styles-icons">
+    <div class="style-icon" data-audio="Audio/miedo.mp3"><i class="fas fa-ghost"></i><p>Scary</p></div>
+    <div class="style-icon" data-audio="Audio/calma.mp3"><i class="fas fa-water"></i><p>Soothing</p></div>
+    <div class="style-icon" data-audio="Audio/alegria.mp3"><i class="fas fa-music"></i><p>Joyful</p></div>
+  </div>
+</section>
 
-            <audio src="Audio/Pokemon.mp3"></audio>
-          </div>
+<div class="section-combo"></div>
 
-          <div class="song-item">
-            <div class="song-info">
-              <i class="fas fa-play-circle"></i>
-              <p>KotaMusic - Bobomb Playground</p>
-            </div>
+<!-- VARIETY -->
+<section class="section variety-section">
+  <h2>Variety</h2>
 
-            <div class="progress-container">
-              <div class="progress"></div>
-            </div>
+  <div class="variety-container">
+    <div class="variety-text">
+      <p>Explora esta selección de canciones con estilos variados.</p>
+    </div>
 
-            <div class="time">
-              <span class="current">0:00</span>
-              <span class="duration">0:00</span>
-            </div>
+    <div class="variety-player">
+      <div class="song-list">
 
-            <audio src="Audio/Mario.mp3"></audio>
-          </div>
-
-          <div class="song-item">
-            <div class="song-info">
-              <i class="fas fa-play-circle"></i>
-              <p>KotaMusic - Space Foxes</p>
-            </div>
-
-            <div class="progress-container">
-              <div class="progress"></div>
-            </div>
-
-            <div class="time">
-              <span class="current">0:00</span>
-              <span class="duration">0:00</span>
-            </div>
-
-            <audio src="Audio/Space.mp3"></audio>
-          </div>
-
-          <div class="song-item">
-            <div class="song-info">
-              <i class="fas fa-play-circle"></i>
-              <p>KotaMusic - Pirate</p>
-            </div>
-
-            <div class="progress-container">
-              <div class="progress"></div>
-            </div>
-
-            <div class="time">
-              <span class="current">0:00</span>
-              <span class="duration">0:00</span>
-            </div>
-
-            <audio src="Audio/Pirata.mp3"></audio>
-          </div>
-
-          <div class="song-item">
-            <div class="song-info">
-              <i class="fas fa-play-circle"></i>
-              <p>KotaMusic - Hero's Push Towards Enemy Castle</p>
-            </div>
-
-            <div class="progress-container">
-              <div class="progress"></div>
-            </div>
-
-            <div class="time">
-              <span class="current">0:00</span>
-              <span class="duration">0:00</span>
-            </div>
-
-            <audio src="Audio/Castle.mp3"></audio>
-          </div>
-
-          <div class="song-item">
-            <div class="song-info">
-              <i class="fas fa-play-circle"></i>
-              <p>KotaMusic - Ghostly Ghost Gang</p>
-            </div>
-
-            <div class="progress-container">
-              <div class="progress"></div>
-            </div>
-
-            <div class="time">
-              <span class="current">0:00</span>
-              <span class="duration">0:00</span>
-            </div>
-
-            <audio src="Audio/Ghost.mp3"></audio>
-          </div>
-
+        <!-- TEMPLATE -->
+        <div class="song-item">
+          <div class="song-info"><i class="fas fa-play-circle"></i><p>Battle Champion</p></div>
+          <div class="progress-container"><div class="progress"></div></div>
+          <div class="time"><span class="current">0:00</span><span class="duration">0:00</span></div>
+          <audio src="Audio/Pokemon.mp3"></audio>
         </div>
+
+        <div class="song-item">
+          <div class="song-info"><i class="fas fa-play-circle"></i><p>Mario</p></div>
+          <div class="progress-container"><div class="progress"></div></div>
+          <div class="time"><span class="current">0:00</span><span class="duration">0:00</span></div>
+          <audio src="Audio/Mario.mp3"></audio>
+        </div>
+
+        <!-- agrega los otros igual -->
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SCRIPT FINAL LIMPIO -->
-  <script>
-  let currentAudio = null;
+<!-- SCRIPT GENERAL -->
+<script>
 
-  const formatTime = (time) => {
-    if (isNaN(time)) return "0:00";
-    const min = Math.floor(time / 60);
-    const sec = Math.floor(time % 60).toString().padStart(2, '0');
-    return `${min}:${sec}`;
-  };
+let currentAudio = null;
+const volumeControl = document.getElementById("volumeControl");
 
-  document.querySelectorAll(".song-item").forEach(item => {
-    const audio = item.querySelector("audio");
-    const progress = item.querySelector(".progress");
-    const container = item.querySelector(".progress-container");
-    const current = item.querySelector(".current");
-    const duration = item.querySelector(".duration");
-    const icon = item.querySelector("i");
+// 🎚 VOLUMEN GLOBAL
+volumeControl.addEventListener("input", () => {
+  document.querySelectorAll("audio").forEach(a => a.volume = volumeControl.value);
+});
 
-    audio.addEventListener("loadedmetadata", () => {
-      duration.textContent = formatTime(audio.duration);
-    });
+// 🎮 PICK YOUR MOOD
+document.querySelectorAll(".style-icon").forEach(icon => {
+  const audio = new Audio(icon.dataset.audio);
+  audio.loop = true;
 
-    audio.addEventListener("timeupdate", () => {
-      if (audio.duration) {
-        const percent = (audio.currentTime / audio.duration) * 100;
-        progress.style.width = percent + "%";
-        current.textContent = formatTime(audio.currentTime);
-      }
-    });
+  icon.addEventListener("click", () => {
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
 
-    item.addEventListener("click", () => {
-      if (currentAudio && currentAudio !== audio) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
+    audio.volume = volumeControl.value;
 
-        document.querySelectorAll(".song-item").forEach(i => i.classList.remove("active"));
-        document.querySelectorAll(".song-info i").forEach(i => i.className = "fas fa-play-circle");
-      }
+    if (audio.paused) {
+      audio.play();
+      icon.classList.add("active");
+    } else {
+      audio.pause();
+      icon.classList.remove("active");
+    }
 
-      if (audio.paused) {
-        audio.play();
-        item.classList.add("active");
-        icon.className = "fas fa-pause-circle";
-      } else {
-        audio.pause();
-        item.classList.remove("active");
-        icon.className = "fas fa-play-circle";
-      }
-
-      currentAudio = audio;
-    });
-
-    container.addEventListener("click", (e) => {
-      e.stopPropagation();
-
-      const rect = container.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-
-      audio.currentTime = (clickX / rect.width) * audio.duration;
-    });
-
-    audio.addEventListener("ended", () => {
-      progress.style.width = "0%";
-      current.textContent = "0:00";
-      item.classList.remove("active");
-      icon.className = "fas fa-play-circle";
-    });
+    currentAudio = audio;
   });
-  </script>
+});
+
+// 🎧 VARIETY PLAYER
+document.querySelectorAll(".song-item").forEach(item => {
+  const audio = item.querySelector("audio");
+  const progress = item.querySelector(".progress");
+  const container = item.querySelector(".progress-container");
+  const current = item.querySelector(".current");
+  const duration = item.querySelector(".duration");
+  const icon = item.querySelector("i");
+
+  const format = t => isNaN(t) ? "0:00" : `${Math.floor(t/60)}:${Math.floor(t%60).toString().padStart(2,'0')}`;
+
+  audio.addEventListener("loadedmetadata", () => duration.textContent = format(audio.duration));
+
+  audio.addEventListener("timeupdate", () => {
+    if (audio.duration) {
+      progress.style.width = (audio.currentTime / audio.duration) * 100 + "%";
+      current.textContent = format(audio.currentTime);
+    }
+  });
+
+  item.addEventListener("click", () => {
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+
+    audio.volume = volumeControl.value;
+
+    if (audio.paused) {
+      audio.play();
+      icon.className = "fas fa-pause-circle";
+    } else {
+      audio.pause();
+      icon.className = "fas fa-play-circle";
+    }
+
+    currentAudio = audio;
+  });
+
+  container.addEventListener("click", e => {
+    e.stopPropagation();
+    const rect = container.getBoundingClientRect();
+    audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+  });
+});
+
+</script>
 
 </body>
 </html>
