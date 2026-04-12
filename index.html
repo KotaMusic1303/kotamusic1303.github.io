@@ -281,6 +281,19 @@ function resetVarietyUI() {
     // Videogame Music: pausa iconos activos
     vgAudios.forEach(audio => {
       audio.addEventListener("play", () => {
+   // 🔥 reset visual de Variety
+    resetVarietyUI();
+
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+
+    styleIcons.forEach(icon => icon.classList.remove("active"));
+
+    currentAudio = audio;
+  });
+});
         // Pausar audio previo si existe
         if (currentAudio && currentAudio !== audio) {
           currentAudio.pause();
