@@ -268,8 +268,10 @@
 
     // AUDIOS
     const vgAudios = document.querySelectorAll(".vg-audio audio");
+    vgAudios.forEach(a => allAudios.push(a));
     const styleIcons = document.querySelectorAll(".style-icon");
     let currentAudio = null;
+    let allAudios = [];
 
     // Videogame Music: pausa iconos activos
     vgAudios.forEach(audio => {
@@ -374,6 +376,7 @@ varietyItems.forEach(item => {
   const current = item.querySelector(".current");
   const duration = item.querySelector(".duration");
   const icon = item.querySelector("i");
+  allAudios.push(audio);
 
   const formatTime = (time) => {
     if (isNaN(time)) return "0:00";
