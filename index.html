@@ -262,13 +262,55 @@
     setInterval(swapImages, 7000);
 
     // AUDIOS
-    const vgAudios = document.querySelectorAll(".vg-audio audio");
-    const styleIcons = document.querySelectorAll(".style-icon");
-    let currentAudio = null;
+    // AUDIOS
+const vgAudios = document.querySelectorAll(".vg-audio audio");
+const styleIcons = document.querySelectorAll(".style-icon");
+const varietyAudios = document.querySelectorAll(".song-item audio");
+
+let currentAudio = null;
+
+// 🔥 FUNCIÓN GLOBAL PARA DETENER TODO
+function stopAllAudios(except = null) {
+  // VG audios
+  vgAudios.forEach(a => {
+    if (a !== except) {
+      a.pause();
+      a.currentTime = 0;
+    }
+  });
+
+  // Variety audios
+  varietyAudios.forEach(a => {
+    if (a !== except) {
+      a.pause();
+      a.currentTime = 0;
+    }
+  });
+
+  // Mood audios (iconos)
+  styleIcons.forEach(icon => {
+    icon.classList.remove("active");
+    if (icon.audioInstance) {
+      icon.audioInstance.pause();
+      icon.audioInstance.currentTime = 0;
+    }
+  });
+
+  // Reset UI Variety
+  document.querySelectorAll(".song-item").forEach(item => {
+    item.classList.remove("active");
+    const icon = item.querySelector("i");
+    if (icon) icon.className = "fas fa-play-circle";
+  });
+}
 
     // Videogame Music: pausa iconos activos
     vgAudios.forEach(audio => {
-      audio.addEventListener("play", () => {
+  audio.addEventListener("play", () => {
+    stopAllAudios(audio);
+    currentAudio = audio;
+  });
+});
         // Pausar audio previo si existe
         if (currentAudio && currentAudio !== audio) {
           currentAudio.pause();
