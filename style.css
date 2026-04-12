@@ -646,3 +646,29 @@ audio, video {
   opacity: 1;
   visibility: visible;
 }
+
+/* Volumen Global */
+
+.global-volume {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(20, 20, 20, 0.9);
+  padding: 10px 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+}
+
+.global-volume i {
+  color: #a855f7;
+  font-size: 14px;
+}
+
+.global-volume input {
+  width: 100px;
+  cursor: pointer;
+}
