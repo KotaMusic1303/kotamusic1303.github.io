@@ -753,3 +753,39 @@ audio, video {
   transform: scale(1.05);
 }
 
+.av-description {
+  width: 350px;
+}
+
+.av-description .av-item {
+  display: none;
+}
+
+.av-description .av-item.active {
+  display: block;
+}
+
+/* VIDEO */
+.av-videos {
+  width: 500px;
+}
+
+.av-videos .av-item {
+  display: none;
+}
+
+.av-videos .av-item.active {
+  display: block;
+}
+
+.av-videos iframe {
+  width: 100%;
+  height: 280px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.av-videos iframe:hover {
+  border-color: #a855f7;
+}
