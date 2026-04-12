@@ -4,55 +4,18 @@
   <meta charset="UTF-8">
   <title>KotaMusic | Audio Engineer</title>
 
+  <!-- ICONOS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- FUENTE -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
-
-  <style>
-  .style-icon {
-    display: inline-block;
-    padding: 15px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s, border-color 0.3s;
-    border: 2px solid transparent;
-  }
-
-  .style-icon:hover {
-    border-color: #a855f7;
-    transform: translateY(-3px) scale(1.15);
-  }
-
-  .style-icon.active {
-    transform: scale(1.2);
-    border-color: #a855f7;
-  }
-
-  .global-volume {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 9999;
-  }
-
-  #volumeControl {
-    writing-mode: bt-lr;
-    -webkit-appearance: slider-vertical;
-    width: 8px;
-    height: 150px;
-    cursor: pointer;
-  }
-  </style>
 </head>
 
 <body>
 
-<!-- VOLUMEN -->
-<div class="global-volume">
-  <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
-</div>
-
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero">
   <h1>KotaMusic</h1>
   <p class="subtitle">Audio Engineer • Composer</p>
@@ -65,36 +28,34 @@
   </div>
 </section>
 
-<!-- VG -->
+<!-- ================= VG ================= -->
 <section class="section vg-section">
   <h2>Videogame Music</h2>
 
   <div class="vg-container">
-
     <div class="vg-image" onclick="swapImages()">
       <img id="img1" src="images/Chilly Fox.png" class="active">
       <img id="img2" src="images/MMXII.png">
     </div>
 
     <div class="vg-audio">
-      <div class="audio-item"><audio controls src="Audio/MMXII1.mp3"></audio></div>
-      <div class="audio-item"><audio controls src="Audio/MMXII2.mp3"></audio></div>
-      <div class="audio-item"><audio controls src="Audio/MMXII3.mp3"></audio></div>
+      <audio controls src="Audio/MMXII1.mp3"></audio>
+      <audio controls src="Audio/MMXII2.mp3"></audio>
+      <audio controls src="Audio/MMXII3.mp3"></audio>
     </div>
 
     <div class="vg-text">
       <p>
         Videogame focused compositions, combining narrative context and immersion.
-        These samples are trying to emulate the 8bit era.
+        These samples are trying to emulate the 8bit era, with a touch of modern processing.
       </p>
     </div>
-
   </div>
 </section>
 
 <div class="section-combo"></div>
 
-<!-- PICK YOUR MOOD -->
+<!-- ================= MOOD ================= -->
 <section class="styles-section">
   <h2>Pick Your Mood</h2>
 
@@ -120,61 +81,27 @@
 
 <div class="section-combo"></div>
 
-<!-- VARIETY -->
+<!-- ================= VARIETY ================= -->
 <section class="section variety-section">
   <h2>Variety</h2>
 
   <div class="variety-container">
     <div class="variety-text">
-      <p>
-        Explora esta selección de canciones con estilos variados.
-      </p>
+      <p>Explora esta selección de canciones con estilos variados.</p>
     </div>
 
     <div class="variety-player">
       <div class="song-list">
 
-        <!-- TODAS RESTAURADAS -->
+        <!-- DUPLICA ESTE BLOQUE PARA TODAS TUS CANCIONES -->
         <div class="song-item">
-          <div class="song-info"><i class="fas fa-play-circle"></i><p>KotaMusic - Battle Against The Champion</p></div>
+          <div class="song-info">
+            <i class="fas fa-play-circle"></i>
+            <p>KotaMusic - Battle Against The Champion</p>
+          </div>
           <div class="progress-bar"><div class="progress"></div></div>
           <div class="time"><span class="current">0:00</span><span class="duration">0:00</span></div>
           <audio src="Audio/Pokemon.mp3"></audio>
-        </div>
-
-        <div class="song-item">
-          <div class="song-info"><i class="fas fa-play-circle"></i><p>KotaMusic - Bobomb Playground</p></div>
-          <div class="progress-bar"><div class="progress"></div></div>
-          <div class="time"><span class="current">0:00</span><span class="duration">0:00</span></div>
-          <audio src="Audio/Mario.mp3"></audio>
-        </div>
-
-        <div class="song-item">
-          <div class="song-info"><i class="fas fa-play-circle"></i><p>KotaMusic - Space Foxes</p></div>
-          <div class="progress-bar"><div class="progress"></div></div>
-          <div class="time"><span class="current">0:00</span><span class="duration">0:00</span></div>
-          <audio src="Audio/Space.mp3"></audio>
-        </div>
-
-        <div class="song-item">
-          <div class="song-info"><i class="fas fa-play-circle"></i><p>KotaMusic - Pirate</p></div>
-          <div class="progress-bar"><div class="progress"></div></div>
-          <div class="time"><span class="current">0:00</span><span class="duration">0:00</span></div>
-          <audio src="Audio/Pirata.mp3"></audio>
-        </div>
-
-        <div class="song-item">
-          <div class="song-info"><i class="fas fa-play-circle"></i><p>KotaMusic - Hero's Pushing Towards Enemy Castle</p></div>
-          <div class="progress-bar"><div class="progress"></div></div>
-          <div class="time"><span class="current">0:00</span><span class="duration">0:00</span></div>
-          <audio src="Audio/Castle.mp3"></audio>
-        </div>
-
-        <div class="song-item">
-          <div class="song-info"><i class="fas fa-play-circle"></i><p>KotaMusic - Ghostly Ghost Gang</p></div>
-          <div class="progress-bar"><div class="progress"></div></div>
-          <div class="time"><span class="current">0:00</span><span class="duration">0:00</span></div>
-          <audio src="Audio/Ghost.mp3"></audio>
         </div>
 
       </div>
@@ -182,58 +109,66 @@
   </div>
 </section>
 
-<!-- BOTÓN -->
+<!-- ================= BOTON ================= -->
 <button id="back-to-top">
   <i class="fas fa-step-backward"></i>
 </button>
 
+<!-- ================= SCRIPTS ================= -->
 <script>
-let currentAudio = null;
-const volumeControl = document.getElementById("volumeControl");
-let moodAudios = [];
 
-/* IMÁGENES */
+let currentAudio = null;
+
+function resetVarietyUI() {
+  document.querySelectorAll(".song-item").forEach(item => {
+    item.classList.remove("active");
+    item.querySelector("i").className = "fas fa-play-circle";
+  });
+}
+
+function resetMoodIcons() {
+  document.querySelectorAll(".style-icon").forEach(i => i.classList.remove("active"));
+}
+
+// IMAGENES
 const img1 = document.getElementById("img1");
 const img2 = document.getElementById("img2");
-
 function swapImages() {
   img1.classList.toggle("active");
   img2.classList.toggle("active");
 }
 setInterval(swapImages, 7000);
 
-/* VOLUMEN GLOBAL REAL */
-function setAllVolumes(value) {
-  document.querySelectorAll("audio").forEach(a => a.volume = value);
-  moodAudios.forEach(a => a.volume = value);
-}
-
-volumeControl.addEventListener("input", () => {
-  setAllVolumes(volumeControl.value);
-});
-
-/* VG */
+// VG
 document.querySelectorAll(".vg-audio audio").forEach(audio => {
   audio.addEventListener("play", () => {
-    if (currentAudio && currentAudio !== audio) currentAudio.pause();
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+    resetVarietyUI();
+    resetMoodIcons();
     currentAudio = audio;
-    audio.volume = volumeControl.value;
   });
 });
 
-/* PICK YOUR MOOD */
+// MOOD
 document.querySelectorAll(".style-icon").forEach(icon => {
   const audio = new Audio(icon.dataset.audio);
   audio.loop = true;
-  moodAudios.push(audio);
+  icon.audioRef = audio;
 
   icon.addEventListener("click", () => {
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
 
-    if (currentAudio && currentAudio !== audio) currentAudio.pause();
+    resetVarietyUI();
 
     if (audio.paused) {
       audio.play();
-      document.querySelectorAll(".style-icon").forEach(i => i.classList.remove("active"));
+      resetMoodIcons();
       icon.classList.add("active");
     } else {
       audio.pause();
@@ -241,71 +176,45 @@ document.querySelectorAll(".style-icon").forEach(icon => {
     }
 
     currentAudio = audio;
-    audio.volume = volumeControl.value;
   });
 });
 
-/* VARIETY */
+// VARIETY
 document.querySelectorAll(".song-item").forEach(item => {
   const audio = item.querySelector("audio");
   const icon = item.querySelector("i");
-  const progress = item.querySelector(".progress");
-  const current = item.querySelector(".current");
-  const duration = item.querySelector(".duration");
-  const bar = item.querySelector(".progress-bar");
-
-  const format = t => {
-    if (isNaN(t)) return "0:00";
-    return Math.floor(t/60)+":"+String(Math.floor(t%60)).padStart(2,'0');
-  };
-
-  audio.addEventListener("loadedmetadata", () => {
-    duration.textContent = format(audio.duration);
-  });
-
-  audio.addEventListener("timeupdate", () => {
-    if (audio.duration) {
-      progress.style.width = (audio.currentTime/audio.duration*100)+"%";
-      current.textContent = format(audio.currentTime);
-    }
-  });
 
   item.addEventListener("click", () => {
 
-    document.querySelectorAll(".style-icon").forEach(i => i.classList.remove("active"));
-
     if (currentAudio && currentAudio !== audio) {
       currentAudio.pause();
-      document.querySelectorAll(".song-item i").forEach(i => i.className="fas fa-play-circle");
+      currentAudio.currentTime = 0;
     }
+
+    resetVarietyUI();
+    resetMoodIcons();
 
     if (audio.paused) {
       audio.play();
-      icon.className="fas fa-pause-circle";
+      item.classList.add("active");
+      icon.className = "fas fa-pause-circle";
     } else {
       audio.pause();
-      icon.className="fas fa-play-circle";
+      item.classList.remove("active");
+      icon.className = "fas fa-play-circle";
     }
 
     currentAudio = audio;
-    audio.volume = volumeControl.value;
-  });
-
-  bar.addEventListener("click", e => {
-    e.stopPropagation();
-    const rect = bar.getBoundingClientRect();
-    audio.currentTime = ((e.clientX-rect.left)/rect.width)*audio.duration;
   });
 });
 
-/* BOTÓN TOP */
+// BOTON TOP
 const btn = document.getElementById("back-to-top");
 window.addEventListener("scroll", () => {
   btn.classList.toggle("show", window.scrollY > 300);
 });
-btn.addEventListener("click", () => {
-  window.scrollTo({top:0,behavior:"smooth"});
-});
+btn.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+
 </script>
 
 </body>
