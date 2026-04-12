@@ -266,6 +266,18 @@
     const styleIcons = document.querySelectorAll(".style-icon");
     let currentAudio = null;
 
+    <script>
+function resetVarietyUI() {
+  document.querySelectorAll(".song-item").forEach(item => {
+    item.classList.remove("active");
+    const icon = item.querySelector("i");
+    if (icon) {
+      icon.className = "fas fa-play-circle";
+    }
+  });
+}
+</script>
+
     // Videogame Music: pausa iconos activos
     vgAudios.forEach(audio => {
       audio.addEventListener("play", () => {
