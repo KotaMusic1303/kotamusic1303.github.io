@@ -20,457 +20,211 @@
     <h1>KotaMusic</h1>
     <p class="subtitle">Audio Engineer • Composer</p>
     <p class="tagline">Creating the sound you are looking for</p>
-    <div class="socials">
-      <a href="https://www.youtube.com/@kotamusic1" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://soundcloud.com/user-876843643" target="_blank"><i class="fab fa-soundcloud"></i></a>
-      <a href="https://www.instagram.com/kotamusic1/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://x.com/Kotamusic1" target="_blank"><i class="fab fa-x-twitter"></i></a>
-    </div>
-  </section>
-
-  <!-- AUDIO / VIDEOGAME MUSIC -->
-  <section class="section vg-section">
-    <h2>Videogame Music</h2>
-
-    <div class="vg-container">
-
-      <!-- IMAGEN -->
-      <div class="vg-image" onclick="swapImages()">
-        <img id="img1" src="images/Chilly Fox.png" class="active">
-        <img id="img2" src="images/MMXII.png">
-      </div>
-
-      <!-- AUDIOS -->
-      <div class="vg-audio">
-        <div class="audio-item">
-          <audio controls>
-            <source src="Audio/MMXII1.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-        <div class="audio-item">
-          <audio controls>
-            <source src="Audio/MMXII2.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-        <div class="audio-item">
-          <audio controls>
-            <source src="Audio/MMXII3.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-
-      <!-- TEXTO -->
-      <div class="vg-text">
-        <p>
-          Videogame focused compositions, combining narrative context and immersion.
-          These samples are trying to emulate the 8bit era, with a touch of modern processing.
-        </p>
-      </div>
-
-    </div>
   </section>
 
   <div class="section-combo"></div>
 
-  <!-- NUEVA SECCIÓN DE ICONOS: PICK YOUR MOOD -->
-  <section class="styles-section">
-    <h2>Pick Your Mood</h2>
-
-    <!-- TEXTO CENTRADO DE DESCRIPCIÓN -->
-    <p class="styles-description">
-      As we already know, context is everything!
-      Give it a try and choose the tone for your project
-    </p>
-
-    <div class="styles-icons">
-      <div class="style-icon" data-audio="Audio/miedo.mp3">
-        <i class="fas fa-ghost"></i>
-        <p>Scary</p>
-      </div>
-
-      <div class="style-icon" data-audio="Audio/calma.mp3">
-        <i class="fas fa-water"></i>
-        <p>Soothing</p>
-      </div>
-
-      <div class="style-icon" data-audio="Audio/alegria.mp3">
-        <i class="fas fa-music"></i>
-        <p>Joyful</p>
-      </div>
-    </div>
-  </section>
-
-<div class="section-combo"></div>
-
   <!-- SECCIÓN VARIETY -->
-<section class="section variety-section">
-  <h2>Variety</h2>
+  <section class="section variety-section">
+    <h2>Variety</h2>
 
-  <div class="variety-container">
-    <!-- TEXTO IZQUIERDA -->
-    <div class="variety-text">
-      <p>
-        Explora esta selección de canciones con estilos variados. Cada pista tiene su propio reproductor integrado
-        y puedes escuchar todas en orden o saltar entre ellas.
-      </p>
-    </div>
+    <div class="variety-container">
 
-    <!-- PANEL ESTILO SPOTIFY -->
-   
-    <div class="variety-player">
-      <div class="song-list">
-        <div class="song-item">
-          <div class="song-info">
-            <i class="fas fa-play-circle"></i>
-            <p>KotaMusic - Battle Agains The Champion</p>
+      <!-- TEXTO -->
+      <div class="variety-text">
+        <p>
+          Explora esta selección de canciones con estilos variados.
+        </p>
+      </div>
+
+      <!-- PLAYER -->
+      <div class="variety-player">
+        <div class="song-list">
+
+          <!-- SONG TEMPLATE -->
+          <div class="song-item">
+            <div class="song-info">
+              <i class="fas fa-play-circle"></i>
+              <p>KotaMusic - Battle Against The Champion</p>
+            </div>
+
+            <div class="progress-container">
+              <div class="progress"></div>
+            </div>
+
+            <div class="time">
+              <span class="current">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
+
+            <audio src="Audio/Pokemon.mp3"></audio>
           </div>
-          <!-- BARRA -->
-  <div class="progress-bar">
-    <div class="progress"></div>
-  </div>
-           <!-- TIEMPO -->
-  <div class="time">
-    <span class="current">0:00</span>
-    <span class="duration">0:00</span>
-  </div>
-          <audio src="Audio/Pokemon.mp3"></audio>
-        </div>
-        <div class="song-item">
-          <div class="song-info">
-            <i class="fas fa-play-circle"></i>
-            <p>KotaMusic - Bobomb Playground</p>
+
+          <div class="song-item">
+            <div class="song-info">
+              <i class="fas fa-play-circle"></i>
+              <p>KotaMusic - Bobomb Playground</p>
+            </div>
+
+            <div class="progress-container">
+              <div class="progress"></div>
+            </div>
+
+            <div class="time">
+              <span class="current">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
+
+            <audio src="Audio/Mario.mp3"></audio>
           </div>
-          <!-- BARRA -->
-  <div class="progress-bar">
-    <div class="progress"></div>
-  </div>
-           <!-- TIEMPO -->
-  <div class="time">
-    <span class="current">0:00</span>
-    <span class="duration">0:00</span>
-  </div>
-  
-          <audio src="Audio/Mario.mp3"></audio>
-        </div>
-        <div class="song-item">
-          <div class="song-info">
-            <i class="fas fa-play-circle"></i>
-            <p>KotaMusic - Space Foxes</p>
+
+          <div class="song-item">
+            <div class="song-info">
+              <i class="fas fa-play-circle"></i>
+              <p>KotaMusic - Space Foxes</p>
+            </div>
+
+            <div class="progress-container">
+              <div class="progress"></div>
+            </div>
+
+            <div class="time">
+              <span class="current">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
+
+            <audio src="Audio/Space.mp3"></audio>
           </div>
-          <!-- BARRA -->
-  <div class="progress-bar">
-    <div class="progress"></div>
-  </div>
-           <!-- TIEMPO -->
-  <div class="time">
-    <span class="current">0:00</span>
-    <span class="duration">0:00</span>
-  </div>
-          <audio src="Audio/Space.mp3"></audio>
-        </div>
-        <div class="song-item">
-          <div class="song-info">
-            <i class="fas fa-play-circle"></i>
-            <p>KotaMusic - Pirate</p>
+
+          <div class="song-item">
+            <div class="song-info">
+              <i class="fas fa-play-circle"></i>
+              <p>KotaMusic - Pirate</p>
+            </div>
+
+            <div class="progress-container">
+              <div class="progress"></div>
+            </div>
+
+            <div class="time">
+              <span class="current">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
+
+            <audio src="Audio/Pirata.mp3"></audio>
           </div>
-          <!-- BARRA -->
-  <div class="progress-bar">
-    <div class="progress"></div>
-  </div>
-           <!-- TIEMPO -->
-  <div class="time">
-    <span class="current">0:00</span>
-    <span class="duration">0:00</span>
-  </div>
-          <audio src="Audio/Pirata.mp3"></audio>
-        </div>
-        <div class="song-item">
-          <div class="song-info">
-            <i class="fas fa-play-circle"></i>
-            <p>KotaMusic - Hero's Pushing Towards Enemy Castle</p>
+
+          <div class="song-item">
+            <div class="song-info">
+              <i class="fas fa-play-circle"></i>
+              <p>KotaMusic - Hero's Push Towards Enemy Castle</p>
+            </div>
+
+            <div class="progress-container">
+              <div class="progress"></div>
+            </div>
+
+            <div class="time">
+              <span class="current">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
+
+            <audio src="Audio/Castle.mp3"></audio>
           </div>
-          <!-- BARRA -->
-  <div class="progress-bar">
-    <div class="progress"></div>
-  </div>
-           <!-- TIEMPO -->
-  <div class="time">
-    <span class="current">0:00</span>
-    <span class="duration">0:00</span>
-  </div>
-          <audio src="Audio/Castle.mp3"></audio>
-        </div>
-        <div class="song-item">
-          <div class="song-info">
-            <i class="fas fa-play-circle"></i>
-            <p>KotaMusic - Ghostly Ghost Gang</p>
+
+          <div class="song-item">
+            <div class="song-info">
+              <i class="fas fa-play-circle"></i>
+              <p>KotaMusic - Ghostly Ghost Gang</p>
+            </div>
+
+            <div class="progress-container">
+              <div class="progress"></div>
+            </div>
+
+            <div class="time">
+              <span class="current">0:00</span>
+              <span class="duration">0:00</span>
+            </div>
+
+            <audio src="Audio/Ghost.mp3"></audio>
           </div>
-          <!-- BARRA -->
-  <div class="progress-bar">
-    <div class="progress"></div>
-  </div>
-           <!-- TIEMPO -->
-  <div class="time">
-    <span class="current">0:00</span>
-    <span class="duration">0:00</span>
-  </div>
-          <audio src="Audio/Ghost.mp3"></audio>
+
         </div>
       </div>
     </div>
-  </div>
-</section>
-  
-  <!-- VIDEO -->
-  <section class="section">
-    <h2>Audiovisual Work</h2>
-
-    <div class="card">
-      <div class="info">
-        <h3>Short Film Sound Design</h3>
-        <span>Postproduction • Mixing</span>
-        <p>Diseño sonoro enfocado en narrativa e inmersión.</p>
-      </div>
-      <video controls>
-        <source src="video/demo1.mp4" type="video/mp4">
-      </video>
-    </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section about">
-    <h2>About</h2>
-    <p>
-      Soy ingeniero en sonido especializado en mezcla, mastering y postproducción audiovisual.
-      Mi enfoque combina precisión técnica con creatividad artística para lograr resultados
-      potentes, modernos e inmersivos.
-    </p>
-  </section>
-
-  <!-- SCRIPTS -->
-
+  <!-- SCRIPT FINAL LIMPIO -->
   <script>
-    // Intercambio de imágenes VG
-    const img1 = document.getElementById("img1");
-    const img2 = document.getElementById("img2");
+  let currentAudio = null;
 
-    function swapImages() {
-      img1.classList.toggle("active");
-      img2.classList.toggle("active");
-    }
-
-    setInterval(swapImages, 7000);
-
-    // AUDIOS
-    const vgAudios = document.querySelectorAll(".vg-audio audio");
-    const styleIcons = document.querySelectorAll(".style-icon");
-    let currentAudio = null;
-
-    // Videogame Music: pausa iconos activos
-    vgAudios.forEach(audio => {
-      audio.addEventListener("play", () => {
-        // Pausar audio previo si existe
-        if (currentAudio && currentAudio !== audio) {
-          currentAudio.pause();
-          if(currentAudio.tagName === "AUDIO") currentAudio.currentTime = 0;
-        }
-
-        // Resetear iconos si VG audio se reproduce
-        styleIcons.forEach(icon => icon.classList.remove("active"));
-
-        currentAudio = audio;
-      });
-    });
-
-    // Pick Your Mood Icons
-    styleIcons.forEach(icon => {
-      const audio = new Audio(icon.dataset.audio);
-      audio.loop = true;
-
-      icon.addEventListener("click", () => {
-        // Pausar audio previo
-        if (currentAudio && currentAudio !== audio) {
-          currentAudio.pause();
-          if(currentAudio.tagName === "AUDIO") currentAudio.currentTime = 0;
-        }
-
-        // Reproducir/pausar y toggle activo
-        if (audio.paused) {
-          audio.play();
-          styleIcons.forEach(i => i.classList.remove("active"));
-          icon.classList.add("active");
-        } else {
-          audio.pause();
-          icon.classList.remove("active");
-        }
-
-        currentAudio = audio;
-      });
-    });
-  </script>
-
-  <!-- HOVER MORADO EN ICONOS -->
-  <style>
-  .style-icon {
-  display: inline-block;
-  padding: 15px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s, border-color 0.3s;
-  border: 2px solid transparent; /* espacio reservado para el borde */
-}
-
-.style-icon:hover {
-  border-color: #a855f7;
-  transform: translateY(-3px) scale(1.15);
-}
-
-.style-icon.active {
-  transform: scale(1.2);
-  border-color: #a855f7;
-}
-  </style>
-
-  <!-- BOTÓN VOLVER AL INICIO -->
-<button id="back-to-top">
-  <i class="fas fa-step-backward"></i>
-</button>
-
-<script>
-const backToTop = document.getElementById("back-to-top");
-
-// Función para mostrar/ocultar según scroll
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {   // 300px desde arriba
-    backToTop.classList.add("show");
-  } else {
-    backToTop.classList.remove("show");
-  }
-});
-
-// Scroll suave al top
-backToTop.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
-</script>
-
-<script>
-const varietyAudios = document.querySelectorAll(".song-item audio");
-const songItems = document.querySelectorAll(".song-item");
-
-songItems.forEach(item => {
-  const audio = item.querySelector("audio");
-
-  item.addEventListener("click", () => {
-    // Pausar cualquier audio previo
-    if (currentAudio && currentAudio !== audio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-    }
-
-    // Play / Pause toggle
-    if (audio.paused) {
-      audio.play();
-    } else {
-      audio.pause();
-    }
-
-    currentAudio = audio;
-  });
-});
-</script>
-
-  <script>
-const varietyItems = document.querySelectorAll(".song-item");
-
-varietyItems.forEach(item => {
-  const audio = item.querySelector("audio");
-  const progress = item.querySelector(".progress");
-
-  // Actualizar barra
-  audio.addEventListener("timeupdate", () => {
-    const percent = (audio.currentTime / audio.duration) * 100;
-    progress.style.width = percent + "%";
-  });
-
-  // Reset al terminar
-  audio.addEventListener("ended", () => {
-    progress.style.width = "0%";
-  });
-});
-</script>
-
-  <script>
-const varietyItems = document.querySelectorAll(".song-item");
-
-varietyItems.forEach(item => {
-  const audio = item.querySelector("audio");
-  const progress = item.querySelector(".progress");
-  const container = item.querySelector(".progress-container");
-  const current = item.querySelector(".current");
-  const duration = item.querySelector(".duration");
-  const icon = item.querySelector("i");
-
-  // FORMATO TIEMPO
   const formatTime = (time) => {
+    if (isNaN(time)) return "0:00";
     const min = Math.floor(time / 60);
     const sec = Math.floor(time % 60).toString().padStart(2, '0');
     return `${min}:${sec}`;
   };
 
-  // CARGAR DURACIÓN
-  audio.addEventListener("loadedmetadata", () => {
-    duration.textContent = formatTime(audio.duration);
-  });
+  document.querySelectorAll(".song-item").forEach(item => {
+    const audio = item.querySelector("audio");
+    const progress = item.querySelector(".progress");
+    const container = item.querySelector(".progress-container");
+    const current = item.querySelector(".current");
+    const duration = item.querySelector(".duration");
+    const icon = item.querySelector("i");
 
-  // ACTUALIZAR PROGRESO
-  audio.addEventListener("timeupdate", () => {
-    const percent = (audio.currentTime / audio.duration) * 100;
-    progress.style.width = percent + "%";
-    current.textContent = formatTime(audio.currentTime);
-  });
+    audio.addEventListener("loadedmetadata", () => {
+      duration.textContent = formatTime(audio.duration);
+    });
 
-  // CLICK EN CANCIÓN
-  item.addEventListener("click", () => {
-    if (currentAudio && currentAudio !== audio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-      document.querySelectorAll(".song-item").forEach(i => i.classList.remove("active"));
-      document.querySelectorAll(".song-info i").forEach(i => i.className = "fas fa-play-circle");
-    }
+    audio.addEventListener("timeupdate", () => {
+      if (audio.duration) {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progress.style.width = percent + "%";
+        current.textContent = formatTime(audio.currentTime);
+      }
+    });
 
-    if (audio.paused) {
-      audio.play();
-      item.classList.add("active");
-      icon.className = "fas fa-pause-circle";
-    } else {
-      audio.pause();
+    item.addEventListener("click", () => {
+      if (currentAudio && currentAudio !== audio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+
+        document.querySelectorAll(".song-item").forEach(i => i.classList.remove("active"));
+        document.querySelectorAll(".song-info i").forEach(i => i.className = "fas fa-play-circle");
+      }
+
+      if (audio.paused) {
+        audio.play();
+        item.classList.add("active");
+        icon.className = "fas fa-pause-circle";
+      } else {
+        audio.pause();
+        item.classList.remove("active");
+        icon.className = "fas fa-play-circle";
+      }
+
+      currentAudio = audio;
+    });
+
+    container.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      const rect = container.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+
+      audio.currentTime = (clickX / rect.width) * audio.duration;
+    });
+
+    audio.addEventListener("ended", () => {
+      progress.style.width = "0%";
+      current.textContent = "0:00";
       item.classList.remove("active");
       icon.className = "fas fa-play-circle";
-    }
-
-    currentAudio = audio;
+    });
   });
+  </script>
 
-  // CLICK EN BARRA
-  container.addEventListener("click", (e) => {
-    e.stopPropagation(); // evita activar play doble
-    const width = container.clientWidth;
-    const clickX = e.offsetX;
-    audio.currentTime = (clickX / width) * audio.duration;
-  });
-
-  // RESET AL TERMINAR
-  audio.addEventListener("ended", () => {
-    progress.style.width = "0%";
-    item.classList.remove("active");
-    icon.className = "fas fa-play-circle";
-  });
-});
-</script>
- 
 </body>
 </html>
