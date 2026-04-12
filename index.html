@@ -300,6 +300,32 @@ backToTop.addEventListener("click", () => {
   });
 });
 </script>
+
+  <script>
+const varietyAudios = document.querySelectorAll(".song-item audio");
+const songItems = document.querySelectorAll(".song-item");
+
+songItems.forEach(item => {
+  const audio = item.querySelector("audio");
+
+  item.addEventListener("click", () => {
+    // Pausar cualquier audio previo
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+
+    // Play / Pause toggle
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+
+    currentAudio = audio;
+  });
+});
+</script>
   
 </body>
 </html>
