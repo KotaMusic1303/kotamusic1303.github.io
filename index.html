@@ -436,6 +436,34 @@ document.querySelectorAll(".style-icon").forEach(icon => icon.classList.remove("
   });
 });
 </script>
+
+  <script>
+// 🔥 Resetear Variety cuando cualquier audio externo suene
+
+function resetVarietyUI() {
+  document.querySelectorAll(".song-item").forEach(item => {
+    item.classList.remove("active");
+    const icon = item.querySelector("i");
+    if (icon) {
+      icon.className = "fas fa-play-circle";
+    }
+  });
+}
+
+// Detectar TODOS los audios
+document.querySelectorAll("audio").forEach(audio => {
+
+  audio.addEventListener("play", () => {
+
+    // Si NO es un audio de Variety → resetear
+    if (!audio.closest(".song-item")) {
+      resetVarietyUI();
+    }
+
+  });
+
+});
+</script>
  
 </body>
 </html>
