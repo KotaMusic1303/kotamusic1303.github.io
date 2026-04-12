@@ -262,55 +262,13 @@
     setInterval(swapImages, 7000);
 
     // AUDIOS
-    // AUDIOS
-const vgAudios = document.querySelectorAll(".vg-audio audio");
-const styleIcons = document.querySelectorAll(".style-icon");
-const varietyAudios = document.querySelectorAll(".song-item audio");
-
-let currentAudio = null;
-
-// 🔥 FUNCIÓN GLOBAL PARA DETENER TODO
-function stopAllAudios(except = null) {
-  // VG audios
-  vgAudios.forEach(a => {
-    if (a !== except) {
-      a.pause();
-      a.currentTime = 0;
-    }
-  });
-
-  // Variety audios
-  varietyAudios.forEach(a => {
-    if (a !== except) {
-      a.pause();
-      a.currentTime = 0;
-    }
-  });
-
-  // Mood audios (iconos)
-  styleIcons.forEach(icon => {
-    icon.classList.remove("active");
-    if (icon.audioInstance) {
-      icon.audioInstance.pause();
-      icon.audioInstance.currentTime = 0;
-    }
-  });
-
-  // Reset UI Variety
-  document.querySelectorAll(".song-item").forEach(item => {
-    item.classList.remove("active");
-    const icon = item.querySelector("i");
-    if (icon) icon.className = "fas fa-play-circle";
-  });
-}
+    const vgAudios = document.querySelectorAll(".vg-audio audio");
+    const styleIcons = document.querySelectorAll(".style-icon");
+    let currentAudio = null;
 
     // Videogame Music: pausa iconos activos
     vgAudios.forEach(audio => {
-  audio.addEventListener("play", () => {
-    stopAllAudios(audio);
-    currentAudio = audio;
-  });
-});
+      audio.addEventListener("play", () => {
         // Pausar audio previo si existe
         if (currentAudio && currentAudio !== audio) {
           currentAudio.pause();
@@ -326,25 +284,10 @@ function stopAllAudios(except = null) {
 
     // Pick Your Mood Icons
     styleIcons.forEach(icon => {
-  const audio = new Audio(icon.dataset.audio);
-  audio.loop = true;
+      const audio = new Audio(icon.dataset.audio);
+      audio.loop = true;
 
-  icon.audioInstance = audio; // 🔥 guardamos referencia
-
-  icon.addEventListener("click", () => {
-    if (audio.paused) {
-      stopAllAudios(audio);
-
-      audio.play();
-      icon.classList.add("active");
-    } else {
-      audio.pause();
-      icon.classList.remove("active");
-    }
-
-    currentAudio = audio;
-  });
-});
+      icon.addEventListener("click", () => {
         // Pausar audio previo
         if (currentAudio && currentAudio !== audio) {
           currentAudio.pause();
@@ -388,14 +331,6 @@ function stopAllAudios(except = null) {
 }
   </style>
 
-    <!-- VOLUMEN GLOBAL -->
-<div class="global-volume">
-  <i class="fas fa-volume-up"></i>
-  <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
-</div>
-  
-  
-
   <!-- BOTÓN VOLVER AL INICIO -->
 <button id="back-to-top">
   <i class="fas fa-step-backward"></i>
@@ -422,61 +357,87 @@ backToTop.addEventListener("click", () => {
 });
 </script>
 
-  
 <script>
+const varietyAudios = document.querySelectorAll(".song-item audio");
+const songItems = document.querySelectorAll(".song-item");
+
+songItems.forEach(item => {
+  const audio = item.querySelector("audio");
+
+  item.addEventListener("click", () => {
+    // Pausar cualquier audio previo
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+
+    // Play / Pause toggle
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+
+    currentAudio = audio;
+  });
+});
+</script>
+
+  <script>
 const varietyItems = document.querySelectorAll(".song-item");
 
 varietyItems.forEach(item => {
   const audio = item.querySelector("audio");
   const progress = item.querySelector(".progress");
-  const container = item.querySelector(".progress-bar"); // CORREGIDO
+
+  // Actualizar barra
+  audio.addEventListener("timeupdate", () => {
+    const percent = (audio.currentTime / audio.duration) * 100;
+    progress.style.width = percent + "%";
+  });
+
+  // Reset al terminar
+  audio.addEventListener("ended", () => {
+    progress.style.width = "0%";
+  });
+});
+</script>
+
+  <script>
+const varietyItems = document.querySelectorAll(".song-item");
+
+varietyItems.forEach(item => {
+  const audio = item.querySelector("audio");
+  const progress = item.querySelector(".progress");
+  const container = item.querySelector(".progress-container");
   const current = item.querySelector(".current");
   const duration = item.querySelector(".duration");
   const icon = item.querySelector("i");
 
+  // FORMATO TIEMPO
   const formatTime = (time) => {
-    if (isNaN(time)) return "0:00";
     const min = Math.floor(time / 60);
     const sec = Math.floor(time % 60).toString().padStart(2, '0');
     return `${min}:${sec}`;
   };
 
-  // Cargar duración
+  // CARGAR DURACIÓN
   audio.addEventListener("loadedmetadata", () => {
     duration.textContent = formatTime(audio.duration);
   });
 
-  // Actualizar barra y tiempo
+  // ACTUALIZAR PROGRESO
   audio.addEventListener("timeupdate", () => {
-    if (audio.duration) {
-      const percent = (audio.currentTime / audio.duration) * 100;
-      progress.style.width = percent + "%";
-      current.textContent = formatTime(audio.currentTime);
-    }
+    const percent = (audio.currentTime / audio.duration) * 100;
+    progress.style.width = percent + "%";
+    current.textContent = formatTime(audio.currentTime);
   });
 
-  // Click en canción
+  // CLICK EN CANCIÓN
   item.addEventListener("click", () => {
-  if (audio.paused) {
-    stopAllAudios(audio);
-
-    audio.play();
-    item.classList.add("active");
-    icon.className = "fas fa-pause-circle";
-  } else {
-    audio.pause();
-    item.classList.remove("active");
-    icon.className = "fas fa-play-circle";
-  }
-
-  currentAudio = audio;
-});
-  
-    document.querySelectorAll(".style-icon").forEach(icon => icon.classList.remove("active"));
     if (currentAudio && currentAudio !== audio) {
       currentAudio.pause();
       currentAudio.currentTime = 0;
-
       document.querySelectorAll(".song-item").forEach(i => i.classList.remove("active"));
       document.querySelectorAll(".song-info i").forEach(i => i.className = "fas fa-play-circle");
     }
@@ -494,60 +455,22 @@ varietyItems.forEach(item => {
     currentAudio = audio;
   });
 
-  // Click en barra (FIX REAL)
+  // CLICK EN BARRA
   container.addEventListener("click", (e) => {
-    e.stopPropagation();
-
-    const rect = container.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const width = rect.width;
-
-    if (audio.duration) {
-      audio.currentTime = (clickX / width) * audio.duration;
-    }
+    e.stopPropagation(); // evita activar play doble
+    const width = container.clientWidth;
+    const clickX = e.offsetX;
+    audio.currentTime = (clickX / width) * audio.duration;
   });
 
-  // Reset
+  // RESET AL TERMINAR
   audio.addEventListener("ended", () => {
     progress.style.width = "0%";
-    current.textContent = "0:00";
     item.classList.remove("active");
     icon.className = "fas fa-play-circle";
   });
 });
 </script>
-
-  <script>
-const volumeControl = document.getElementById("volumeControl");
-
-// 🔥 función que obtiene TODOS los audios existentes y futuros
-function getAllAudios() {
-  return document.querySelectorAll("audio");
-}
-
-// 🔥 aplicar volumen a todo
-function setGlobalVolume(value) {
-  const audios = getAllAudios();
-  audios.forEach(audio => {
-    audio.volume = value;
-  });
-
-  // también los audios creados manualmente (Mood)
-  document.querySelectorAll(".style-icon").forEach(icon => {
-    if (icon.audioInstance) {
-      icon.audioInstance.volume = value;
-    }
-  });
-}
-
-// 🎚️ cambiar volumen en tiempo real
-volumeControl.addEventListener("input", (e) => {
-  setGlobalVolume(e.target.value);
-});
-
-// 🔥 volumen inicial (por si cargas audios después)
-setGlobalVolume(volumeControl.value);
-</script>
-  
+ 
 </body>
 </html>
