@@ -15,6 +15,10 @@
 
 <body>
 
+  <div id="global-volume">
+  <input type="range" id="globalVolume" min="0" max="1" step="0.01" value="1">
+</div>
+
 <!-- ================= HERO ================= -->
 <section class="hero">
   <h1>KotaMusic</h1>
@@ -264,6 +268,52 @@ document.querySelectorAll(".style-icon").forEach(icon => {
   });
 
 });
+</script>
+
+  <script>
+// =========================
+// VOLUMEN GLOBAL REAL
+// =========================
+
+const volumeSlider = document.getElementById("globalVolume");
+
+// aplicar volumen a TODO
+function applyGlobalVolume(value) {
+
+  // audios HTML
+  document.querySelectorAll("audio").forEach(a => {
+    a.volume = value;
+  });
+
+  // audios de Pick Your Mood (new Audio)
+  document.querySelectorAll(".style-icon").forEach(icon => {
+    if (icon.audioRef) {
+      icon.audioRef.volume = value;
+    }
+  });
+}
+
+// actualizar en tiempo real
+volumeSlider.addEventListener("input", () => {
+  applyGlobalVolume(volumeSlider.value);
+});
+
+// 🔥 clave: cada vez que un audio nuevo se reproduce
+document.addEventListener("play", (e) => {
+  if (e.target.tagName === "AUDIO") {
+    e.target.volume = volumeSlider.value;
+  }
+}, true);
+
+// 🔥 clave para Pick Your Mood
+document.querySelectorAll(".style-icon").forEach(icon => {
+  if (icon.audioRef) {
+    icon.audioRef.volume = volumeSlider.value;
+  }
+});
+
+// volumen inicial
+applyGlobalVolume(volumeSlider.value);
 </script>
 
 </body>
