@@ -584,6 +584,9 @@ audio, video {
   margin: 8px 0;
   cursor: pointer;
   overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
 }
 
 .progress {
