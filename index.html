@@ -352,6 +352,26 @@ songItems.forEach(item => {
   });
 });
 </script>
+
+  <script>
+const varietyItems = document.querySelectorAll(".song-item");
+
+varietyItems.forEach(item => {
+  const audio = item.querySelector("audio");
+  const progress = item.querySelector(".progress");
+
+  // Actualizar barra
+  audio.addEventListener("timeupdate", () => {
+    const percent = (audio.currentTime / audio.duration) * 100;
+    progress.style.width = percent + "%";
+  });
+
+  // Reset al terminar
+  audio.addEventListener("ended", () => {
+    progress.style.width = "0%";
+  });
+});
+</script>
  
 </body>
 </html>
