@@ -649,11 +649,17 @@ audio, video {
 
 /* Volumen Global */
 
-.global-volume {
+#global-volume {
   position: fixed;
   top: 20px;
   left: 20px;
   z-index: 9999;
+}
+
+#globalVolume {
+  writing-mode: bt-lr;
+  -webkit-appearance: slider-vertical;
+  height: 120px;
 }
 
 #volumeControl {
