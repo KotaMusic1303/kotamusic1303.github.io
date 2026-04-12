@@ -550,6 +550,25 @@ audio, video {
   transform: scale(1.2);
 }
 
+/* BARRA CONTENEDORA */
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background: #2a2a2a;
+  border-radius: 5px;
+  margin: 8px 0;
+  overflow: hidden;
+}
+
+/* PROGRESO */
+.progress {
+  width: 0%;
+  height: 100%;
+  background: #a855f7;
+  border-radius: 5px;
+  transition: width 0.1s linear;
+}
+
 /*FIN ICONOS ESTILOS MUSICALES*/
 
 /* BOTÓN VOLVER AL INICIO */
