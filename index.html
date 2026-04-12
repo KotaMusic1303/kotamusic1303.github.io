@@ -326,10 +326,25 @@ function stopAllAudios(except = null) {
 
     // Pick Your Mood Icons
     styleIcons.forEach(icon => {
-      const audio = new Audio(icon.dataset.audio);
-      audio.loop = true;
+  const audio = new Audio(icon.dataset.audio);
+  audio.loop = true;
 
-      icon.addEventListener("click", () => {
+  icon.audioInstance = audio; // 🔥 guardamos referencia
+
+  icon.addEventListener("click", () => {
+    if (audio.paused) {
+      stopAllAudios(audio);
+
+      audio.play();
+      icon.classList.add("active");
+    } else {
+      audio.pause();
+      icon.classList.remove("active");
+    }
+
+    currentAudio = audio;
+  });
+});
         // Pausar audio previo
         if (currentAudio && currentAudio !== audio) {
           currentAudio.pause();
