@@ -421,8 +421,8 @@ audio, video {
 
 .vg-section {
   max-width: 1400px;
-  margin-left: 80px;   /* separación desde la izquierda */
-  margin-right: 0;     /* elimina centrado */
+  margin-left: clamp(40px, 8vw, 120px);
+  margin-right: 0;
 }
 
 .vg-container {
