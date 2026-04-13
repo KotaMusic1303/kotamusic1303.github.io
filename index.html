@@ -551,6 +551,41 @@ document.getElementById("av-prev").addEventListener("click", () => {
 
   <script>
 // =========================
+// NAVEGACIÓN AUDIOVISUAL (FIX COMPLETO)
+// =========================
+
+const avPrev = document.getElementById("av-prev");
+const avNext = document.getElementById("av-next");
+
+const avTextItems = document.querySelectorAll(".av-description .av-item");
+const avVideoItems = document.querySelectorAll(".av-videos .av-item");
+
+let avIndex = 0;
+
+function updateAV(index) {
+
+  avTextItems.forEach(el => el.classList.remove("active"));
+  avVideoItems.forEach(el => el.classList.remove("active"));
+
+  avTextItems[index].classList.add("active");
+  avVideoItems[index].classList.add("active");
+}
+
+// NEXT
+avNext.addEventListener("click", () => {
+  avIndex = (avIndex + 1) % avTextItems.length;
+  updateAV(avIndex);
+});
+
+// PREV
+avPrev.addEventListener("click", () => {
+  avIndex = (avIndex - 1 + avTextItems.length) % avTextItems.length;
+  updateAV(avIndex);
+});
+</script>
+
+  <script>
+// =========================
 // PAUSA YOUTUBE SIN ROMPER NADA
 // =========================
 
