@@ -933,23 +933,3 @@ audio, video {
 .av-videos {
   margin-left: clamp(80px, 10vw, 180px);
 }
-
-/* =========================
-   ALIGN VIDEO WITH VARIETY PLAYER
-========================= */
-
-.av-container {
-  justify-content: space-between;
-}
-
-.av-description {
-  width: 650px;
-  flex-shrink: 0;
-}
-
-.av-videos {
-  flex: 1;
-  max-width: 700px;
-  display: flex;
-  justify-content: flex-end;
-}
