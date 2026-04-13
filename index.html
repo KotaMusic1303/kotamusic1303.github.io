@@ -548,6 +548,30 @@ document.getElementById("av-prev").addEventListener("click", () => {
   setTimeout(pauseAllYouTube, 100);
 });
 </script>
+
+  <script>
+// =========================
+// PAUSA YOUTUBE SIN ROMPER NADA
+// =========================
+
+function pauseAllYouTube() {
+  document.querySelectorAll(".av-videos iframe").forEach(iframe => {
+    iframe.contentWindow.postMessage(JSON.stringify({
+      event: "command",
+      func: "pauseVideo"
+    }), "*");
+  });
+}
+
+// después del cambio, no antes
+document.getElementById("av-next").addEventListener("click", () => {
+  setTimeout(pauseAllYouTube, 120);
+});
+
+document.getElementById("av-prev").addEventListener("click", () => {
+  setTimeout(pauseAllYouTube, 120);
+});
+</script>
   
 </body>
 </html>
