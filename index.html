@@ -607,6 +607,97 @@ document.getElementById("av-prev").addEventListener("click", () => {
   setTimeout(pauseAllYouTube, 120);
 });
 </script>
+
+  <script>
+// =========================
+// SINCRONIZAR AUDIO ↔ YOUTUBE
+// =========================
+
+// 🔴 Pausar TODOS los audios de la web
+function pauseAllAudios() {
+
+  // audios normales
+  document.querySelectorAll("audio").forEach(a => {
+    a.pause();
+    a.currentTime = 0;
+  });
+
+  // audios de Pick Your Mood
+  document.querySelectorAll(".style-icon").forEach(icon => {
+    if (icon.audioRef) {
+      icon.audioRef.pause();
+      icon.audioRef.currentTime = 0;
+    }
+  });
+
+  // reset UI
+  if (typeof resetVarietyUI === "function") resetVarietyUI();
+  if (typeof resetMoodIcons === "function") resetMoodIcons();
+}
+
+// 🔴 Pausar TODOS los videos de YouTube
+function pauseAllYouTubeVideos() {
+  document.querySelectorAll(".av-videos iframe").forEach(frame => {
+    frame.contentWindow.postMessage(JSON.stringify({
+      event: "command",
+      func: "pauseVideo"
+    }), "*");
+  });
+}
+
+// =========================
+// 🎬 VIDEO → corta audio
+// =========================
+
+document.querySelectorAll(".av-videos iframe").forEach(frame => {
+
+  frame.addEventListener("load", () => {
+
+    // detectar play dentro del iframe
+    frame.contentWindow.postMessage(JSON.stringify({
+      event: "listening",
+      id: frame.id
+    }), "*");
+
+  });
+
+});
+
+// escuchar eventos de YouTube
+window.addEventListener("message", (event) => {
+
+  try {
+    const data = JSON.parse(event.data);
+
+    // cuando video empieza
+    if (data.event === "onStateChange" && data.info === 1) {
+      pauseAllAudios();
+    }
+
+  } catch(e) {}
+
+});
+
+// =========================
+// 🎧 AUDIO → corta video
+// =========================
+
+// cualquier audio HTML
+document.querySelectorAll("audio").forEach(audio => {
+  audio.addEventListener("play", () => {
+    pauseAllYouTubeVideos();
+  });
+});
+
+// Pick Your Mood (new Audio)
+document.querySelectorAll(".style-icon").forEach(icon => {
+  if (icon.audioRef) {
+    icon.audioRef.addEventListener("play", () => {
+      pauseAllYouTubeVideos();
+    });
+  }
+});
+</script>
   
 </body>
 </html>
