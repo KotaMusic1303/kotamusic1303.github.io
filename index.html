@@ -622,38 +622,25 @@ document.querySelectorAll(".style-icon").forEach(icon => {
 
   <script>
 // =========================
-// SINCRONIZAR AUDIO ↔ YOUTUBE
-// =========================
-
-// 🔴 Pausar TODOS los audios de la web
-function pauseAllAudios() {
-
-  // audios normales
-  document.querySelectorAll("audio").forEach(a => {
-    a.pause();
-    a.currentTime = 0;
-  });
-
-  // audios de Pick Your Mood
-  document.querySelectorAll(".style-icon").forEach(icon => {
-    if (icon.audioRef) {
-      icon.audioRef.pause();
-      icon.audioRef.currentTime = 0;
-    }
-  });
-
-  // reset UI
-  if (typeof resetVarietyUI === "function") resetVarietyUI();
-  if (typeof resetMoodIcons === "function") resetMoodIcons();
-}
-
-// =========================
 // 🎬 VIDEO → corta audio
 // =========================
 
 document.querySelectorAll(".av-videos iframe").forEach(frame => {
 
   frame.addEventListener("load", () => {
+
+    frame.contentWindow.postMessage(JSON.stringify({
+      event: "listening"
+    }), "*");
+
+    frame.contentWindow.postMessage(JSON.stringify({
+      event: "command",
+      func: "addEventListener",
+      args: ["onStateChange"]
+    }), "*");
+
+  });
+});
 
     // detectar play dentro del iframe
     frame.contentWindow.postMessage(JSON.stringify({
