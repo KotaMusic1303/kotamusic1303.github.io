@@ -596,6 +596,28 @@ document.getElementById("av-next").addEventListener("click", () => {
 document.getElementById("av-prev").addEventListener("click", () => {
   setTimeout(pauseAllYouTube, 120);
 });
+
+// 🔥 CUANDO CUALQUIER AUDIO SUENE → PAUSAR VIDEOS
+
+document.addEventListener("play", (e) => {
+
+  if (e.target.tagName === "AUDIO") {
+    pauseAllYouTubeVideos();
+  }
+
+}, true);
+
+
+// 🔥 PICK YOUR MOOD (porque usa new Audio)
+
+document.querySelectorAll(".style-icon").forEach(icon => {
+  if (icon.audioRef) {
+    icon.audioRef.addEventListener("play", () => {
+      pauseAllYouTubeVideos();
+    });
+  }
+});
+    
 </script>
 
   <script>
