@@ -530,14 +530,26 @@ const avVideoItems = document.querySelectorAll(".av-videos .av-item");
 
 let avIndex = 0;
 
+<script>
 function updateAV(index) {
 
+  // 🔴 PAUSAR TODOS LOS VIDEOS ANTES DE CAMBIAR
+  document.querySelectorAll(".av-videos iframe").forEach(frame => {
+    frame.contentWindow.postMessage(JSON.stringify({
+      event: "command",
+      func: "pauseVideo",
+      args: []
+    }), "*");
+  });
+
+  // cambiar contenido
   avTextItems.forEach(el => el.classList.remove("active"));
   avVideoItems.forEach(el => el.classList.remove("active"));
 
   avTextItems[index].classList.add("active");
   avVideoItems[index].classList.add("active");
 }
+</script>
 
 // NEXT
 avNext.addEventListener("click", () => {
