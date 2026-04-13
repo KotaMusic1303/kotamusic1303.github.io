@@ -896,7 +896,7 @@ audio, video {
 }
 
 /* =========================
-   MASTER LAYOUT (PRO GRID)
+   MASTER LAYOUT (FIX CENTRADO PRO)
 ========================= */
 
 .section,
@@ -905,6 +905,7 @@ audio, video {
 .audiovisual-section,
 .vg-section {
   max-width: 1400px;
-  margin-left: clamp(40px, 8vw, 120px);
-  margin-right: auto;
+  margin: 0 auto; /* centra el bloque */
+  padding-left: clamp(20px, 4vw, 60px); /* empuja contenido hacia la derecha */
+  padding-right: 20px;
 }
