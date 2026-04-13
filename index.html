@@ -532,11 +532,11 @@ document.querySelectorAll(".song-item").forEach(item => {
 
 // enganchar sin bloquear la navegación
 document.getElementById("av-next").addEventListener("click", () => {
-  setTimeout(pauseAllYouTube, 100); // 👈 después del cambio
+  setTimeout(pauseAllYouTubeVideos, 100); // 👈 después del cambio
 });
 
 document.getElementById("av-prev").addEventListener("click", () => {
-  setTimeout(pauseAllYouTube, 100);
+  setTimeout(pauseAllYouTubeVideos, 100);
 });
 </script>
 
@@ -590,11 +590,11 @@ function pauseAllYouTubeVideos() {
 }
 // después del cambio, no antes
 document.getElementById("av-next").addEventListener("click", () => {
-  setTimeout(pauseAllYouTube, 120);
+  setTimeout(pauseAllYouTubeVideos, 120);
 });
 
 document.getElementById("av-prev").addEventListener("click", () => {
-  setTimeout(pauseAllYouTube, 120);
+  setTimeout(pauseAllYouTubeVideos, 120);
 });
 
 // 🔥 CUANDO CUALQUIER AUDIO SUENE → PAUSAR VIDEOS
