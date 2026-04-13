@@ -894,3 +894,17 @@ audio, video {
   transform: scale(1.2);
   box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
 }
+
+/* =========================
+   MASTER LAYOUT (PRO GRID)
+========================= */
+
+.section,
+.variety-section,
+.styles-section,
+.audiovisual-section,
+.vg-section {
+  max-width: 1400px;
+  margin-left: clamp(40px, 8vw, 120px);
+  margin-right: auto;
+}
