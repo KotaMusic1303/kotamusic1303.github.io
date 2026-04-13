@@ -517,18 +517,10 @@ document.querySelectorAll(".song-item").forEach(item => {
 });
 </script>
 
-  <script>
+
 // =========================
 // AUDIOVISUAL LOOP YOUTUBE
 // =========================
-
-const avPrev = document.getElementById("av-prev");
-const avNext = document.getElementById("av-next");
-
-const avTextItems = document.querySelectorAll(".av-description .av-item");
-const avVideoItems = document.querySelectorAll(".av-videos .av-item");
-
-let avIndex = 0;
 
 <script>
 function updateAV(index) {
@@ -549,18 +541,6 @@ function updateAV(index) {
   avTextItems[index].classList.add("active");
   avVideoItems[index].classList.add("active");
 }
-
-// NEXT
-avNext.addEventListener("click", () => {
-  avIndex = (avIndex + 1) % avTextItems.length;
-  updateAV(avIndex);
-});
-
-// PREV
-avPrev.addEventListener("click", () => {
-  avIndex = (avIndex - 1 + avTextItems.length) % avTextItems.length;
-  updateAV(avIndex);
-});
 </script>
 
 </body>
