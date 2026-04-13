@@ -576,10 +576,30 @@ function pauseAllYouTube() {
     }), "*");
   });
 }
+</script>
 
-// enganchar a los botones SIN tocar tu lógica
-document.getElementById("av-next").addEventListener("click", pauseAllYouTube);
-document.getElementById("av-prev").addEventListener("click", pauseAllYouTube);
+  <script>
+// =========================
+// PAUSA YOUTUBE DESPUÉS DEL CAMBIO
+// =========================
+
+function pauseAllYouTube() {
+  document.querySelectorAll(".av-videos iframe").forEach(iframe => {
+    iframe.contentWindow.postMessage(JSON.stringify({
+      event: "command",
+      func: "pauseVideo"
+    }), "*");
+  });
+}
+
+// enganchar sin bloquear la navegación
+document.getElementById("av-next").addEventListener("click", () => {
+  setTimeout(pauseAllYouTube, 100); // 👈 después del cambio
+});
+
+document.getElementById("av-prev").addEventListener("click", () => {
+  setTimeout(pauseAllYouTube, 100);
+});
 </script>
   
 </body>
