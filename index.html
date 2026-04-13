@@ -223,7 +223,7 @@
 
       <div class="av-item active">
         <iframe 
-  src="https://www.youtube.com/embed/iSdMBckIgC4?enablejsapi=1" 
+  src="https://www.youtube.com/embed/iSdMBckIgC4?enablejsapi=1&origin=http://https://kotamusic1303.github.io" 
   allow="autoplay; encrypted-media"
   allowfullscreen>
 </iframe>
@@ -231,7 +231,7 @@
 
       <div class="av-item">
        <iframe 
-  src="https://www.youtube.com/embed/gVegRvNlzQE?enablejsapi=1" 
+  src="https://www.youtube.com/embed/gVegRvNlzQE?enablejsapi=1&origin=http://https://kotamusic1303.github.io" 
   allow="autoplay; encrypted-media"
   allowfullscreen>
 </iframe>
@@ -640,7 +640,8 @@ function pauseAllYouTubeVideos() {
   document.querySelectorAll(".av-videos iframe").forEach(frame => {
     frame.contentWindow.postMessage(JSON.stringify({
       event: "command",
-      func: "pauseVideo"
+      func: "pauseVideo",
+      args: []
     }), "*");
   });
 }
