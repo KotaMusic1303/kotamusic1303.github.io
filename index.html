@@ -682,12 +682,17 @@ window.addEventListener("message", (event) => {
 // 🎧 AUDIO → corta video
 // =========================
 
-// cualquier audio HTML
-document.querySelectorAll("audio").forEach(audio => {
-  audio.addEventListener("play", () => {
+<script>
+// =========================
+// 🎧 AUDIO → corta video (FIX REAL)
+// =========================
+
+// HTML5 audios (VG + Variety)
+document.addEventListener("play", (e) => {
+  if (e.target.tagName === "AUDIO") {
     pauseAllYouTubeVideos();
-  });
-});
+  }
+}, true);
 
 // Pick Your Mood (new Audio)
 document.querySelectorAll(".style-icon").forEach(icon => {
@@ -697,6 +702,7 @@ document.querySelectorAll(".style-icon").forEach(icon => {
     });
   }
 });
+</script>
 </script>
   
 </body>
