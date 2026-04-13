@@ -234,7 +234,7 @@
   src="https://www.youtube.com/embed/gVegRvNlzQE?enablejsapi=1" 
   allow="autoplay; encrypted-media"
   allowfullscreen>
-</iframe>>
+</iframe>
       </div>
 
       <div class="av-item">
@@ -523,59 +523,6 @@ document.querySelectorAll(".song-item").forEach(item => {
     current.textContent = "0:00";
   });
 });
-</script>
-
-
-
-<script>
-function updateAV(index) {
-
-  // 🔴 PAUSAR TODOS LOS VIDEOS ANTES DE CAMBIAR
-  document.querySelectorAll(".av-videos iframe").forEach(frame => {
-    frame.contentWindow.postMessage(JSON.stringify({
-      event: "command",
-      func: "pauseVideo",
-      args: []
-    }), "*");
-  });
-
-  // cambiar contenido
-  avTextItems.forEach(el => el.classList.remove("active"));
-  avVideoItems.forEach(el => el.classList.remove("active"));
-
-  avTextItems[index].classList.add("active");
-  avVideoItems[index].classList.add("active");
-}
-</script>
-
-<script>
-// =========================
-// PAUSAR VIDEO AL CAMBIAR
-// =========================
-
-function pauseAllYouTube() {
-  document.querySelectorAll(".av-videos iframe").forEach(iframe => {
-    iframe.contentWindow.postMessage(JSON.stringify({
-      event: "command",
-      func: "pauseVideo"
-    }), "*");
-  });
-}  
-</script>
-
-  <script>
-// =========================
-// PAUSAR YOUTUBE SIN ROMPER NADA
-// =========================
-
-function pauseAllYouTube() {
-  document.querySelectorAll(".av-videos iframe").forEach(iframe => {
-    iframe.contentWindow.postMessage(JSON.stringify({
-      event: "command",
-      func: "pauseVideo"
-    }), "*");
-  });
-}
 </script>
 
   <script>
