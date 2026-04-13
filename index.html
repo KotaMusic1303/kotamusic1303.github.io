@@ -576,6 +576,30 @@ avPrev.addEventListener("click", () => {
 </script>
 
   <script>
+// 🔴 FUNCIÓN QUE FALTABA
+function pauseAllAudios() {
+
+  // audios HTML
+  document.querySelectorAll("audio").forEach(a => {
+    a.pause();
+    a.currentTime = 0;
+  });
+
+  // audios de Pick Your Mood
+  document.querySelectorAll(".style-icon").forEach(icon => {
+    if (icon.audioRef) {
+      icon.audioRef.pause();
+      icon.audioRef.currentTime = 0;
+    }
+  });
+
+  // reset UI
+  if (typeof resetVarietyUI === "function") resetVarietyUI();
+  if (typeof resetMoodIcons === "function") resetMoodIcons();
+}
+</script>
+
+  <script>
 // =========================
 // PAUSA YOUTUBE SIN ROMPER NADA
 // =========================
