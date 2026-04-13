@@ -931,5 +931,5 @@ audio, video {
 }
 
 .av-videos {
-  margin-left: clamp(60px, 8vw, 160px);
+  margin-left: clamp(80px, 10vw, 180px);
 }
