@@ -909,3 +909,15 @@ audio, video {
   padding-left: clamp(20px, 4vw, 60px); /* empuja contenido hacia la derecha */
   padding-right: 20px;
 }
+
+/* =========================
+   VIDEO MÁS GRANDE (SIN ROMPER LAYOUT)
+========================= */
+
+.av-videos {
+  width: clamp(500px, 45vw, 700px);
+}
+
+.av-videos iframe {
+  height: clamp(280px, 26vw, 400px);
+}
