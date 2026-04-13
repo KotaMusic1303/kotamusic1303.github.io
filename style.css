@@ -943,7 +943,7 @@ audio, video {
 }
 
 .av-description {
-  width: 350px;
+  width: 650px;
   flex-shrink: 0;
 }
 
