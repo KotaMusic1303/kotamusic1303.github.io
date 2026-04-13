@@ -560,16 +560,26 @@ function pauseAllYouTube() {
       func: "pauseVideo"
     }), "*");
   });
+}  
+</script>
+
+  <script>
+// =========================
+// PAUSAR YOUTUBE SIN ROMPER NADA
+// =========================
+
+function pauseAllYouTube() {
+  document.querySelectorAll(".av-videos iframe").forEach(iframe => {
+    iframe.contentWindow.postMessage(JSON.stringify({
+      event: "command",
+      func: "pauseVideo"
+    }), "*");
+  });
 }
 
-// interceptar navegación
-const originalUpdateAV = updateAV;
-
-updateAV = function(index) {
-  pauseAllYouTube(); // 🔥 pausa todos los videos
-  originalUpdateAV(index); // mantiene tu lógica intacta
-};
-  
+// enganchar a los botones SIN tocar tu lógica
+document.getElementById("av-next").addEventListener("click", pauseAllYouTube);
+document.getElementById("av-prev").addEventListener("click", pauseAllYouTube);
 </script>
   
 </body>
