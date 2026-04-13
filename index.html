@@ -222,7 +222,11 @@
     <div class="av-videos">
 
       <div class="av-item active">
-        <iframe src="https://www.youtube.com/embed/iSdMBckIgC4" allowfullscreen></iframe>
+        <<iframe 
+  src="https://www.youtube.com/embed/iSdMBckIgC4?enablejsapi=1" 
+  allow="autoplay; encrypted-media"
+  allowfullscreen>
+</iframe>
       </div>
 
       <div class="av-item">
@@ -543,5 +547,28 @@ function updateAV(index) {
 }
 </script>
 
+<script>
+// =========================
+// PAUSAR VIDEO AL CAMBIAR
+// =========================
+
+function pauseAllYouTube() {
+  document.querySelectorAll(".av-videos iframe").forEach(iframe => {
+    iframe.contentWindow.postMessage(JSON.stringify({
+      event: "command",
+      func: "pauseVideo"
+    }), "*");
+  });
+}
+
+// interceptar navegación
+const originalUpdateAV = updateAV;
+
+updateAV = function(index) {
+  pauseAllYouTube(); // 🔥 pausa todos los videos
+  originalUpdateAV(index); // mantiene tu lógica intacta
+};
+</script>
+  
 </body>
 </html>
