@@ -223,7 +223,7 @@
 
       <div class="av-item active">
         <iframe 
-  src="https://www.youtube.com/embed/iSdMBckIgC4?enablejsapi=1&origin=http://https://kotamusic1303.github.io" 
+  src="https://www.youtube.com/embed/iSdMBckIgC4?enablejsapi=1" 
   allow="autoplay; encrypted-media"
   allowfullscreen>
 </iframe>
@@ -231,7 +231,7 @@
 
       <div class="av-item">
        <iframe 
-  src="https://www.youtube.com/embed/gVegRvNlzQE?enablejsapi=1&origin=http://https://kotamusic1303.github.io" 
+  src="https://www.youtube.com/embed/gVegRvNlzQE?enablejsapi=1" 
   allow="autoplay; encrypted-media"
   allowfullscreen>
 </iframe>
@@ -530,15 +530,6 @@ document.querySelectorAll(".song-item").forEach(item => {
 // PAUSA YOUTUBE DESPUÉS DEL CAMBIO
 // =========================
 
-function pauseAllYouTube() {
-  document.querySelectorAll(".av-videos iframe").forEach(iframe => {
-    iframe.contentWindow.postMessage(JSON.stringify({
-      event: "command",
-      func: "pauseVideo"
-    }), "*");
-  });
-}
-
 // enganchar sin bloquear la navegación
 document.getElementById("av-next").addEventListener("click", () => {
   setTimeout(pauseAllYouTube, 100); // 👈 después del cambio
@@ -588,16 +579,15 @@ avPrev.addEventListener("click", () => {
 // =========================
 // PAUSA YOUTUBE SIN ROMPER NADA
 // =========================
-
-function pauseAllYouTube() {
-  document.querySelectorAll(".av-videos iframe").forEach(iframe => {
-    iframe.contentWindow.postMessage(JSON.stringify({
+function pauseAllYouTubeVideos() {
+  document.querySelectorAll(".av-videos iframe").forEach(frame => {
+    frame.contentWindow.postMessage(JSON.stringify({
       event: "command",
-      func: "pauseVideo"
+      func: "pauseVideo",
+      args: []
     }), "*");
   });
 }
-
 // después del cambio, no antes
 document.getElementById("av-next").addEventListener("click", () => {
   setTimeout(pauseAllYouTube, 120);
@@ -633,17 +623,6 @@ function pauseAllAudios() {
   // reset UI
   if (typeof resetVarietyUI === "function") resetVarietyUI();
   if (typeof resetMoodIcons === "function") resetMoodIcons();
-}
-
-// 🔴 Pausar TODOS los videos de YouTube
-function pauseAllYouTubeVideos() {
-  document.querySelectorAll(".av-videos iframe").forEach(frame => {
-    frame.contentWindow.postMessage(JSON.stringify({
-      event: "command",
-      func: "pauseVideo",
-      args: []
-    }), "*");
-  });
 }
 
 // =========================
