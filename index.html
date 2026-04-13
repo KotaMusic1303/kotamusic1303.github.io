@@ -222,7 +222,7 @@
     <div class="av-videos">
 
       <div class="av-item active">
-        <iframe src="<iframe src="https://www.youtube.com/embed/iSdMBckIgC4?enablejsapi=1">" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/iSdMBckIgC4" allowfullscreen></iframe>
       </div>
 
       <div class="av-item">
@@ -552,61 +552,5 @@ avPrev.addEventListener("click", () => {
 });
 </script>
 
-  <script>
-let ytPlayer;
-
-// Crear reproductor
-function onYouTubeIframeAPIReady() {
-  ytPlayer = new YT.Player('audiovisual-player', {
-    height: '300',
-    width: '100%',
-    videoId: 'dQw4w9WgXcQ', // primer video
-    playerVars: {
-      modestbranding: 1,
-      rel: 0
-    }
-  });
-}
-</script>
-
-  <script src="https://www.youtube.com/iframe_api"></script>
-
-  <script>
-// =========================
-// VOLUMEN GLOBAL PARA YOUTUBE (IFRAMES)
-// =========================
-
-const YT_IFRAMES = document.querySelectorAll(".av-videos iframe");
-
-// Función para enviar volumen (hack postMessage)
-function setYouTubeVolume(volume) {
-  YT_IFRAMES.forEach(frame => {
-    frame.contentWindow.postMessage(JSON.stringify({
-      event: "command",
-      func: "setVolume",
-      args: [volume * 100]
-    }), "*");
-  });
-}
-
-// Integrarlo con tu slider EXISTENTE
-const globalSlider = document.getElementById("globalVolume");
-
-globalSlider.addEventListener("input", () => {
-  const vol = globalSlider.value;
-
-  setYouTubeVolume(vol);
-});
-
-// activar API de control en iframes
-YT_IFRAMES.forEach(frame => {
-  const src = frame.src;
-
-  if (!src.includes("enablejsapi=1")) {
-    frame.src = src + (src.includes("?") ? "&" : "?") + "enablejsapi=1";
-  }
-});
-</script>
-  
 </body>
 </html>
