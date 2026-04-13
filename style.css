@@ -866,3 +866,31 @@ audio, video {
 .av-videos iframe:hover {
   border-color: #a855f7;
 }
+
+/* =========================
+   MATCH TITLES (VG + AUDIOVISUAL → VARIETY)
+========================= */
+
+.vg-section h2,
+.audiovisual-section h2 {
+  font-size: 2.5em;
+  color: #a855f7;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+/* =========================
+   FLECHAS AUDIOVISUAL (MEJORA VISUAL)
+========================= */
+
+.av-controls i {
+  color: #a855f7; /* morado base */
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.av-controls i:hover {
+  color: #ffffff;
+  border-color: #a855f7;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
