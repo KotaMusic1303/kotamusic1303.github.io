@@ -420,9 +420,9 @@ audio, video {
 }
 
 .vg-section {
-  max-width: 1400px; /* más ancho */
-  margin-left: 40px; /* ← empuja hacia la izquierda */
-  margin-right: auto;
+  max-width: 1400px;
+  margin-left: 80px;   /* separación desde la izquierda */
+  margin-right: 0;     /* elimina centrado */
 }
 
 .vg-container {
