@@ -834,27 +834,47 @@ audio, video {
    FIX ANIMACIÓN AV
 ========================= */
 
-.av-description .av-item,
-.av-videos .av-item {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  width: 100%;
-}
-
+/* CONTENEDOR CLAVE */
 .av-description,
 .av-videos {
   position: relative;
   overflow: hidden;
 }
 
+/* ITEMS */
+.av-description .av-item,
+.av-videos .av-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  opacity: 0;
+  transform: translateX(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  pointer-events: none;
+}
+
+/* ACTIVO */
 .av-description .av-item.active,
 .av-videos .av-item.active {
   opacity: 1;
   pointer-events: auto;
-  position: relative;
+  z-index: 2;
 }
 
+/* ENTRADA */
+.slide-in-right { transform: translateX(100%); }
+.slide-in-left  { transform: translateX(-100%); }
+
+.slide-in-right.active,
+.slide-in-left.active {
+  transform: translateX(0);
+}
+
+/* SALIDA */
+.slide-out-left  { transform: translateX(-100%); opacity: 0; }
+.slide-out-right { transform: translateX(100%); opacity: 0; }
 /* VIDEO */
 .av-videos {
   width: 500px;
