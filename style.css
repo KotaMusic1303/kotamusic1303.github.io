@@ -948,35 +948,36 @@ audio, video {
 }
 
 /* =========================
-   ANIMACIONES SLIDE AV
+   ANIMACIÓN SUAVE AV (SAFE)
 ========================= */
 
 .av-item {
-  transition: all 0.4s ease;
+  transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
-/* SALIDA */
 .slide-out-left {
-  transform: translateX(-60px);
+  transform: translateX(-80px);
   opacity: 0;
 }
 
 .slide-out-right {
-  transform: translateX(60px);
+  transform: translateX(80px);
   opacity: 0;
 }
 
-/* ENTRADA */
 .slide-in-right {
-  transform: translateX(60px);
+  transform: translateX(80px);
   opacity: 0;
-  animation: slideInRight 0.4s forwards;
 }
 
 .slide-in-left {
-  transform: translateX(-60px);
+  transform: translateX(-80px);
   opacity: 0;
-  animation: slideInLeft 0.4s forwards;
+}
+
+.slide-reset {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 @keyframes slideInRight {
