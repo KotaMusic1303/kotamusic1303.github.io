@@ -445,8 +445,9 @@ audio, video {
   );
   margin: 0;   /* elimina margen extra */
   padding: 0;  /* elimina padding extra */
-}
   position: relative;
+}
+  
 }
 
 .vg-image {
