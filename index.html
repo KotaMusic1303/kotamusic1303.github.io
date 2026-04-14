@@ -750,69 +750,6 @@ document.querySelectorAll(".style-icon").forEach(icon => {
   }
 });
 </script>
-
- <script> 
- const avPrev = document.getElementById("av-prev");
-const avNext = document.getElementById("av-next");
-
-const avTextItems = document.querySelectorAll(".av-description .av-item");
-const avVideoItems = document.querySelectorAll(".av-videos .av-item");
-
-let avIndex = 0;
-
-function slideAV(newIndex, direction) {
-
-  const currentText = avTextItems[avIndex];
-  const currentVideo = avVideoItems[avIndex];
-
-  const nextText = avTextItems[newIndex];
-  const nextVideo = avVideoItems[newIndex];
-
-  // limpiar clases
-  [currentText, currentVideo, nextText, nextVideo].forEach(el => {
-    el.classList.remove("slide-in-left","slide-in-right","slide-out-left","slide-out-right","active");
-  });
-
-  // SALIDA
-  if (direction === "next") {
-    currentText.classList.add("slide-out-left");
-    currentVideo.classList.add("slide-out-left");
-
-    nextText.classList.add("slide-in-right");
-    nextVideo.classList.add("slide-in-right");
-  } else {
-    currentText.classList.add("slide-out-right");
-    currentVideo.classList.add("slide-out-right");
-
-    nextText.classList.add("slide-in-left");
-    nextVideo.classList.add("slide-in-left");
-  }
-
-  // activar nuevo
-  nextText.classList.add("active");
-  nextVideo.classList.add("active");
-
-  // limpiar anterior después de animación
-  setTimeout(() => {
-    currentText.classList.remove("active");
-    currentVideo.classList.remove("active");
-  }, 500);
-
-  avIndex = newIndex;
-}
-
-// NEXT
-avNext.addEventListener("click", () => {
-  const nextIndex = (avIndex + 1) % avTextItems.length;
-  slideAV(nextIndex, "next");
-});
-
-// PREV
-avPrev.addEventListener("click", () => {
-  const prevIndex = (avIndex - 1 + avTextItems.length) % avTextItems.length;
-  slideAV(prevIndex, "prev");
-});
- </script>
   
 </body>
 </html>
