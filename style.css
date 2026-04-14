@@ -833,6 +833,15 @@ audio, video {
 ========================= */
 
 /* CONTENEDOR CLAVE */
+
+.av-description {
+  min-height: 120px; /* ajusta según tu texto */
+}
+
+.av-videos {
+  min-height: 280px;
+}
+
 .av-description,
 .av-videos {
   position: relative;
