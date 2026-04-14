@@ -830,16 +830,29 @@ audio, video {
 
 /* TEXTO */
 
-.av-description {
-  width: 350px;
+/* =========================
+   FIX ANIMACIÓN AV
+========================= */
+
+.av-description .av-item,
+.av-videos .av-item {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
 }
 
-.av-description .av-item {
-  display: none;
+.av-description,
+.av-videos {
+  position: relative;
+  overflow: hidden;
 }
 
-.av-description .av-item.active {
-  display: block;
+.av-description .av-item.active,
+.av-videos .av-item.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
 }
 
 /* VIDEO */
