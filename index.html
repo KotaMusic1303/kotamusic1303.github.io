@@ -709,6 +709,63 @@ document.querySelectorAll(".style-icon").forEach(icon => {
   }
 });
 </script>
+
+  <script>
+// =========================
+// 🎬 ANIMACIÓN SLIDE AUDIOVISUAL (NO ROMPE NADA)
+// =========================
+
+const avItemsText = document.querySelectorAll(".av-description .av-item");
+const avItemsVideo = document.querySelectorAll(".av-videos .av-item");
+
+function animateAV(direction, newIndex) {
+
+  const currentText = document.querySelector(".av-description .av-item.active");
+  const currentVideo = document.querySelector(".av-videos .av-item.active");
+
+  // clases según dirección
+  const outClass = direction === "next" ? "slide-out-left" : "slide-out-right";
+  const inClass  = direction === "next" ? "slide-in-right" : "slide-in-left";
+
+  // animar salida
+  currentText.classList.add(outClass);
+  currentVideo.classList.add(outClass);
+
+  setTimeout(() => {
+
+    // limpiar clases y cambiar contenido
+    currentText.classList.remove("active", outClass);
+    currentVideo.classList.remove("active", outClass);
+
+    avItemsText[newIndex].classList.add("active", inClass);
+    avItemsVideo[newIndex].classList.add("active", inClass);
+
+    // limpiar animación de entrada
+    setTimeout(() => {
+      avItemsText[newIndex].classList.remove(inClass);
+      avItemsVideo[newIndex].classList.remove(inClass);
+    }, 400);
+
+  }, 400);
+}
+
+
+// =========================
+// REEMPLAZAR SOLO EL CAMBIO DE INDEX
+// =========================
+
+avNext.addEventListener("click", () => {
+  const newIndex = (avIndex + 1) % avItemsText.length;
+  animateAV("next", newIndex);
+  avIndex = newIndex;
+});
+
+avPrev.addEventListener("click", () => {
+  const newIndex = (avIndex - 1 + avItemsText.length) % avItemsText.length;
+  animateAV("prev", newIndex);
+  avIndex = newIndex;
+});
+</script>
   
 </body>
 </html>
