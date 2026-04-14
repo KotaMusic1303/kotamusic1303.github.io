@@ -586,7 +586,6 @@ audio, video {
   position: relative;
   z-index: 2;
 }
-}
 
 .progress {
   width: 0%;
