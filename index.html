@@ -565,16 +565,57 @@ function updateAV(index) {
   avVideoItems[index].classList.add("active");
 }
 
+// =========================
+// NAVEGACIÓN CON ANIMACIÓN (FIX REAL)
+// =========================
+
+function animateAV(direction, newIndex) {
+
+  const currentText = document.querySelector(".av-description .av-item.active");
+  const currentVideo = document.querySelector(".av-videos .av-item.active");
+
+  const nextText = avTextItems[newIndex];
+  const nextVideo = avVideoItems[newIndex];
+
+  const outClass = direction === "next" ? "slide-out-left" : "slide-out-right";
+  const inClass  = direction === "next" ? "slide-in-right" : "slide-in-left";
+
+  // preparar el siguiente (visible pero fuera de pantalla)
+  nextText.classList.add("active", inClass);
+  nextVideo.classList.add("active", inClass);
+
+  // forzar reflow (CLAVE para que anime bien)
+  nextText.offsetHeight;
+
+  // animar salida
+  currentText.classList.add(outClass);
+  currentVideo.classList.add(outClass);
+
+  // después de animación
+  setTimeout(() => {
+
+    currentText.classList.remove("active", outClass);
+    currentVideo.classList.remove("active", outClass);
+
+    nextText.classList.remove(inClass);
+    nextVideo.classList.remove(inClass);
+
+  }, 400);
+}
+
+
 // NEXT
 avNext.addEventListener("click", () => {
-  avIndex = (avIndex + 1) % avTextItems.length;
-  updateAV(avIndex);
+  const newIndex = (avIndex + 1) % avTextItems.length;
+  animateAV("next", newIndex);
+  avIndex = newIndex;
 });
 
 // PREV
 avPrev.addEventListener("click", () => {
-  avIndex = (avIndex - 1 + avTextItems.length) % avTextItems.length;
-  updateAV(avIndex);
+  const newIndex = (avIndex - 1 + avTextItems.length) % avTextItems.length;
+  animateAV("prev", newIndex);
+  avIndex = newIndex;
 });
 </script>
 
