@@ -750,6 +750,63 @@ document.querySelectorAll(".style-icon").forEach(icon => {
   }
 });
 </script>
+
+  <script>
+  const avPrev = document.getElementById("av-prev");
+const avNext = document.getElementById("av-next");
+
+const avTextItems = document.querySelectorAll(".av-description .av-item");
+const avVideoItems = document.querySelectorAll(".av-videos .av-item");
+
+let avIndex = 0;
+
+function animateAV(direction, newIndex) {
+
+  const currentText = avTextItems[avIndex];
+  const currentVideo = avVideoItems[avIndex];
+
+  const nextText = avTextItems[newIndex];
+  const nextVideo = avVideoItems[newIndex];
+
+  const outClass = direction === "next" ? "slide-out-left" : "slide-out-right";
+  const inClass  = direction === "next" ? "slide-in-right" : "slide-in-left";
+
+  // preparar siguiente
+  nextText.classList.add("active", inClass);
+  nextVideo.classList.add("active", inClass);
+
+  // forzar animación
+  nextText.offsetHeight;
+
+  // salida actual
+  currentText.classList.add(outClass);
+  currentVideo.classList.add(outClass);
+
+  setTimeout(() => {
+
+    currentText.classList.remove("active", outClass);
+    currentVideo.classList.remove("active", outClass);
+
+    nextText.classList.remove(inClass);
+    nextVideo.classList.remove(inClass);
+
+  }, 400);
+}
+
+// NEXT
+avNext.addEventListener("click", () => {
+  const newIndex = (avIndex + 1) % avTextItems.length;
+  animateAV("next", newIndex);
+  avIndex = newIndex;
+});
+
+// PREV
+avPrev.addEventListener("click", () => {
+  const newIndex = (avIndex - 1 + avTextItems.length) % avTextItems.length;
+  animateAV("prev", newIndex);
+  avIndex = newIndex;
+});
+  </script>
   
 </body>
 </html>
