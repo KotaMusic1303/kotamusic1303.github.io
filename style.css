@@ -842,23 +842,12 @@ audio, video {
 /* ITEMS */
 .av-description .av-item,
 .av-videos .av-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  opacity: 0;
-  transform: translateX(0);
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  pointer-events: none;
+  display: none;
 }
 
-/* ACTIVO */
 .av-description .av-item.active,
 .av-videos .av-item.active {
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 2;
+  display: block;
 }
 
 /* ENTRADA */
@@ -963,11 +952,6 @@ audio, video {
 
 .av-item {
   transition: transform 0.35s ease, opacity 0.35s ease;
-}
-
-.av-item {
-  opacity: 1 !important;
-  position: relative !important;
 }
 
 .slide-out-left {
