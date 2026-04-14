@@ -933,3 +933,49 @@ audio, video {
 .av-videos {
   margin-left: clamp(80px, 10vw, 180px);
 }
+
+/* =========================
+   ANIMACIONES SLIDE AV
+========================= */
+
+.av-item {
+  transition: all 0.4s ease;
+}
+
+/* SALIDA */
+.slide-out-left {
+  transform: translateX(-60px);
+  opacity: 0;
+}
+
+.slide-out-right {
+  transform: translateX(60px);
+  opacity: 0;
+}
+
+/* ENTRADA */
+.slide-in-right {
+  transform: translateX(60px);
+  opacity: 0;
+  animation: slideInRight 0.4s forwards;
+}
+
+.slide-in-left {
+  transform: translateX(-60px);
+  opacity: 0;
+  animation: slideInLeft 0.4s forwards;
+}
+
+@keyframes slideInRight {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
