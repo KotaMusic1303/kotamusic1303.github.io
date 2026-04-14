@@ -242,6 +242,7 @@
   src="https://www.youtube.com/embed/IKd4sK00Bu4?enablejsapi=1" 
   allow="autoplay; encrypted-media"
   allowfullscreen>
+</iframe>
       </div>
 
       <div class="av-item">
@@ -540,82 +541,6 @@ document.getElementById("av-next").addEventListener("click", () => {
 
 document.getElementById("av-prev").addEventListener("click", () => {
   setTimeout(pauseAllYouTubeVideos, 100);
-});
-</script>
-
-  <script>
-// =========================
-// NAVEGACIÓN AUDIOVISUAL (FIX COMPLETO)
-// =========================
-
-const avPrev = document.getElementById("av-prev");
-const avNext = document.getElementById("av-next");
-
-const avTextItems = document.querySelectorAll(".av-description .av-item");
-const avVideoItems = document.querySelectorAll(".av-videos .av-item");
-
-let avIndex = 0;
-
-function updateAV(index) {
-
-  avTextItems.forEach(el => el.classList.remove("active"));
-  avVideoItems.forEach(el => el.classList.remove("active"));
-
-  avTextItems[index].classList.add("active");
-  avVideoItems[index].classList.add("active");
-}
-
-// =========================
-// NAVEGACIÓN CON ANIMACIÓN (FIX REAL)
-// =========================
-
-function animateAV(direction, newIndex) {
-
-  const currentText = document.querySelector(".av-description .av-item.active");
-  const currentVideo = document.querySelector(".av-videos .av-item.active");
-
-  const nextText = avTextItems[newIndex];
-  const nextVideo = avVideoItems[newIndex];
-
-  const outClass = direction === "next" ? "slide-out-left" : "slide-out-right";
-  const inClass  = direction === "next" ? "slide-in-right" : "slide-in-left";
-
-  // preparar el siguiente (visible pero fuera de pantalla)
-  nextText.classList.add("active", inClass);
-  nextVideo.classList.add("active", inClass);
-
-  // forzar reflow (CLAVE para que anime bien)
-  nextText.offsetHeight;
-
-  // animar salida
-  currentText.classList.add(outClass);
-  currentVideo.classList.add(outClass);
-
-  // después de animación
-  setTimeout(() => {
-
-    currentText.classList.remove("active", outClass);
-    currentVideo.classList.remove("active", outClass);
-
-    nextText.classList.remove(inClass);
-    nextVideo.classList.remove(inClass);
-
-  }, 400);
-}
-
-
-// NEXT
-avNext.addEventListener("click", () => {
-  const newIndex = (avIndex + 1) % avTextItems.length;
-  animateAV("next", newIndex);
-  avIndex = newIndex;
-});
-
-// PREV
-avPrev.addEventListener("click", () => {
-  const newIndex = (avIndex - 1 + avTextItems.length) % avTextItems.length;
-  animateAV("prev", newIndex);
-  avIndex = newIndex;
 });
 </script>
 
