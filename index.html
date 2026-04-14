@@ -751,58 +751,62 @@ document.querySelectorAll(".style-icon").forEach(icon => {
 });
 </script>
 
-  <script>
+ <script> 
+ // =========================
+// ANIMACIÓN AV (SIN ROMPER LAYOUT)
 // =========================
-// 🎬 ANIMACIÓN SLIDE AUDIOVISUAL (NO ROMPE NADA)
-// =========================
-
-const avItemsText = document.querySelectorAll(".av-description .av-item");
-const avItemsVideo = document.querySelectorAll(".av-videos .av-item");
 
 function animateAV(direction, newIndex) {
 
   const currentText = document.querySelector(".av-description .av-item.active");
   const currentVideo = document.querySelector(".av-videos .av-item.active");
 
-  // clases según dirección
+  const nextText = avTextItems[newIndex];
+  const nextVideo = avVideoItems[newIndex];
+
   const outClass = direction === "next" ? "slide-out-left" : "slide-out-right";
   const inClass  = direction === "next" ? "slide-in-right" : "slide-in-left";
 
-  // animar salida
+  // 1. animar salida
   currentText.classList.add(outClass);
   currentVideo.classList.add(outClass);
 
   setTimeout(() => {
 
-    // limpiar clases y cambiar contenido
+    // 2. ocultar actual
     currentText.classList.remove("active", outClass);
     currentVideo.classList.remove("active", outClass);
 
-    avItemsText[newIndex].classList.add("active", inClass);
-    avItemsVideo[newIndex].classList.add("active", inClass);
+    // 3. preparar siguiente
+    nextText.classList.add("active", inClass);
+    nextVideo.classList.add("active", inClass);
 
-    // limpiar animación de entrada
+    // forzar reflow
+    nextText.offsetHeight;
+
+    // 4. animar entrada
+    nextText.classList.add("slide-reset");
+    nextVideo.classList.add("slide-reset");
+
     setTimeout(() => {
-      avItemsText[newIndex].classList.remove(inClass);
-      avItemsVideo[newIndex].classList.remove(inClass);
-    }, 400);
+      nextText.classList.remove(inClass, "slide-reset");
+      nextVideo.classList.remove(inClass, "slide-reset");
+    }, 350);
 
-  }, 400);
+  }, 350);
 }
 
 
-// =========================
-// REEMPLAZAR SOLO EL CAMBIO DE INDEX
-// =========================
-
+// NEXT
 avNext.addEventListener("click", () => {
-  const newIndex = (avIndex + 1) % avItemsText.length;
+  const newIndex = (avIndex + 1) % avTextItems.length;
   animateAV("next", newIndex);
   avIndex = newIndex;
 });
 
+// PREV
 avPrev.addEventListener("click", () => {
-  const newIndex = (avIndex - 1 + avItemsText.length) % avItemsText.length;
+  const newIndex = (avIndex - 1 + avTextItems.length) % avTextItems.length;
   animateAV("prev", newIndex);
   avIndex = newIndex;
 });
