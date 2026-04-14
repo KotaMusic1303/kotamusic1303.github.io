@@ -965,6 +965,11 @@ audio, video {
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
+.av-item {
+  opacity: 1 !important;
+  position: relative !important;
+}
+
 .slide-out-left {
   transform: translateX(-80px);
   opacity: 0;
