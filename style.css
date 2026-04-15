@@ -611,7 +611,6 @@ audio, video {
     flex-direction: column;
     justify-content: flex-end;  /* agregar */
   }
-  }
   .av-slide-video {
     width: 100%;
   }
