@@ -418,7 +418,6 @@ body {
   gap: 12px;
   width: 100%;
   margin-left: 60px;
-  margin-top: -20px;
   position: relative;   /* agregar */
   z-index: 10;          /* agregar */
 }
