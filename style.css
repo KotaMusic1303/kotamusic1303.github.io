@@ -609,6 +609,8 @@ audio, video {
   .av-slide {
     padding: 0 8px;
     flex-direction: column;
+    justify-content: flex-end;  /* agregar */
+  }
   }
   .av-slide-video {
     width: 100%;
