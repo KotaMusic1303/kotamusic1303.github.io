@@ -456,6 +456,7 @@ body {
 /* contenedor con overflow oculto */
 .av-track-wrapper {
   overflow: hidden;
+  overflow-y: visible;
   width: 100%;
 }
 
