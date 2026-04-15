@@ -120,7 +120,7 @@ body {
 .audiovisual-section h2 {
   font-size: 2.5em;
   color: #a855f7;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
   text-shadow: 0 0 10px rgba(168,85,247,0.4);
 }
 
@@ -397,7 +397,6 @@ body {
   gap: 20px;
   padding: 0 clamp(10px, 3vw, 40px) 0 0;
   align-items: flex-start;  /* agregar si no está */
-  margin-top: -20px;        /* mover el margin aquí en lugar de av-slide-media */
 }
 
 /* Texto con el mismo padding-left que el h2 del título */
@@ -419,6 +418,9 @@ body {
   gap: 12px;
   width: 100%;
   margin-left: 60px;
+  margin-top: -20px;
+  position: relative;   /* agregar */
+  z-index: 10;          /* agregar */
 }
 
 /* flechas + contador — siempre sobre el video */
@@ -456,9 +458,9 @@ body {
 
 /* contenedor con overflow oculto */
 .av-track-wrapper {
-  overflow: hidden;
-  overflow-y: visible;
-  width: 100%;
+    width: 100%;
+    overflow-x: hidden;   /* reemplaza "overflow: hidden" */
+    overflow-y: visible;  /* reemplaza "overflow-y: visible" — aunque ya estaba, asegúrate que quede así */
 }
 
 /* track que se desplaza */
