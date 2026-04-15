@@ -2,20 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KotaMusic | Audio Engineer</title>
-
-  <!-- ICONOS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- FUENTE -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div id="global-volume">
+<!-- VOLUMEN GLOBAL -->
+<div id="global-volume">
   <input type="range" id="globalVolume" min="0" max="1" step="0.01" value="1">
 </div>
 
@@ -35,24 +32,19 @@
 <!-- ================= VG ================= -->
 <section class="section vg-section">
   <h2>Videogame Music</h2>
-
   <div class="vg-container">
     <div class="vg-image" onclick="swapImages()">
-      <img id="img1" src="images/Chilly Fox.png" class="active">
-      <img id="img2" src="images/MMXII.png">
+      <img id="img1" src="images/Chilly Fox.png" class="active" alt="Chilly Fox">
+      <img id="img2" src="images/MMXII.png" alt="MMXII">
     </div>
-
     <div class="vg-audio">
       <audio controls src="Audio/MMXII1.mp3"></audio>
       <audio controls src="Audio/MMXII2.mp3"></audio>
       <audio controls src="Audio/MMXII3.mp3"></audio>
     </div>
-
     <div class="vg-text">
-      <p>
-        Videogame focused compositions, combining narrative context and immersion.
-        These samples are trying to emulate the 8bit era, with a touch of modern processing.
-      </p>
+      <p>Videogame focused compositions, combining narrative context and immersion.
+      These samples are trying to emulate the 8bit era, with a touch of modern processing.</p>
     </div>
   </div>
 </section>
@@ -62,21 +54,17 @@
 <!-- ================= MOOD ================= -->
 <section class="styles-section">
   <h2>Pick Your Mood</h2>
-
   <p class="styles-description">
     As we already know, context is everything!
     Give it a try and choose the tone for your project
   </p>
-
   <div class="styles-icons">
     <div class="style-icon" data-audio="Audio/miedo.mp3">
       <i class="fas fa-ghost"></i><p>Scary</p>
     </div>
-
     <div class="style-icon" data-audio="Audio/calma.mp3">
       <i class="fas fa-water"></i><p>Soothing</p>
     </div>
-
     <div class="style-icon" data-audio="Audio/alegria.mp3">
       <i class="fas fa-music"></i><p>Joyful</p>
     </div>
@@ -88,16 +76,13 @@
 <!-- ================= VARIETY ================= -->
 <section class="section variety-section">
   <h2>Variety</h2>
-
   <div class="variety-container">
     <div class="variety-text">
       <p>Explora esta selección de canciones con estilos variados.</p>
     </div>
-
     <div class="variety-player">
       <div class="song-list">
 
-        <!-- DUPLICA ESTE BLOQUE PARA TODAS TUS CANCIONES -->
         <div class="song-item">
           <div class="song-info">
             <i class="fas fa-play-circle"></i>
@@ -163,575 +148,317 @@
   </div>
 </section>
 
-  <div class="section-combo"></div>
+<div class="section-combo"></div>
+<div class="section-combo"></div>
 
-  <div class="section-combo"></div>
-
+<!-- ================= AUDIOVISUAL ================= -->
 <section class="section audiovisual-section">
   <h2>Audiovisual</h2>
 
-  <!-- FLECHAS -->
+  <!-- FLECHAS + CONTADOR -->
   <div class="av-controls">
     <i class="fas fa-chevron-left" id="av-prev"></i>
+    <span class="av-counter"><span id="av-current">1</span> / <span id="av-total">8</span></span>
     <i class="fas fa-chevron-right" id="av-next"></i>
   </div>
 
-  <div class="av-container">
+  <!-- TRACK DE SCROLL HORIZONTAL -->
+  <div class="av-track-wrapper">
+    <div class="av-track" id="av-track">
 
-    <!-- TEXTO (IZQUIERDA) -->
-    <div class="av-description">
-
-      <div class="av-item active">
-        <p>
-          Descripción del video 1. Puedes hablar del diseño sonoro,
-          intención narrativa o técnicas usadas.
-        </p>
+      <div class="av-slide">
+        <div class="av-slide-text">
+          <p>Descripción del video 1. Puedes hablar del diseño sonoro, intención narrativa o técnicas usadas.</p>
+        </div>
+        <div class="av-slide-video">
+          <iframe src="https://www.youtube.com/embed/iSdMBckIgC4?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
       </div>
 
-      <div class="av-item">
-        <p>Descripción del video 2</p>
+      <div class="av-slide">
+        <div class="av-slide-text">
+          <p>Descripción del video 2.</p>
+        </div>
+        <div class="av-slide-video">
+          <iframe src="https://www.youtube.com/embed/gVegRvNlzQE?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
       </div>
 
-      <div class="av-item">
-        <p>Descripción del video 3</p>
+      <div class="av-slide">
+        <div class="av-slide-text">
+          <p>Descripción del video 3.</p>
+        </div>
+        <div class="av-slide-video">
+          <iframe src="https://www.youtube.com/embed/IKd4sK00Bu4?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
       </div>
 
-      <div class="av-item">
-        <p>Descripción del video 4</p>
+      <div class="av-slide">
+        <div class="av-slide-text"><p>Descripción del video 4.</p></div>
+        <div class="av-slide-video">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
+        </div>
       </div>
 
-      <div class="av-item">
-        <p>Descripción del video 5</p>
+      <div class="av-slide">
+        <div class="av-slide-text"><p>Descripción del video 5.</p></div>
+        <div class="av-slide-video">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" allowfullscreen></iframe>
+        </div>
       </div>
 
-      <div class="av-item">
-        <p>Descripción del video 6</p>
+      <div class="av-slide">
+        <div class="av-slide-text"><p>Descripción del video 6.</p></div>
+        <div class="av-slide-video">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" allowfullscreen></iframe>
+        </div>
       </div>
 
-      <div class="av-item">
-        <p>Descripción del video 7</p>
+      <div class="av-slide">
+        <div class="av-slide-text"><p>Descripción del video 7.</p></div>
+        <div class="av-slide-video">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_7" allowfullscreen></iframe>
+        </div>
       </div>
 
-      <div class="av-item">
-        <p>Descripción del video 8</p>
-      </div>
-
-    </div>
-
-    <!-- VIDEOS (DERECHA) -->
-    <div class="av-videos">
-
-      <div class="av-item active">
-        <iframe 
-  src="https://www.youtube.com/embed/iSdMBckIgC4?enablejsapi=1" 
-  allow="autoplay; encrypted-media"
-  allowfullscreen>
-</iframe>
-      </div>
-
-      <div class="av-item">
-       <iframe 
-  src="https://www.youtube.com/embed/gVegRvNlzQE?enablejsapi=1" 
-  allow="autoplay; encrypted-media"
-  allowfullscreen>
-</iframe>
-      </div>
-
-      <div class="av-item">
-        <iframe 
-  src="https://www.youtube.com/embed/IKd4sK00Bu4?enablejsapi=1" 
-  allow="autoplay; encrypted-media"
-  allowfullscreen>
-</iframe>
-      </div>
-
-      <div class="av-item">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
-      </div>
-
-      <div class="av-item">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" allowfullscreen></iframe>
-      </div>
-
-      <div class="av-item">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" allowfullscreen></iframe>
-      </div>
-
-      <div class="av-item">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_7" allowfullscreen></iframe>
-      </div>
-
-      <div class="av-item">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_8" allowfullscreen></iframe>
+      <div class="av-slide">
+        <div class="av-slide-text"><p>Descripción del video 8.</p></div>
+        <div class="av-slide-video">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_8" allowfullscreen></iframe>
+        </div>
       </div>
 
     </div>
-
   </div>
+
 </section>
 
-<!-- ================= BOTON ================= -->
-<button id="back-to-top">
+<!-- ================= BOTÓN TOP ================= -->
+<button id="back-to-top" aria-label="Volver al inicio">
   <i class="fas fa-step-backward"></i>
 </button>
 
-<!-- ================= SCRIPTS ================= -->
+<!-- ================= SCRIPT ÚNICO ================= -->
 <script>
+(function () {
 
-let currentAudio = null;
+  // ─── Estado global ───────────────────────────────
+  let currentAudio = null;
 
-function resetVarietyUI() {
-  document.querySelectorAll(".song-item").forEach(item => {
-    item.classList.remove("active");
-    item.querySelector("i").className = "fas fa-play-circle";
-  });
-}
-
-function resetMoodIcons() {
-  document.querySelectorAll(".style-icon").forEach(i => i.classList.remove("active"));
-}
-
-// IMAGENES
-const img1 = document.getElementById("img1");
-const img2 = document.getElementById("img2");
-function swapImages() {
-  img1.classList.toggle("active");
-  img2.classList.toggle("active");
-}
-setInterval(swapImages, 7000);
-
-// VG
-document.querySelectorAll(".vg-audio audio").forEach(audio => {
-  audio.addEventListener("play", () => {
-    if (currentAudio && currentAudio !== audio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-    }
-    resetVarietyUI();
-    resetMoodIcons();
-    currentAudio = audio;
-  });
-});
-
-// MOOD
-document.querySelectorAll(".style-icon").forEach(icon => {
-  const audio = new Audio(icon.dataset.audio);
-  audio.loop = true;
-  icon.audioRef = audio;
-
-  icon.addEventListener("click", () => {
-    if (currentAudio && currentAudio !== audio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-    }
-
-    resetVarietyUI();
-
-    if (audio.paused) {
-      audio.play();
-      resetMoodIcons();
-      icon.classList.add("active");
-    } else {
-      audio.pause();
-      icon.classList.remove("active");
-    }
-
-    currentAudio = audio;
-  });
-});
-
-// VARIETY
-document.querySelectorAll(".song-item").forEach(item => {
-  const audio = item.querySelector("audio");
-  const icon = item.querySelector("i");
-
-  item.addEventListener("click", () => {
-
-    if (currentAudio && currentAudio !== audio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-    }
-
-    resetVarietyUI();
-    resetMoodIcons();
-
-    if (audio.paused) {
-      audio.play();
-      item.classList.add("active");
-      icon.className = "fas fa-pause-circle";
-    } else {
-      audio.pause();
+  // ─── Utilidades reset UI ─────────────────────────
+  function resetVarietyUI() {
+    document.querySelectorAll(".song-item").forEach(item => {
       item.classList.remove("active");
-      icon.className = "fas fa-play-circle";
-    }
-
-    currentAudio = audio;
-  });
-});
-
-// BOTON TOP
-const btn = document.getElementById("back-to-top");
-window.addEventListener("scroll", () => {
-  btn.classList.toggle("show", window.scrollY > 300);
-});
-btn.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
-
-</script>
-
-  <script>
-// ===========================
-// FIX GLOBAL SIN ROMPER NADA
-// ===========================
-
-// reset visual de variety
-function forceResetVariety() {
-  document.querySelectorAll(".song-item").forEach(item => {
-    item.classList.remove("active");
-    const icon = item.querySelector("i");
-    if (icon) icon.className = "fas fa-play-circle";
-  });
-}
-
-// reset visual de mood
-function forceResetMood() {
-  document.querySelectorAll(".style-icon").forEach(icon => {
-    icon.classList.remove("active");
-  });
-}
-
-// detectar cualquier audio HTML
-document.querySelectorAll("audio").forEach(audio => {
-  audio.addEventListener("play", () => {
-
-    // si NO es de variety → resetear variety
-    if (!audio.closest(".song-item")) {
-      forceResetVariety();
-    }
-
-    // si NO es de mood → resetear mood
-    if (!audio.closest(".style-icon")) {
-      forceResetMood();
-    }
-  });
-});
-
-// detectar audios de Pick Your Mood (new Audio)
-document.querySelectorAll(".style-icon").forEach(icon => {
-
-  if (!icon.audioRef) return;
-
-  icon.audioRef.addEventListener("play", () => {
-    forceResetVariety();
-  });
-
-});
-</script>
-
-  <script>
-// =========================
-// VOLUMEN GLOBAL REAL
-// =========================
-
-const volumeSlider = document.getElementById("globalVolume");
-
-// aplicar volumen a TODO
-function applyGlobalVolume(value) {
-
-  // audios HTML
-  document.querySelectorAll("audio").forEach(a => {
-    a.volume = value;
-  });
-
-  // audios de Pick Your Mood (new Audio)
-  document.querySelectorAll(".style-icon").forEach(icon => {
-    if (icon.audioRef) {
-      icon.audioRef.volume = value;
-    }
-  });
-}
-
-// actualizar en tiempo real
-volumeSlider.addEventListener("input", () => {
-  applyGlobalVolume(volumeSlider.value);
-});
-
-// 🔥 clave: cada vez que un audio nuevo se reproduce
-document.addEventListener("play", (e) => {
-  if (e.target.tagName === "AUDIO") {
-    e.target.volume = volumeSlider.value;
+      const icon = item.querySelector("i");
+      if (icon) icon.className = "fas fa-play-circle";
+    });
   }
-}, true);
 
-// 🔥 clave para Pick Your Mood
-document.querySelectorAll(".style-icon").forEach(icon => {
-  if (icon.audioRef) {
-    icon.audioRef.volume = volumeSlider.value;
+  function resetMoodIcons() {
+    document.querySelectorAll(".style-icon").forEach(i => i.classList.remove("active"));
   }
-});
 
-// volumen inicial
-applyGlobalVolume(volumeSlider.value);
-</script>
+  function pauseAllAudios() {
+    document.querySelectorAll("audio").forEach(a => { a.pause(); a.currentTime = 0; });
+    document.querySelectorAll(".style-icon").forEach(icon => {
+      if (icon.audioRef) { icon.audioRef.pause(); icon.audioRef.currentTime = 0; }
+    });
+    resetVarietyUI();
+    resetMoodIcons();
+  }
 
-  <script>
-// =========================
-// FIX TIMER + SEEK VARIETY
-// =========================
+  function pauseAllYouTube() {
+    document.querySelectorAll(".av-slide-video iframe").forEach(frame => {
+      frame.contentWindow.postMessage(
+        JSON.stringify({ event: "command", func: "pauseVideo", args: [] }), "*"
+      );
+    });
+  }
 
-document.querySelectorAll(".song-item").forEach(item => {
-  const audio = item.querySelector("audio");
-  const progress = item.querySelector(".progress");
-  const bar = item.querySelector(".progress-bar");
-  const current = item.querySelector(".current");
-  const duration = item.querySelector(".duration");
-
-  if (!audio) return;
-
-  const formatTime = (time) => {
-    if (isNaN(time)) return "0:00";
-    const min = Math.floor(time / 60);
-    const sec = Math.floor(time % 60).toString().padStart(2, "0");
-    return `${min}:${sec}`;
+  // ─── Imágenes VG (auto-swap) ─────────────────────
+  const img1 = document.getElementById("img1");
+  const img2 = document.getElementById("img2");
+  window.swapImages = function () {
+    img1.classList.toggle("active");
+    img2.classList.toggle("active");
   };
+  setInterval(swapImages, 7000);
 
-  // duración
-  audio.addEventListener("loadedmetadata", () => {
-    duration.textContent = formatTime(audio.duration);
+  // ─── VG audios ───────────────────────────────────
+  document.querySelectorAll(".vg-audio audio").forEach(audio => {
+    audio.addEventListener("play", () => {
+      if (currentAudio && currentAudio !== audio) {
+        currentAudio.pause(); currentAudio.currentTime = 0;
+      }
+      resetVarietyUI();
+      resetMoodIcons();
+      pauseAllYouTube();
+      currentAudio = audio;
+    });
   });
 
-  // progreso + tiempo actual
-  audio.addEventListener("timeupdate", () => {
-    if (audio.duration) {
-      const percent = (audio.currentTime / audio.duration) * 100;
-      progress.style.width = percent + "%";
-      current.textContent = formatTime(audio.currentTime);
-    }
-  });
-
-  // click en barra (seek)
-  bar.addEventListener("click", (e) => {
-    e.stopPropagation();
-
-    const rect = bar.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const width = rect.width;
-
-    if (audio.duration) {
-      audio.currentTime = (clickX / width) * audio.duration;
-    }
-  });
-
-  // reset al terminar
-  audio.addEventListener("ended", () => {
-    progress.style.width = "0%";
-    current.textContent = "0:00";
-  });
-});
-</script>
-
-  <script>
-// =========================
-// PAUSA YOUTUBE DESPUÉS DEL CAMBIO
-// =========================
-
-// enganchar sin bloquear la navegación
-document.getElementById("av-next").addEventListener("click", () => {
-  setTimeout(pauseAllYouTubeVideos, 100); // 👈 después del cambio
-});
-
-document.getElementById("av-prev").addEventListener("click", () => {
-  setTimeout(pauseAllYouTubeVideos, 100);
-});
-</script>
-
-  <script>
-// 🔴 FUNCIÓN QUE FALTABA
-function pauseAllAudios() {
-
-  // audios HTML
-  document.querySelectorAll("audio").forEach(a => {
-    a.pause();
-    a.currentTime = 0;
-  });
-
-  // audios de Pick Your Mood
+  // ─── Pick Your Mood ──────────────────────────────
   document.querySelectorAll(".style-icon").forEach(icon => {
-    if (icon.audioRef) {
-      icon.audioRef.pause();
-      icon.audioRef.currentTime = 0;
+    const audio = new Audio(icon.dataset.audio);
+    audio.loop = true;
+    icon.audioRef = audio;
+
+    audio.addEventListener("play", () => {
+      resetVarietyUI();
+      pauseAllYouTube();
+    });
+
+    icon.addEventListener("click", () => {
+      if (currentAudio && currentAudio !== audio) {
+        currentAudio.pause(); currentAudio.currentTime = 0;
+      }
+      resetVarietyUI();
+
+      if (audio.paused) {
+        audio.play();
+        resetMoodIcons();
+        icon.classList.add("active");
+      } else {
+        audio.pause();
+        icon.classList.remove("active");
+      }
+      currentAudio = audio;
+    });
+  });
+
+  // ─── Variety ─────────────────────────────────────
+  document.querySelectorAll(".song-item").forEach(item => {
+    const audio   = item.querySelector("audio");
+    const icon    = item.querySelector("i");
+    const progress = item.querySelector(".progress");
+    const bar     = item.querySelector(".progress-bar");
+    const currentEl  = item.querySelector(".current");
+    const durationEl = item.querySelector(".duration");
+
+    if (!audio) return;
+
+    const fmt = t => isNaN(t) ? "0:00"
+      : `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, "0")}`;
+
+    audio.addEventListener("loadedmetadata", () => {
+      durationEl.textContent = fmt(audio.duration);
+    });
+
+    audio.addEventListener("timeupdate", () => {
+      if (audio.duration) {
+        progress.style.width = (audio.currentTime / audio.duration * 100) + "%";
+        currentEl.textContent = fmt(audio.currentTime);
+      }
+    });
+
+    audio.addEventListener("ended", () => {
+      progress.style.width = "0%";
+      currentEl.textContent = "0:00";
+    });
+
+    bar.addEventListener("click", e => {
+      e.stopPropagation();
+      const rect = bar.getBoundingClientRect();
+      if (audio.duration) audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+    });
+
+    item.addEventListener("click", () => {
+      if (currentAudio && currentAudio !== audio) {
+        currentAudio.pause(); currentAudio.currentTime = 0;
+      }
+      resetVarietyUI();
+      resetMoodIcons();
+
+      if (audio.paused) {
+        audio.play();
+        item.classList.add("active");
+        icon.className = "fas fa-pause-circle";
+        pauseAllYouTube();
+      } else {
+        audio.pause();
+        item.classList.remove("active");
+        icon.className = "fas fa-play-circle";
+      }
+      currentAudio = audio;
+    });
+  });
+
+  // ─── Volumen global ──────────────────────────────
+  const volSlider = document.getElementById("globalVolume");
+
+  function applyVolume(v) {
+    document.querySelectorAll("audio").forEach(a => a.volume = v);
+    document.querySelectorAll(".style-icon").forEach(icon => {
+      if (icon.audioRef) icon.audioRef.volume = v;
+    });
+  }
+
+  volSlider.addEventListener("input", () => applyVolume(volSlider.value));
+
+  document.addEventListener("play", e => {
+    if (e.target.tagName === "AUDIO") e.target.volume = volSlider.value;
+  }, true);
+
+  applyVolume(volSlider.value);
+
+  // ─── Botón volver arriba ─────────────────────────
+  const btnTop = document.getElementById("back-to-top");
+  window.addEventListener("scroll", () => {
+    btnTop.classList.toggle("show", window.scrollY > 300);
+  });
+  btnTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  // ─── YouTube: escuchar estado ────────────────────
+  window.addEventListener("message", event => {
+    let data;
+    try { data = JSON.parse(event.data); } catch { return; }
+    if (data.event === "onStateChange" && data.info === 1) {
+      pauseAllAudios();
     }
   });
 
-  // reset UI
-  if (typeof resetVarietyUI === "function") resetVarietyUI();
-  if (typeof resetMoodIcons === "function") resetMoodIcons();
-}
-</script>
-
-  <script>
-// =========================
-// PAUSA YOUTUBE SIN ROMPER NADA
-// =========================
-function pauseAllYouTubeVideos() {
-  document.querySelectorAll(".av-videos iframe").forEach(frame => {
-    frame.contentWindow.postMessage(JSON.stringify({
-      event: "command",
-      func: "pauseVideo",
-      args: []
-    }), "*");
-  });
-}
-// después del cambio, no antes
-document.getElementById("av-next").addEventListener("click", () => {
-  setTimeout(pauseAllYouTubeVideos, 120);
-});
-
-document.getElementById("av-prev").addEventListener("click", () => {
-  setTimeout(pauseAllYouTubeVideos, 120);
-});
-
-// 🔥 CUANDO CUALQUIER AUDIO SUENE → PAUSAR VIDEOS
-
-document.addEventListener("play", (e) => {
-
-  if (e.target.tagName === "AUDIO") {
-    pauseAllYouTubeVideos();
-  }
-
-}, true);
-
-
-// 🔥 PICK YOUR MOOD (porque usa new Audio)
-
-document.querySelectorAll(".style-icon").forEach(icon => {
-  if (icon.audioRef) {
-    icon.audioRef.addEventListener("play", () => {
-      pauseAllYouTubeVideos();
+  document.querySelectorAll(".av-slide-video iframe").forEach(frame => {
+    frame.addEventListener("load", () => {
+      frame.contentWindow.postMessage(JSON.stringify({ event: "listening" }), "*");
+      frame.contentWindow.postMessage(JSON.stringify({
+        event: "command", func: "addEventListener", args: ["onStateChange"]
+      }), "*");
     });
-  }
-});
-    
-</script>
-
-  <script>
-// =========================
-// 🎬 VIDEO → corta audio (FIX REAL)
-// =========================
-
-// escuchar eventos de YouTube correctamente
-window.addEventListener("message", (event) => {
-
-  let data;
-
-  try {
-    data = JSON.parse(event.data);
-  } catch (e) {
-    return;
-  }
-
-  // cuando el video se reproduce
-  if (data.event === "onStateChange" && data.info === 1) {
-    pauseAllAudios();
-  }
-
-});
-
-// activar escucha en iframes
-document.querySelectorAll(".av-videos iframe").forEach(frame => {
-
-  frame.addEventListener("load", () => {
-
-    frame.contentWindow.postMessage(JSON.stringify({
-      event: "listening"
-    }), "*");
-
-    frame.contentWindow.postMessage(JSON.stringify({
-      event: "command",
-      func: "addEventListener",
-      args: ["onStateChange"]
-    }), "*");
-
   });
 
-});
-    
-// =========================
-// 🎧 AUDIO → corta video (FIX REAL)
-// =========================
+  // ─── Audiovisual: scroll horizontal con flechas ──
+  const track     = document.getElementById("av-track");
+  const slides    = track.querySelectorAll(".av-slide");
+  const btnPrev   = document.getElementById("av-prev");
+  const btnNext   = document.getElementById("av-next");
+  const counterEl = document.getElementById("av-current");
+  const totalEl   = document.getElementById("av-total");
 
-// HTML5 audios (VG + Variety)
-document.addEventListener("play", (e) => {
-  if (e.target.tagName === "AUDIO") {
-    pauseAllYouTubeVideos();
-  }
-}, true);
+  let avIndex = 0;
+  const total = slides.length;
+  totalEl.textContent = total;
 
-// Pick Your Mood (new Audio)
-document.querySelectorAll(".style-icon").forEach(icon => {
-  if (icon.audioRef) {
-    icon.audioRef.addEventListener("play", () => {
-      pauseAllYouTubeVideos();
-    });
+  function goTo(index) {
+    avIndex = (index + total) % total;
+    track.style.transform = `translateX(-${avIndex * 100}%)`;
+    counterEl.textContent = avIndex + 1;
+    // pausar YouTube después de la transición
+    setTimeout(pauseAllYouTube, 400);
   }
-});
+
+  btnNext.addEventListener("click", () => goTo(avIndex + 1));
+  btnPrev.addEventListener("click", () => goTo(avIndex - 1));
+
+  // soporte swipe táctil
+  let touchStartX = 0;
+  track.addEventListener("touchstart", e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener("touchend", e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(diff > 0 ? avIndex + 1 : avIndex - 1);
+  });
+
+})();
 </script>
 
-  <script>
-  const avPrev = document.getElementById("av-prev");
-const avNext = document.getElementById("av-next");
-
-const avTextItems = document.querySelectorAll(".av-description .av-item");
-const avVideoItems = document.querySelectorAll(".av-videos .av-item");
-
-let avIndex = 0;
-
-function animateAV(direction, newIndex) {
-
-  const currentText = avTextItems[avIndex];
-  const currentVideo = avVideoItems[avIndex];
-
-  const nextText = avTextItems[newIndex];
-  const nextVideo = avVideoItems[newIndex];
-
-  const outClass = direction === "next" ? "slide-out-left" : "slide-out-right";
-  const inClass  = direction === "next" ? "slide-in-right" : "slide-in-left";
-
-  // preparar siguiente
-  nextText.classList.add("active", inClass);
-  nextVideo.classList.add("active", inClass);
-
-  // forzar animación
-  nextText.offsetHeight;
-
-  // salida actual
-  currentText.classList.add(outClass);
-  currentVideo.classList.add(outClass);
-
-  setTimeout(() => {
-
-    currentText.classList.remove("active", outClass);
-    currentVideo.classList.remove("active", outClass);
-
-    nextText.classList.remove(inClass);
-    nextVideo.classList.remove(inClass);
-
-  }, 400);
-}
-
-// NEXT
-avNext.addEventListener("click", () => {
-  const newIndex = (avIndex + 1) % avTextItems.length;
-  animateAV("next", newIndex);
-  avIndex = newIndex;
-});
-
-// PREV
-avPrev.addEventListener("click", () => {
-  const newIndex = (avIndex - 1 + avTextItems.length) % avTextItems.length;
-  animateAV("prev", newIndex);
-  avIndex = newIndex;
-});
-  </script>
-  
 </body>
 </html>
