@@ -625,7 +625,11 @@ audio, video {
    .av-slide-text {
   order: 2;   /* agregar: el texto va segundo */
   padding-top: 0;  /* elimina el padding-top que pusimos para desktop */
-}
+  }
+   .av-track {
+    align-items: flex-start;  /* agregar */
+  }
+
 
   /* Volumen global — más pequeño en móvil */
   #globalVolume {
