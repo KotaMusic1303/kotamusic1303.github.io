@@ -583,6 +583,9 @@ audio, video {
 
   /* Mood */
   .styles-icons {
+    flex-direction: row;  /* agregar */
+    flex-wrap: wrap;      /* asegura que el tercero baje al centro */
+    justify-content: center;
     gap: 30px;
   }
   .style-icon {
