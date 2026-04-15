@@ -401,14 +401,13 @@ body {
 
 /* Texto con el mismo padding-left que el h2 del título */
 .av-slide-text {
-  order: 2;   /* agregar: el texto va segundo */
   flex: 1;
   min-width: 200px;
   color: #bbb;
   font-size: 1em;
   line-height: 1.7;
   padding-left: 0px; /* alinea con el borde izq del título (border-left 3px + padding 10px) */
-  padding-top: 0px;   /* agregar: empuja el texto hacia abajo para alinearlo con el video */
+  padding-top: 55px;   /* agregar: empuja el texto hacia abajo para alinearlo con el video */
 }
 
 /* Contenedor media: flechas encima del video, centradas sobre él */
@@ -623,6 +622,10 @@ audio, video {
     margin-top: 0;
     margin-left: 0;
   }
+   .av-slide-text {
+  order: 2;   /* agregar: el texto va segundo */
+  padding-top: 0;  /* elimina el padding-top que pusimos para desktop */
+}
 
   /* Volumen global — más pequeño en móvil */
   #globalVolume {
