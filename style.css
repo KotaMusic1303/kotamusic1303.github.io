@@ -395,7 +395,7 @@ body {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  padding: 0 clamp(10px, 3vw, 40px);
+  padding: 0 clamp(10px, 3vw, 40px) 0 0;
 }
 
 /* Texto con el mismo padding-left que el h2 del título */
@@ -405,7 +405,7 @@ body {
   color: #bbb;
   font-size: 1em;
   line-height: 1.7;
-  padding-left: 13px; /* alinea con el borde izq del título (border-left 3px + padding 10px) */
+  padding-left: 0px; /* alinea con el borde izq del título (border-left 3px + padding 10px) */
 }
 
 /* Contenedor media: flechas encima del video, centradas sobre él */
@@ -413,9 +413,10 @@ body {
   flex: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   width: 100%;
+  margin-top: 0;
 }
 
 /* flechas + contador — siempre sobre el video */
