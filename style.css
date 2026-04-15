@@ -421,6 +421,7 @@ body {
 
 /* flechas + contador — siempre sobre el video */
 .av-controls {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -466,7 +467,7 @@ body {
 
 /* video */
 .av-slide-video {
-  width: clamp(300px, 70vw, 760px);
+  width: 100%;
 }
 
 .av-slide-video iframe {
