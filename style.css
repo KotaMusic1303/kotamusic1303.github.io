@@ -416,7 +416,8 @@ body {
   align-items: flex-start;
   gap: 12px;
   width: 100%;
-  margin-top: -20;
+  margin-top: -20px;
+  margin-left: 20px;
 }
 
 /* flechas + contador — siempre sobre el video */
@@ -426,7 +427,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  margin-left: 20px;
 }
 
 .av-controls i {
