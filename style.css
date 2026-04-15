@@ -282,14 +282,46 @@ body {
   align-items: flex-start;
 }
 
-.variety-text {
+/* Columna izquierda: texto + imagen rotativa */
+.variety-left {
   flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.variety-text {
   color: #bbb;
   font-size: 1em;
 }
 
+/* Imagen rotativa Variety — igual estética que VG */
+.variety-image {
+  position: relative;
+  height: 280px;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.variety-image img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: opacity 2s ease, border-color 0.4s ease, transform 0.3s ease;
+}
+
+.variety-image img.active      { z-index: 2; opacity: 1; border-color: #a855f7; }
+.variety-image img:not(.active){ z-index: 1; opacity: 0; }
+.variety-image img:hover       { transform: scale(1.03); }
+
 .variety-player {
   flex: 1;
+  min-width: 260px;
   max-height: 500px;
   overflow-y: auto;
   background: #121212;
@@ -355,13 +387,38 @@ body {
    AUDIOVISUAL — SLIDER HORIZONTAL
 ========================= */
 
-/* flechas + contador */
+/* El slide ahora apila texto arriba, media (controles + video) abajo */
+.av-slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 clamp(10px, 3vw, 40px);
+}
+
+/* Texto con el mismo padding-left que el h2 del título */
+.av-slide-text {
+  color: #bbb;
+  font-size: 1em;
+  line-height: 1.7;
+  padding-left: 13px; /* alinea con el borde izq del título (border-left 3px + padding 10px) */
+}
+
+/* Contenedor media: flechas encima del video, centradas sobre él */
+.av-slide-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+/* flechas + contador — siempre sobre el video */
 .av-controls {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  margin: 20px 0 40px;
 }
 
 .av-controls i {
@@ -388,7 +445,7 @@ body {
   text-align: center;
 }
 
-/* contenedor con overflow oculto — aquí ocurre el "scroll" */
+/* contenedor con overflow oculto */
 .av-track-wrapper {
   overflow: hidden;
   width: 100%;
@@ -401,30 +458,14 @@ body {
   will-change: transform;
 }
 
-/* cada slide ocupa exactamente el 100% del wrapper */
-.av-slide {
-  min-width: 100%;
-  display: flex;
-  align-items: center;
-  gap: clamp(30px, 5vw, 80px);
-  padding: 0 clamp(10px, 3vw, 40px);
-}
-
-.av-slide-text {
-  flex: 1;
-  color: #bbb;
-  font-size: 1em;
-  line-height: 1.7;
-  min-height: 120px;
-}
-
+/* video */
 .av-slide-video {
-  width: clamp(400px, 45vw, 680px);
+  width: clamp(300px, 70vw, 760px);
 }
 
 .av-slide-video iframe {
   width: 100%;
-  height: clamp(250px, 26vw, 380px);
+  height: clamp(200px, 40vw, 420px);
   border-radius: 12px;
   border: 2px solid transparent;
   transition: border-color 0.3s;
@@ -493,7 +534,7 @@ audio, video {
 #back-to-top.show { opacity: 1; visibility: visible; }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE — MÓVIL
 ========================= */
 @media (max-width: 900px) {
   .vg-container {
@@ -508,8 +549,51 @@ audio, video {
 }
 
 @media (max-width: 768px) {
-  .av-slide {
+
+  /* Hero */
+  .hero h1 {
+    font-size: 2.4em;
+  }
+  .hero h1::before,
+  .hero h1::after {
+    display: none;
+  }
+
+  /* Secciones */
+  .section,
+  .variety-section,
+  .styles-section,
+  .audiovisual-section,
+  .vg-section {
+    padding: 40px 16px;
+  }
+
+  /* Mood */
+  .styles-icons {
+    gap: 30px;
+  }
+  .style-icon {
+    font-size: 3.5em;
+  }
+
+  /* Variety */
+  .variety-container {
     flex-direction: column;
+  }
+  .variety-left {
+    width: 100%;
+  }
+  .variety-image {
+    height: 200px;
+  }
+  .variety-player {
+    width: 100%;
+    max-height: 400px;
+  }
+
+  /* Audiovisual */
+  .av-slide {
+    padding: 0 8px;
   }
   .av-slide-video {
     width: 100%;
@@ -518,10 +602,45 @@ audio, video {
     height: auto;
     aspect-ratio: 16 / 9;
   }
-  .styles-icons {
-    gap: 40px;
+
+  /* Volumen global — más pequeño en móvil */
+  #globalVolume {
+    height: 90px;
   }
-  .variety-container {
-    flex-direction: column;
+
+  /* Botón top */
+  #back-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+    font-size: 1.2em;
+  }
+
+  /* section-combo más corto */
+  .section-combo {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2em;
+  }
+  .vg-section h2,
+  .audiovisual-section h2,
+  .styles-section h2,
+  .variety-section h2 {
+    font-size: 1.8em;
+  }
+  .styles-icons {
+    gap: 20px;
+  }
+  .style-icon {
+    font-size: 2.8em;
+  }
+  .av-controls i {
+    font-size: 18px;
+    padding: 8px;
   }
 }
