@@ -401,13 +401,14 @@ body {
 
 /* Texto con el mismo padding-left que el h2 del título */
 .av-slide-text {
+  order: 2;   /* agregar: el texto va segundo */
   flex: 1;
   min-width: 200px;
   color: #bbb;
   font-size: 1em;
   line-height: 1.7;
   padding-left: 0px; /* alinea con el borde izq del título (border-left 3px + padding 10px) */
-  padding-top: 55px;   /* agregar: empuja el texto hacia abajo para alinearlo con el video */
+  padding-top: 0px;   /* agregar: empuja el texto hacia abajo para alinearlo con el video */
 }
 
 /* Contenedor media: flechas encima del video, centradas sobre él */
@@ -597,8 +598,8 @@ audio, video {
     width: 100%;
   }
   .variety-image {
-    height: 200px;
-    width: 100%;
+    height: 280px;
+    width: 280px;
   }
   .variety-player {
     width: 100%;
@@ -618,6 +619,7 @@ audio, video {
     aspect-ratio: 16 / 9;
   }
    .av-slide-media {
+    order: 1;   /* agregar: el video va primero */
     margin-top: 0;
     margin-left: 0;
   }
