@@ -393,13 +393,15 @@ body {
 .av-slide {
   min-width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 20px;
   padding: 0 clamp(10px, 3vw, 40px);
 }
 
 /* Texto con el mismo padding-left que el h2 del título */
 .av-slide-text {
+  flex: 1;
+  min-width: 200px
   color: #bbb;
   font-size: 1em;
   line-height: 1.7;
@@ -408,6 +410,7 @@ body {
 
 /* Contenedor media: flechas encima del video, centradas sobre él */
 .av-slide-media {
+  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -597,6 +600,7 @@ audio, video {
   /* Audiovisual */
   .av-slide {
     padding: 0 8px;
+    flex-direction: column;
   }
   .av-slide-video {
     width: 100%;
