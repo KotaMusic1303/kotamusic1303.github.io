@@ -416,7 +416,7 @@ body {
   align-items: flex-start;
   gap: 12px;
   width: 100%;
-  margin-top: 0;
+  margin-top: -20;
 }
 
 /* flechas + contador — siempre sobre el video */
@@ -426,6 +426,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  margin-left: 20px;
 }
 
 .av-controls i {
@@ -610,6 +611,10 @@ audio, video {
   .av-slide-video iframe {
     height: auto;
     aspect-ratio: 16 / 9;
+  }
+   .av-slide-media {
+    margin-top: 0;
+    margin-left: 0;
   }
 
   /* Volumen global — más pequeño en móvil */
