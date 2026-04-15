@@ -602,6 +602,7 @@ audio, video {
   .variety-image {
     height: 280px;
     width: 280px;
+    margin: 0 auto;
   }
   .variety-player {
     width: 100%;
