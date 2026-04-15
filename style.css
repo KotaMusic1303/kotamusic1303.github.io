@@ -396,6 +396,8 @@ body {
   flex-direction: row;
   gap: 20px;
   padding: 0 clamp(10px, 3vw, 40px) 0 0;
+  align-items: flex-start;  /* agregar si no está */
+  margin-top: -20px;        /* mover el margin aquí en lugar de av-slide-media */
 }
 
 /* Texto con el mismo padding-left que el h2 del título */
@@ -416,7 +418,6 @@ body {
   align-items: flex-start;
   gap: 12px;
   width: 100%;
-  margin-top: -20px;
   margin-left: 60px;
 }
 
