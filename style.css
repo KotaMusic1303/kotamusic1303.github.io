@@ -39,7 +39,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 4em;
+  font-size: 4.5em;
   font-weight: 600;
   letter-spacing: 2px;
   color: #fff;
@@ -83,7 +83,7 @@ body {
 }
 
 .socials a {
-  font-size: 1.6em;
+  font-size: 1.9em;
   color: #888;
   text-decoration: none;
   transition: transform 0.25s ease, color 0.25s ease;
