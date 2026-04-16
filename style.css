@@ -462,7 +462,8 @@ body {
 }
 
 .av-counter {
-  font-size: 0.9em;
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
   color: #888;
   min-width: 50px;
   text-align: center;
