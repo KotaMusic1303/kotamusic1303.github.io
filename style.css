@@ -441,6 +441,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  margin-top: 5px
 }
 
 .av-controls i {
