@@ -216,7 +216,8 @@ body {
 
 /* texto */
 .vg-text {
-  font-size: 0.95em;
+  font-family: "Exo 2", sans-serif;
+  font-size: 1.2em;
   color: #bbb;
   line-height: 1.6;
 }
@@ -237,7 +238,8 @@ body {
 
 .styles-description {
   margin: 20px 0 80px;
-  font-size: 1.1em;
+  font-family: "Exo 2", sans-serif;
+  font-size: 1.5em;
   color: #bbb;
 }
 
@@ -292,8 +294,9 @@ body {
 }
 
 .variety-text {
+  font-family: "Exo 2", sans-serif;
   color: #bbb;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 /* Imagen rotativa Variety — igual estética que VG */
@@ -404,7 +407,8 @@ body {
   flex: 1;
   min-width: 200px;
   color: #bbb;
-  font-size: 1em;
+  font-family: "Exo 2", sans-serif;
+  font-size: 1.5em;
   line-height: 1.7;
   padding-left: 0px; /* alinea con el borde izq del título (border-left 3px + padding 10px) */
   padding-top: 55px;   /* agregar: empuja el texto hacia abajo para alinearlo con el video */
