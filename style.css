@@ -155,8 +155,6 @@ body {
    VG SECTION
 ========================= */
 .vg-section {
-  margin-left: clamp(40px, 8vw, 120px);
-  margin-right: 0;
 }
 
 .vg-container {
