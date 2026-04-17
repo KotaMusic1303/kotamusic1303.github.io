@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KotaMusic | Work With Me</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <h1>KotaMusic</h1>
+  <p class="subtitle">Audio Engineer • Composer</p>
+  <p class="tagline">Creating the sound you are looking for</p>
+  <div class="socials">
+    <a href="https://www.youtube.com/@kotamusic1" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://soundcloud.com/user-876843643" target="_blank"><i class="fab fa-soundcloud"></i></a>
+    <a href="https://www.instagram.com/kotamusic1/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://x.com/Kotamusic1" target="_blank"><i class="fab fa-x-twitter"></i></a>
+  </div>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-link">Portfolio</a>
+    <span class="nav-divider"></span>
+    <a href="pulse.html" class="nav-link">Meet Pulse</a>
+    <span class="nav-divider"></span>
+    <a href="work.html" class="nav-link active">Work With Me</a>
+  </nav>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section work-section">
+
+  <h2 class="work-title">Services</h2>
+  <p class="work-subtitle">Every project is different. Here's what I can bring to yours.</p>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-gamepad"></i></div>
+      <h3>Videogame Music</h3>
+      <p>Original compositions for games of any genre and scale. From 8-bit retro to cinematic orchestral, tailored to your world.</p>
+      <div class="service-price">Contact for quote</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-film"></i></div>
+      <h3>Audiovisual</h3>
+      <p>Music and sound design for animations, short films, trailers, and any video content. Sync-locked to your visuals.</p>
+      <div class="service-price">Contact for quote</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+      <h3>Mixing & Mastering</h3>
+      <p>Professional mix and master for your tracks. Clean, balanced, and ready for any platform or release format.</p>
+      <div class="service-price">Contact for quote</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-music"></i></div>
+      <h3>Custom Composition</h3>
+      <p>Need something that doesn't fit the categories above? Let's talk. Original music for any context or purpose.</p>
+      <div class="service-price">Contact for quote</div>
+    </div>
+
+  </div>
+
+  <!-- ================= PROCESS ================= -->
+  <div class="process-block">
+    <h2 class="work-title" style="margin-bottom: 14px;">How It Works</h2>
+    <p class="work-subtitle" style="margin-bottom: 50px;">A simple process so we can focus on the music.</p>
+
+    <div class="process-steps">
+
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <h4>Tell me about your project</h4>
+        <p>Use the form below to describe what you need — genre, mood, references, deadlines, and any other details that matter to you.</p>
+      </div>
+
+      <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <h4>We align on the vision</h4>
+        <p>I'll get back to you to discuss the project, clarify the scope, and make sure we're on the same page before starting.</p>
+      </div>
+
+      <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <h4>I create and deliver</h4>
+        <p>You receive the files, review them, and we refine until the result is exactly what your project needs.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= CONTACT FORM ================= -->
+  <div class="contact-block">
+    <h2 class="work-title" style="margin-bottom: 14px;">Get In Touch</h2>
+    <p class="work-subtitle" style="margin-bottom: 50px;">Ready to start? Fill in the form and I'll get back to you as soon as possible.</p>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" placeholder="your@email.com" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cf-service">Service</label>
+        <select id="cf-service">
+          <option value="">Select a service...</option>
+          <option value="vgm">Videogame Music</option>
+          <option value="av">Audiovisual</option>
+          <option value="mm">Mixing & Mastering</option>
+          <option value="custom">Custom Composition</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="cf-message">Tell me about your project</label>
+        <textarea id="cf-message" rows="6" placeholder="Describe your project, mood, references, deadlines, budget..." required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        Send Message <i class="fas fa-paper-plane"></i>
+      </button>
+
+      <p id="form-feedback" class="form-feedback"></p>
+
+    </form>
+  </div>
+
+</section>
+
+<!-- ================= BOTÓN TOP ================= -->
+<button id="back-to-top" aria-label="Volver al inicio">
+  <i class="fas fa-step-backward"></i>
+</button>
+
+<script>
+  const btnTop = document.getElementById("back-to-top");
+  window.addEventListener("scroll", () => { btnTop.classList.toggle("show", window.scrollY > 300); });
+  btnTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const feedback = document.getElementById("form-feedback");
+    feedback.textContent = "Thanks! I'll get back to you soon.";
+    feedback.classList.add("feedback-ok");
+    e.target.reset();
+    setTimeout(() => { feedback.textContent = ""; feedback.classList.remove("feedback-ok"); }, 5000);
+  }
+</script>
+
+</body>
+</html>
