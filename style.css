@@ -154,9 +154,6 @@ body {
 /* =========================
    VG SECTION
 ========================= */
-.vg-section {
-}
-
 .vg-container {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
@@ -181,9 +178,9 @@ body {
   transition: opacity 2s ease, border-color 0.4s ease, transform 0.3s ease;
 }
 
-.vg-image img.active   { z-index: 2; opacity: 1; border-color: #a855f7; }
-.vg-image img:not(.active) { z-index: 1; opacity: 0; }
-.vg-image img:hover    { transform: scale(1.03); }
+.vg-image img.active      { z-index: 2; opacity: 1; border-color: #a855f7; }
+.vg-image img:not(.active){ z-index: 1; opacity: 0; }
+.vg-image img:hover       { transform: scale(1.03); }
 
 /* audios */
 .vg-audio {
@@ -298,7 +295,7 @@ body {
   font-size: 1.5em;
 }
 
-/* Imagen rotativa Variety — igual estética que VG */
+/* Imagen rotativa Variety */
 .variety-image {
   position: relative;
   height: 380px;
@@ -306,12 +303,12 @@ body {
   cursor: pointer;
   border-radius: 12px;
   overflow: hidden;
-  border: 2px solid transparent;        /* agregar */
-  transition: border-color 0.4s ease;   /* agregar */
+  border: 2px solid transparent;
+  transition: border-color 0.4s ease;
 }
 
 .variety-image:hover {
-  border-color: #a855f7;   /* agregar */
+  border-color: #a855f7;
 }
 
 .variety-image img {
@@ -319,13 +316,12 @@ body {
   top: 0; left: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  background: #121212
   border-radius: 12px;
   border: none;
-  transition: opacity 2s ease, border-color 0.4s ease, transform 0.3s ease;
+  transition: opacity 2s ease, transform 0.3s ease;
 }
 
-.variety-image img.active      { z-index: 2; opacity: 1; border-color: #a855f7; }
+.variety-image img.active      { z-index: 2; opacity: 1; }
 .variety-image img:not(.active){ z-index: 1; opacity: 0; }
 .variety-image img:hover       { transform: scale(1.03); }
 
@@ -396,18 +392,15 @@ body {
 /* =========================
    AUDIOVISUAL — SLIDER HORIZONTAL
 ========================= */
-
-/* El slide ahora apila texto arriba, media (controles + video) abajo */
 .av-slide {
   min-width: 100%;
   display: flex;
   flex-direction: row;
   gap: 20px;
   padding: 0 clamp(10px, 3vw, 40px) 0 0;
-  align-items: flex-start;  /* agregar si no está */
+  align-items: flex-start;
 }
 
-/* Texto con el mismo padding-left que el h2 del título */
 .av-slide-text {
   flex: 1;
   min-width: 200px;
@@ -415,11 +408,10 @@ body {
   font-family: "Exo 2", sans-serif;
   font-size: 1.5em;
   line-height: 1.7;
-  padding-left: 0px; /* alinea con el borde izq del título (border-left 3px + padding 10px) */
-  padding-top: 55px;   /* agregar: empuja el texto hacia abajo para alinearlo con el video */
+  padding-left: 0px;
+  padding-top: 55px;
 }
 
-/* Contenedor media: flechas encima del video, centradas sobre él */
 .av-slide-media {
   flex: 2;
   display: flex;
@@ -428,18 +420,17 @@ body {
   gap: 12px;
   width: 100%;
   margin-left: 80px;
-  position: relative;   /* agregar */
-  z-index: 10;          /* agregar */
+  position: relative;
+  z-index: 10;
 }
 
-/* flechas + contador — siempre sobre el video */
 .av-controls {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  margin-top: 11px
+  margin-top: 11px;
 }
 
 .av-controls i {
@@ -467,14 +458,12 @@ body {
   text-align: center;
 }
 
-/* contenedor con overflow oculto */
 .av-track-wrapper {
-    width: 100%;
-    overflow-x: hidden;   /* reemplaza "overflow: hidden" */
-    overflow-y: visible;  /* reemplaza "overflow-y: visible" — aunque ya estaba, asegúrate que quede así */
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
-/* track que se desplaza */
 .av-track {
   display: flex;
   transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
@@ -482,7 +471,6 @@ body {
   overflow: visible;
 }
 
-/* video */
 .av-slide-video {
   width: 100%;
 }
@@ -700,7 +688,8 @@ audio, video {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 50px; height: 50px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: none;
   background: #a855f7;
@@ -762,8 +751,8 @@ audio, video {
 
   /* Mood */
   .styles-icons {
-    flex-direction: row;  /* agregar */
-    flex-wrap: wrap;      /* asegura que el tercero baje al centro */
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
   }
@@ -792,7 +781,7 @@ audio, video {
   .av-slide {
     padding: 0 8px;
     flex-direction: column;
-    justify-content: flex-end;  /* agregar */
+    justify-content: flex-end;
   }
   .av-slide-video {
     width: 100%;
@@ -801,19 +790,18 @@ audio, video {
     height: auto;
     aspect-ratio: 16 / 9;
   }
-   .av-slide-media {
-    order: 1;   /* agregar: el video va primero */
+  .av-slide-media {
+    order: 1;
     margin-top: 0;
     margin-left: 0;
   }
-   .av-slide-text {
-  order: 2;   /* agregar: el texto va segundo */
-  padding-top: 0;  /* elimina el padding-top que pusimos para desktop */
+  .av-slide-text {
+    order: 2;
+    padding-top: 0;
   }
-   .av-track {
-    align-items: flex-start;  /* agregar */
+  .av-track {
+    align-items: flex-start;
   }
-
 
   /* Volumen global — más pequeño en móvil */
   #globalVolume {
