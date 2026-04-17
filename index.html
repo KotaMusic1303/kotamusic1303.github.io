@@ -298,6 +298,59 @@
 
 </section>
 
+<div class="section-combo"></div>
+
+<!-- ================= MIXING / MASTERING ================= -->
+<section class="section mm-section">
+  <h2>Mixing / Mastering</h2>
+  <div class="mm-container">
+
+    <div class="mm-image">
+      <img src="images/mixing.png" alt="Mixing & Mastering">
+    </div>
+
+    <div class="mm-text">
+      <p>Your music deserves the best sound possible. Mixing and mastering are the final
+      steps that transform a good recording into a professional, polished track ready
+      for any platform. Balanced levels, clean frequencies, spatial depth and
+      loudness consistency — all crafted with precision and care for your music's identity.</p>
+    </div>
+
+    <div class="mm-player">
+      <div class="mm-player-inner">
+
+        <div class="mm-ab-labels">
+          <span id="mm-label-a" class="mm-label active-label">Before</span>
+          <span id="mm-label-b" class="mm-label">After</span>
+        </div>
+
+        <div class="mm-switch-wrap">
+          <button id="mm-switch" class="mm-switch" aria-label="Switch A/B">
+            <span class="mm-switch-knob"></span>
+          </button>
+        </div>
+
+        <div class="mm-progress-bar" id="mm-bar">
+          <div class="mm-progress" id="mm-progress"></div>
+        </div>
+        <div class="mm-time">
+          <span id="mm-current">0:00</span>
+          <span id="mm-duration">0:00</span>
+        </div>
+
+        <div class="mm-controls">
+          <i class="fas fa-play-circle" id="mm-play-btn"></i>
+        </div>
+
+        <audio id="mm-audio-a" src="Audio/before.mp3" preload="metadata"></audio>
+        <audio id="mm-audio-b" src="Audio/after.mp3"  preload="metadata"></audio>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+  
 <!-- ================= BOTÓN TOP ================= -->
 <button id="back-to-top" aria-label="Volver al inicio">
   <i class="fas fa-step-backward"></i>
@@ -482,6 +535,111 @@
   document.addEventListener("play", e => {
     if (e.target.tagName === "AUDIO") e.target.volume = volSlider.value;
   }, true);
+
+ 
+  const volSlider = document.getElementById("globalVolume");
+
+   // ─── Mixing / Mastering A/B player ──────────────
+  const mmAudioA   = document.getElementById("mm-audio-a");
+  const mmAudioB   = document.getElementById("mm-audio-b");
+  const mmSwitch   = document.getElementById("mm-switch");
+  const mmPlayBtn  = document.getElementById("mm-play-btn");
+  const mmBar      = document.getElementById("mm-bar");
+  const mmProgressEl = document.getElementById("mm-progress");
+  const mmCurrentEl  = document.getElementById("mm-current");
+  const mmDurationEl = document.getElementById("mm-duration");
+  const mmLabelA   = document.getElementById("mm-label-a");
+  const mmLabelB   = document.getElementById("mm-label-b");
+
+  if (mmAudioA && mmAudioB) {
+    let mmActive   = mmAudioA;
+    let mmInactive = mmAudioB;
+    let mmPlaying  = false;
+    let mmIsB      = false;
+
+    const fmtMM = t => isNaN(t) ? "0:00"
+      : `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, "0")}`;
+
+    function mmSetDuration() {
+      const dur = mmActive.duration || mmInactive.duration;
+      if (!isNaN(dur)) mmDurationEl.textContent = fmtMM(dur);
+    }
+    mmAudioA.addEventListener("loadedmetadata", mmSetDuration);
+    mmAudioB.addEventListener("loadedmetadata", mmSetDuration);
+
+    function mmTick() {
+      const dur = mmActive.duration;
+      if (dur) {
+        mmProgressEl.style.width = (mmActive.currentTime / dur * 100) + "%";
+        mmCurrentEl.textContent  = fmtMM(mmActive.currentTime);
+        mmDurationEl.textContent = fmtMM(dur);
+      }
+    }
+    mmAudioA.addEventListener("timeupdate", () => { if (!mmIsB) mmTick(); });
+    mmAudioB.addEventListener("timeupdate", () => { if (mmIsB)  mmTick(); });
+
+    function mmEnded() {
+      mmPlaying = false;
+      mmPlayBtn.className = "fas fa-play-circle";
+      mmProgressEl.style.width = "0%";
+      mmCurrentEl.textContent  = "0:00";
+      mmAudioA.currentTime = 0;
+      mmAudioB.currentTime = 0;
+    }
+    mmAudioA.addEventListener("ended", mmEnded);
+    mmAudioB.addEventListener("ended", mmEnded);
+
+    mmPlayBtn.addEventListener("click", () => {
+      if (currentAudio && currentAudio !== mmActive) {
+        currentAudio.pause(); currentAudio.currentTime = 0;
+        resetVarietyUI(); resetMoodIcons();
+      }
+      pauseAllYouTube();
+
+      if (mmPlaying) {
+        mmActive.pause();
+        mmInactive.pause();
+        mmPlayBtn.className = "fas fa-play-circle";
+        mmPlaying = false;
+        currentAudio = null;
+      } else {
+        mmActive.play();
+        mmPlayBtn.className = "fas fa-pause-circle";
+        mmPlaying = true;
+        currentAudio = mmActive;
+      }
+    });
+
+    mmSwitch.addEventListener("click", () => {
+      const wasPlaying = mmPlaying;
+      const syncTime   = mmActive.currentTime;
+
+      mmInactive.currentTime = syncTime;
+
+      if (wasPlaying) {
+        mmActive.pause();
+        mmInactive.play();
+        currentAudio = mmInactive;
+      }
+
+      [mmActive, mmInactive] = [mmInactive, mmActive];
+      mmIsB = !mmIsB;
+
+      mmSwitch.classList.toggle("switched", mmIsB);
+      mmLabelA.classList.toggle("active-label", !mmIsB);
+      mmLabelB.classList.toggle("active-label",  mmIsB);
+    });
+
+    mmBar.addEventListener("click", e => {
+      const rect  = mmBar.getBoundingClientRect();
+      const ratio = (e.clientX - rect.left) / rect.width;
+      const dur   = mmActive.duration || 0;
+      if (dur) {
+        mmActive.currentTime   = ratio * dur;
+        mmInactive.currentTime = ratio * dur;
+      }
+    });
+  }
 
   applyVolume(volSlider.value);
 
