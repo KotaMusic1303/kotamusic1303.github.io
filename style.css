@@ -558,6 +558,174 @@ audio, video {
 #back-to-top.show { opacity: 1; visibility: visible; }
 
 /* =========================
+   MIXING / MASTERING
+========================= */
+.mm-section h2 {
+  font-size: 2.5em;
+  color: #a855f7;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(168,85,247,0.4);
+}
+
+.mm-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.mm-image {
+  flex: 0 0 auto;
+  width: clamp(200px, 25vw, 320px);
+}
+
+.mm-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #a855f7;
+  display: block;
+}
+
+.mm-text {
+  flex: 1;
+  min-width: 200px;
+  color: #bbb;
+  font-size: 0.95em;
+  line-height: 1.7;
+}
+
+.mm-player {
+  flex: 0 0 auto;
+  width: clamp(240px, 28vw, 340px);
+}
+
+.mm-player-inner {
+  background: #121212;
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 24px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mm-ab-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mm-label {
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.mm-label.active-label {
+  color: #a855f7;
+  text-shadow: 0 0 6px rgba(168,85,247,0.6);
+}
+
+.mm-switch-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.mm-switch {
+  position: relative;
+  width: 80px;
+  height: 36px;
+  border-radius: 18px;
+  background: #1c1c1c;
+  border: 2px solid #a855f7;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 8px rgba(168,85,247,0.3);
+}
+
+.mm-switch:hover {
+  box-shadow: 0 0 14px rgba(168,85,247,0.6);
+}
+
+.mm-switch-knob {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #a855f7;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s;
+  box-shadow: 0 0 6px rgba(168,85,247,0.7);
+}
+
+.mm-switch.switched .mm-switch-knob {
+  transform: translateX(44px);
+  background: #c084fc;
+  box-shadow: 0 0 10px rgba(192,132,252,0.9);
+}
+
+.mm-progress-bar {
+  width: 100%;
+  height: 5px;
+  background: #2a2a2a;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.mm-progress {
+  width: 0%;
+  height: 100%;
+  background: #a855f7;
+  border-radius: 5px;
+  transition: width 0.1s linear;
+}
+
+.mm-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75em;
+  color: #aaa;
+  margin-top: -8px;
+}
+
+.mm-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.mm-controls i {
+  font-size: 2.8em;
+  color: #a855f7;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s, text-shadow 0.2s;
+}
+
+.mm-controls i:hover {
+  transform: scale(1.15);
+  color: #c084fc;
+  text-shadow: 0 0 10px rgba(168,85,247,0.7);
+}
+
+@media (max-width: 768px) {
+  .mm-container {
+    flex-direction: column;
+  }
+  .mm-image {
+    width: 100%;
+  }
+  .mm-player {
+    width: 100%;
+  }
+}
+
+/* =========================
    RESPONSIVE — MÓVIL
 ========================= */
 @media (max-width: 900px) {
