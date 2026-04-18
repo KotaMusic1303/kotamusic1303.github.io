@@ -33,9 +33,9 @@
       av_desc8: "Descripción del video 8.",
       // Index — MM
       mm_tagline: "Bringing your music to its full potential",
-      mm_caption: "Band name / Project",
-      mm_track: "Track Name",
-      mm_text: "UNDER CONSTRUCTION — add your project description here. Tell the story of the band, the recording process, and what you brought to the mix.",
+      mm_caption: "HUILLAC",
+      mm_track: "Oriflama",
+      mm_text: "Currently I'm working with the death metal band Huillac as their mixing/mastering enginer for their soon to be released first album. Here you can listen to a sample of one of their songs, Oriflama. You can switch to compare the raw mix with the untreated audios and the final version. Give it a try! ",
       // Work
       work_services_title: "Services",
       work_services_sub: "Every project is different. Here's what I can bring to yours.",
@@ -77,24 +77,24 @@
 
     es: {
       // Hero
-      subtitle: "Ingeniero de Audio • Compositor",
+      subtitle: "Técnico en sonido • Compositor",
       tagline: "Creando el sonido que estás buscando",
       // Navbar
-      nav_portfolio: "Portfolio",
+      nav_portfolio: "Portafolio",
       nav_pulse: "Conoce a Pulse",
       nav_work: "Trabaja Conmigo",
       // Index — VG
       vg_title: "Música para Videojuegos",
-      vg_text: "Composiciones orientadas a videojuegos, combinando contexto narrativo e inmersión. Estas muestras intentan emular la era del 8bit, con un toque de procesamiento moderno. Este proyecto es MegaManX: Innocent Impulse, un fangame de Megaman del cual soy uno de los compositores.",
+      vg_text: "Composiciones orientadas a videojuegos, combinando contexto, narrativa e inmersión. Estos ejemplos buscan recrear la era 8bit, con un toque de procesamiento moderno. Este proyecto es MegaManX: Innocent Impulse, un fangame de Megaman del cual soy uno de los compositores.",
       // Index — Mood
-      mood_title: "Elige tu Mood",
-      mood_desc: "Como ya sabemos, ¡el contexto lo es todo! Pruébalo y elige el tono para tu proyecto.",
+      mood_title: "Elige tu estilo",
+      mood_desc: "Como ya sabemos, ¡el contexto lo es todo! Elige el estilo adecuado para tu proyecto.",
       mood_scary: "Terror",
       mood_soothing: "Calma",
       mood_joyful: "Alegría",
       // Index — Variety
       variety_title: "Variedad",
-      variety_text: "¡Cada aventura es diferente! Y para cada una es mejor tener el soundtrack perfecto. Desde las profundidades del espacio hasta una fiesta en un barco pirata, ¡del fantasy medieval a una mansión encantada! Tu imaginación es el límite.",
+      variety_text: "¡Cada aventura es diferente! Y para cada una es mejor tener la abnda sonora perfecta. Desde los confines del espacio hasta una fiesta en un barco pirata, ¡Desde un mundo de fantasía medieval a una mansión encantada! Tu imaginación es el límite.",
       // Index — Audiovisual
       av_title: "Audiovisual",
       av_desc1: "Opening teaser for an animation called \"PatoPuño\". Project made by a group of animation students from Concepción, Chile. My task here was to compose a theme song for this clip, inspired by other cartoons like \"Powerpuff Girls\" or \"Kick Buttowski\"",
@@ -106,10 +106,10 @@
       av_desc7: "Descripción del video 7.",
       av_desc8: "Descripción del video 8.",
       // Index — MM
-      mm_tagline: "Logremos sacar lo mejor de tu música",
-      mm_caption: "Nombre de la banda / Proyecto",
-      mm_track: "Nombre del track",
-      mm_text: "EN CONSTRUCCIÓN — agrega aquí la descripción de tu proyecto. Cuenta la historia de la banda, el proceso de grabación y lo que aportaste al mix.",
+      mm_tagline: "Logremos obtener lo mejor de tu música",
+      mm_caption: "Huillac",
+      mm_track: "Oriflama",
+      mm_text: "Actualmente me encuentro trabajando con la banda de death metal Huillac como su ingeniero en mezcla y mastering, para su primer disco el cual está proximo a lanzarse. Aqui puedes escuchar una muestra de una de sus canciones, Oriflama. Puedes alternar para comparar la mezcla en crudo con audios sin procesar y la versión final. ¡Intentalo!",
       // Work
       work_services_title: "Servicios",
       work_services_sub: "Cada proyecto es diferente. Esto es lo que puedo aportar al tuyo.",
