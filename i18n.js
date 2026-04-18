@@ -97,8 +97,8 @@
       variety_text: "¡Cada aventura es diferente! Y para cada una es mejor tener la abnda sonora perfecta. Desde los confines del espacio hasta una fiesta en un barco pirata, ¡Desde un mundo de fantasía medieval a una mansión encantada! Tu imaginación es el límite.",
       // Index — Audiovisual
       av_title: "Audiovisual",
-      av_desc1: "Opening teaser for an animation called \"PatoPuño\". Project made by a group of animation students from Concepción, Chile. My task here was to compose a theme song for this clip, inspired by other cartoons like \"Powerpuff Girls\" or \"Kick Buttowski\"",
-      av_desc2: "For this project, \"Umbra\", I was tasked to compose the background music. Using the animatic as reference the composition should be in sync with the movement and flow of the animation but at the same time, not lose it's natural feel.",
+      av_desc1: "Teaser de introducción para la animación \"PatoPuño\". El proyecto fue creado por un grupo de estudiantes de animación de Concepción, Chile. Mi tarea aqui era componer la canción tema para este video, tomando de inspiración otras caricaturas como \"Las Chicas Super Poderosas\" o \"Kick Buttowski\"",
+      av_desc2: "Para este proyecto, \"Umbra\", se me pidió componer la musica de fondo. Usando el animatic como referencia, la composición debía estar en sincronía con el movimiento y fluidez de la animación, pero al mismo tempo, no perder su naturalidad.",
       av_desc3: "One day, with my good old friend @Soyelska we had the great idea of creating a \"demake\" concept for the game \"The Legend Of Zelda: Breath Of The Wild\", using the \"The Legend Of Zelda: The Minish Cap\" visual style. He was in charge of the art and animation, and I was in charge of the music and sound effects.",
       av_desc4: "\"Tierra De Artistas\" is a teaser trailer of a documentary series centered on artists radicated in Concepción, Chile. For this project, I composed the main song played as background music. The idea was to create something organic, cozy and nostalgic.",
       av_desc5: "Descripción del video 5.",
