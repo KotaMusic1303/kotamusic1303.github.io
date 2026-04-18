@@ -36,6 +36,8 @@
       mm_caption: "HUILLAC",
       mm_track: "Oriflama",
       mm_text: "Currently I'm working with the death metal band Huillac as their mixing/mastering enginer for their soon to be released first album. Here you can listen to a sample of one of their songs, Oriflama. You can switch to compare the raw mix with the untreated audios and the final version. Give it a try! ",
+      mm_before: "Before",
+      mm_after: "After",
       // Work
       work_services_title: "Services",
       work_services_sub: "Every project is different. Here's what I can bring to yours.",
@@ -110,6 +112,8 @@
       mm_caption: "Huillac",
       mm_track: "Oriflama",
       mm_text: "Actualmente me encuentro trabajando con la banda de death metal Huillac como su ingeniero en mezcla y mastering, para su primer disco el cual está proximo a lanzarse. Aqui puedes escuchar una muestra de una de sus canciones, Oriflama. Puedes alternar para comparar la mezcla en crudo con audios sin procesar y la versión final. ¡Intentalo!",
+      mm_before: "Antes",
+      mm_after: "Después",
       // Work
       work_services_title: "Servicios",
       work_services_sub: "Cada proyecto es diferente. Esto es lo que puedo aportar al tuyo.",
