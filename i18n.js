@@ -123,7 +123,7 @@
       svc2_text: "Música y diseño de sonido para animaciones, cortometrajes, trailers y cualquier contenido en video. Sincronizado a tus visuales.",
       svc3_title: "Mixing & Mastering",
       svc3_text: "Mix y master profesional para tus tracks. Limpio, balanceado y listo para cualquier plataforma o formato de lanzamiento.",
-      svc4_title: "Composición a Medida",
+      svc4_title: "Musica a Medida",
       svc4_text: "¿Necesitás algo que no encaja en las categorías anteriores? Hablemos. Música original para cualquier contexto o propósito.",
       svc_price: "Consultar precio",
       work_process_title: "Cómo Funciona",
