@@ -1047,6 +1047,16 @@ audio, video {
 .form-feedback { font-family: "Exo 2", sans-serif; font-size: 0.95em; color: #555; min-height: 1.4em; }
 .form-feedback.feedback-ok { color: #a855f7; }
 
+.form-highlight {
+  animation: highlightPulse 1.5s ease;
+}
+
+@keyframes highlightPulse {
+  0%   { box-shadow: 0 0 0px rgba(168,85,247,0); }
+  40%  { box-shadow: 0 0 30px rgba(168,85,247,0.5); }
+  100% { box-shadow: 0 0 0px rgba(168,85,247,0); }
+}
+
 /* =========================
    BOTÓN TOP
 ========================= */
