@@ -112,7 +112,7 @@
   </div>
 
   <!-- ================= CONTACT FORM ================= -->
-  <div class="contact-block">
+  <div class="contact-block" id="contact-form">
     <h2 class="work-title" data-i18n="contact_tittle" style="margin-bottom: 14px;">Get In Touch</h2>
     <p class="work-subtitle" data-i18n="contact_sub" style="margin-bottom: 50px;">Ready to start? Fill in the form and I'll get back to you as soon as possible.</p>
 
@@ -177,5 +177,18 @@
 </script>
 
   <script src="i18n.js"></script>
+
+  <script>
+  document.querySelectorAll('a[href="#contact-form"]').forEach(link => {
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+    const target = document.getElementById("contact-form");
+    target.scrollIntoView({ behavior: "smooth" });
+    target.classList.add("form-highlight");
+    setTimeout(() => target.classList.remove("form-highlight"), 1500);
+  });
+});
+    </script>
+  
 </body>
 </html>
