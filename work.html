@@ -122,17 +122,17 @@
       <div class="form-row">
         <div class="form-group">
           <label for="cf-name" data-i18n="form_name">Name</label>
-          <input type="text" id="cf-name" data-i18n="form_name_ph" placeholder="Your name" required>
+          <input type="text" id="cf-name" name=name" data-i18n="form_name_ph" placeholder="Your name" required>
         </div>
         <div class="form-group">
           <label for="cf-email" data-i18n="form_email">Email</label>
-          <input type="email" id="cf-email" data-i18n="form_email_ph" placeholder="your@email.com" required>
+          <input type="email" id="cf-email" name="email" data-i18n="form_email_ph" placeholder="your@email.com" required>
         </div>
       </div>
 
       <div class="form-group">
         <label for="cf-service" data-i18n="form_service">Service</label>
-        <select id="cf-service">
+        <select id="cf-service" name="service">
           <option data-i18n="form_service_ph" value="">Select a service...</option>
           <option data-i18n="form_svc1" value="vgm">Videogame Music</option>
           <option data-i18n="form_svc2" value="av">Audiovisual</option>
@@ -144,7 +144,7 @@
 
       <div class="form-group">
         <label data-i18n="form_message" for="cf-message">Tell me about your project</label>
-        <textarea id="cf-message" rows="6" placeholder="Describe your project, mood, references, deadlines, budget..." required></textarea>
+        <textarea id="cf-message" name="message" rows="6" placeholder="Describe your project, mood, references, deadlines, budget..." required></textarea>
       </div>
 
     <button type="submit" class="submit-btn">
