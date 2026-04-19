@@ -117,7 +117,7 @@
       // Work
       work_services_title: "Servicios",
       work_services_sub: "Cada proyecto es diferente. Esto es lo que puedo aportar al tuyo.",
-      svc1_title: "Música para Videojuegos",
+      svc1_title: "Videojuegos",
       svc1_text: "Composiciones originales para juegos de cualquier género y escala. Del retro 8-bit a lo orquestal cinematográfico, adaptado a tu mundo.",
       svc2_title: "Audiovisual",
       svc2_text: "Música y diseño de sonido para animaciones, cortometrajes, trailers y cualquier contenido en video. Sincronizado a tus visuales.",
