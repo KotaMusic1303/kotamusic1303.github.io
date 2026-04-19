@@ -47,7 +47,7 @@
       svc2_text: "Music and sound design for animations, short films, trailers, and any video content. Sync-locked to your visuals.",
       svc3_title: "Mixing & Mastering",
       svc3_text: "Professional mix and master for your tracks. Clean, balanced, and ready for any platform or release format.",
-      svc4_title: "Custom Composition",
+      svc4_title: "Custom",
       svc4_text: "Need something that doesn't fit the categories above? Let's talk. Original music for any context or purpose.",
       svc_price: "Contact for quote",
       work_process_title: "How It Works",
