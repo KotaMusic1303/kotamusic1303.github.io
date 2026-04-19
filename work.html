@@ -116,7 +116,8 @@
     <h2 class="work-title" data-i18n="contact_title" style="margin-bottom: 14px;">Get In Touch</h2>
     <p class="work-subtitle" data-i18n="contact_sub" style="margin-bottom: 50px;">Ready to start? Fill in the form and I'll get back to you as soon as possible.</p>
 
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+    <form class="contact-form" action="https://formspree.io/f/xgoryzbz" method="POST">
+      <input type="hidden" name="_subject" value="New message from KotaMusic portfolio">
 
       <div class="form-row">
         <div class="form-group">
@@ -165,15 +166,6 @@
   const btnTop = document.getElementById("back-to-top");
   window.addEventListener("scroll", () => { btnTop.classList.toggle("show", window.scrollY > 300); });
   btnTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const feedback = document.getElementById("form-feedback");
-    feedback.textContent = "Thanks! I'll get back to you soon.";
-    feedback.classList.add("feedback-ok");
-    e.target.reset();
-    setTimeout(() => { feedback.textContent = ""; feedback.classList.remove("feedback-ok"); }, 5000);
-  }
 </script>
 
   <script src="i18n.js"></script>
