@@ -27,8 +27,8 @@
       av_desc2: "For this project, \"Umbra\", I was tasked to compose the background music. Using the animatic as reference the composition should be in sync with the movement and flow of the animation but at the same time, not lose it's natural feel.",
       av_desc3: "One day, with my good old friend @Soyelska we had the great idea of creating a \"demake\" concept for the game \"The Legend Of Zelda: Breath Of The Wild\", using the \"The Legend Of Zelda: The Minish Cap\" visual style. He was in charge of the art and animation, and I was in charge of the music and sound effects.",
       av_desc4: "\"Tierra De Artistas\" is a teaser trailer of a documentary series centered on artists radicated in Concepción, Chile. For this project, I composed the main song played as background music. The idea was to create something organic, cozy and nostalgic.",
-      av_desc5: `"Sepade" is an NGO with 50 years of experience contributing to education and personal development. In recent decades, it has focused on formal education, aiming to provide meaningful, holistic learning.
-in 2020, it produced the documentary "The Great Seed" which, through community testimonies, portrays the identity and values of its project from a human perspective.
+      av_desc5: `"Sepade" is an NGO that contributes to education and personal development. It has focused on formal education, aiming to provide meaningful, holistic learning.
+in 2020, it produced the documentary "The Great Seed" which, through community testimonies, portrays the identity and values of its project.
 My role in this project was to compose the music for the 38-minute documentary.`,
       av_desc6: "Descripción del video 6.",
       av_desc7: "Descripción del video 7.",
