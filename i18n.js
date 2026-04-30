@@ -30,7 +30,7 @@
       av_desc5: `"Sepade" is an NGO that contributes to education and personal development. It has focused on formal education, aiming to provide meaningful, holistic learning.
 in 2020, it produced the documentary "The Great Seed" which, through community testimonies, portrays the identity and values of its project.
 My role in this project was to compose the music for the 38-minute documentary.`,
-      av_desc6: "Descripción del video 6.",
+      av_desc6: 'Another project I am part of is "Mimesis", a podcast focused on dentistry, where I work as the audio and video editor/post-production specialist for its content. The overall work consists of voice cleanup and multicamera video editing.',
       av_desc7: "Descripción del video 7.",
       av_desc8: "Descripción del video 8.",
       // Index — MM
@@ -108,7 +108,7 @@ My role in this project was to compose the music for the 38-minute documentary.`
       av_desc5: `"Sepade" es una ONG que contribuye a la educación y desarrollo personal. Se ha centrado en la educación formal, apuntando a dar aprendizaje significativo y holístico.
 En 2020, se produjo el documental "La Gran Semilla" en el cual, por testimonios de la comunidad, se muestra la identidad y valores de sus proyectos.
 Mi rol aqui fue componer la música para el documental de 38 minutos.`,
-      av_desc6: "Descripción del video 6.",
+      av_desc6: 'Otro proyecto del que soy parte, es "Mimesis", podcast enfocado en la odontología, en el cual me desempeño como editor/postproductor de audio y video para su contenido. El trabajo general costa de limpieza y de voces y edición de video multicámara.',
       av_desc7: "Descripción del video 7.",
       av_desc8: "Descripción del video 8.",
       // Index — MM
