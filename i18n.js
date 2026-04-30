@@ -107,7 +107,7 @@ My role in this project was to compose the music for the 38-minute documentary.`
       av_desc4: "\"Tierra De Artistas\" es el teaser de una serie documental centrada en artistas pertenecientes a Concepción, Chile. Para este proyecto compuse la canción principal, la cual puede escucharse como musica de fondo. La idea era crear algo organico, acojedor y nostalgico.",
       av_desc5: `"Sepade" es una ONG que contribuye a la educación y desarrollo personal. Se ha centrado en la educación formal, apuntando a dar aprendizaje significativo y holístico.
 En 2020, se produjo el documental "La Gran Semilla" en el cual, por testimonios de la comunidad, se muestra la identidad y valores de sus proyectos.
-Mi rol aqui fue componer la música for the 38-minute documentary.`,
+Mi rol aqui fue componer la música para el documental de 38 minutos.`,
       av_desc6: "Descripción del video 6.",
       av_desc7: "Descripción del video 7.",
       av_desc8: "Descripción del video 8.",
