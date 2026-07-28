@@ -21,6 +21,17 @@
       // Index — Variety
       variety_title: "Variety",
       variety_text: "Every adventure is a different one! And for each one we better have the perfect soundtrack! From the depths of space to a party on a pirate ship, from medieval fantasy to a haunted mansion! Your imagination is your limit.",
+      // Index — Sound Design
+      sd_title: "Diseño Sonoro",
+      sd_intro: "Además de componer, también diseño e incorporo sonido en proyectos interactivos — el audio que reacciona y hace que un mundo se sienta vivo. Con herramientas como Wwise, integro la música y los efectos dentro del juego para que todo responda al jugador mientras avanza y actúa.",
+      sd_card1_title: "Trabajo con Wwise",
+      sd_card1_text: "Experiencia usando herramientas como Wwise para llevar el audio a los juegos y conectarlo con lo que ocurre en pantalla.",
+      sd_card2_title: "Llevar el Sonido al Juego",
+      sd_card2_text: "Tomar la música y los efectos ya terminados e integrarlos dentro del juego para que suenen en el momento justo.",
+      sd_card3_title: "Audio que Reacciona",
+      sd_card3_text: "Música y ambientes que cambian con la acción y siguen lo que hace el jugador.",
+      sd_card4_title: "Efectos de Sonido",
+      sd_card4_text: "Crear y combinar efectos de sonido que se sientan reales y acompañen el tono de cada mundo.",
       // Index — Audiovisual
       av_title: "Audiovisual",
       av_desc1: "Opening teaser for an animation called \"PatoPuño\". Project made by a group of animation students from Concepción, Chile. My task here was to compose a theme song for this clip, inspired by other cartoons like \"Powerpuff Girls\" or \"Kick Buttowski\"",
@@ -99,6 +110,17 @@ My role in this project was to compose the music for the 38-minute documentary.`
       // Index — Variety
       variety_title: "Variedad",
       variety_text: "¡Cada aventura es diferente! Y para cada una es mejor tener la banda sonora perfecta. Desde los confines del espacio hasta una fiesta en un barco pirata, ¡Desde un mundo de fantasía medieval a una mansión encantada! Tu imaginación es el límite.",
+      // Index — Sound Design
+      sd_title: "Sound Design",
+      sd_intro: "Beyond composing, I also design and add sound to interactive projects — the reactive audio that makes a game world feel alive. Working with tools like Wwise, I bring the music and sound effects into the game so everything responds to the player as they move and act.",
+      sd_card1_title: "Working with Wwise",
+      sd_card1_text: "Experience using tools like Wwise to bring audio into games and connect it to what happens on screen.",
+      sd_card2_title: "Bringing Sound Into the Game",
+      sd_card2_text: "Taking finished music and effects and setting them up inside the game so they play at the right moment.",
+      sd_card3_title: "Audio That Reacts",
+      sd_card3_text: "Music and ambience that change with the action and follow what the player is doing.",
+      sd_card4_title: "Sound Effects",
+      sd_card4_text: "Creating and layering sound effects that feel real and fit the mood of each world.",
       // Index — Audiovisual
       av_title: "Audiovisual",
       av_desc1: "Teaser de introducción para la animación \"PatoPuño\". El proyecto fue creado por un grupo de estudiantes de animación de Concepción, Chile. Mi tarea aqui era componer la canción tema para este video, tomando de inspiración otras caricaturas como \"Las Chicas Super Poderosas\" o \"Kick Buttowski\"",
