@@ -44,7 +44,7 @@ My role in this project was to compose the music for the 38-minute documentary.`
       work_services_title: "Services",
       work_services_sub: "Every project is different. Here's what I can bring to yours.",
       svc1_title: "Videogame Music",
-      svc1_text: "Original compositions for games of any genre and scale. From 8-bit retro to cinematic orchestral, tailored to your world.",
+      svc1_text: "Original compositions for games of any genre and scale. From 8-bit retro to cinematic orchestral, fitting all your need.",
       svc2_title: "Audiovisual",
       svc2_text: "Music and sound design for animations, short films, trailers, and any video content. Sync-locked to your visuals.",
       svc3_title: "Mixing & Mastering",
