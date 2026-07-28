@@ -98,7 +98,7 @@ My role in this project was to compose the music for the 38-minute documentary.`
       mood_joyful: "Alegría",
       // Index — Variety
       variety_title: "Variedad",
-      variety_text: "¡Cada aventura es diferente! Y para cada una es mejor tener la abnda sonora perfecta. Desde los confines del espacio hasta una fiesta en un barco pirata, ¡Desde un mundo de fantasía medieval a una mansión encantada! Tu imaginación es el límite.",
+      variety_text: "¡Cada aventura es diferente! Y para cada una es mejor tener la banda sonora perfecta. Desde los confines del espacio hasta una fiesta en un barco pirata, ¡Desde un mundo de fantasía medieval a una mansión encantada! Tu imaginación es el límite.",
       // Index — Audiovisual
       av_title: "Audiovisual",
       av_desc1: "Teaser de introducción para la animación \"PatoPuño\". El proyecto fue creado por un grupo de estudiantes de animación de Concepción, Chile. Mi tarea aqui era componer la canción tema para este video, tomando de inspiración otras caricaturas como \"Las Chicas Super Poderosas\" o \"Kick Buttowski\"",
@@ -136,7 +136,7 @@ Mi rol aqui fue componer la música para el documental de 38 minutos.`,
       step1_text: "Usa el formulario más abajo para describir lo que necesitas — genero, estilo, referencias, fechas limites, y cualquier otro detalle que consideres importante.",
       step2_title: "Nos ponemos de acuerdo",
       step2_text: "Me pondré en contacto contigo para discutir sobre el proyecto, aclarar el enfoque, y asegurarnos de estar en la misma pagina antes de comenzar.",
-      step3_title: "Craré y haré entrega",
+      step3_title: "Crearé y haré entrega",
       step3_text: "Recibirás los archivos, los previsualizarás, y lo refinaremos hasta que el resultado sea exactamente lo que tu proyecto necesita.",
       contact_title: "Contacto",
       contact_sub: "¿Listo para empezar? Completá el formulario y te respondo a la brevedad.",
