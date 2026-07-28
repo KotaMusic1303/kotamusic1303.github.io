@@ -42,8 +42,8 @@
 in 2020, it produced the documentary "The Great Seed" which, through community testimonies, portrays the identity and values of its project.
 My role in this project was to compose the music for the 38-minute documentary.`,
       av_desc6: 'Another project I am part of is "Mimesis", a podcast focused on dentistry, where I work as the audio and video editor/post-production specialist for its content. The overall work consists of voice cleanup and multicamera video editing.',
-      av_desc7: "Descripción del video 7.",
-      av_desc8: "Descripción del video 8.",
+      av_desc7: "Also part of the Mimesis project: short capsules I create for platforms like Instagram Stories and TikTok. Quick, self-contained clips that take the podcast's ideas and reshape them into a format made for scrolling.",
+      av_desc8: "For the short film \"Que Permanezca En La Memoria\" I composed the music and also worked on the sound design. The film hasn't been released yet, so I'm not allowed to show any scenes for now — what you can hear here is the composition on its own.",
       // Index — MM
       mm_tagline: "Bringing your music to its full potential",
       mm_caption: "HUILLAC",
@@ -131,8 +131,8 @@ My role in this project was to compose the music for the 38-minute documentary.`
 En 2020, se produjo el documental "La Gran Semilla" en el cual, por testimonios de la comunidad, se muestra la identidad y valores de sus proyectos.
 Mi rol aqui fue componer la música para el documental de 38 minutos.`,
       av_desc6: 'Otro proyecto del que soy parte, es "Mimesis", podcast enfocado en la odontología, en el cual me desempeño como editor/postproductor de audio y video para su contenido. El trabajo general costa de limpieza y de voces y edición de video multicámara.',
-      av_desc7: "Descripción del video 7.",
-      av_desc8: "Descripción del video 8.",
+      av_desc7: "También forma parte del proyecto Mimesis: pequeñas cápsulas que creo para plataformas como historias de Instagram y TikTok. Clips breves que toman las ideas del podcast y las adaptan a un formato ágil, pensado para el móvil.",
+      av_desc8: "Para el cortometraje \"Que Permanezca En La Memoria\" compuse la música y además trabajé en el diseño sonoro. El corto todavía no se estrena, así que por ahora no tengo permitido mostrar escenas — lo que puedes escuchar aquí es la composición por sí sola.",
       // Index — MM
       mm_tagline: "Logremos obtener lo mejor de tu música",
       mm_caption: "Huillac",
